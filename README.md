@@ -1,0 +1,1 @@
+# Divide-and-Conquer-method-in-TDA
