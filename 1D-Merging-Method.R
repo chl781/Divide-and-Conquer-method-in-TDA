@@ -65,7 +65,7 @@ gap2=seq(range[2,1], range[2,2], length.out = m)
 maxdimension=1
 
 # Load data and do basic transform
-j2=1
+j2=2
 X=read.csv2(paste0("data/1Dcircle/2closeCircles_",j2,".csv"),header=F,sep=",")
 X=as.numeric(as.matrix(X))
 X=matrix(X,ncol=2)
@@ -74,7 +74,7 @@ X=matrix(X,ncol=2)
 # Generate divide data in sub-regions.
 m=15
 X_split=matrix(list(),m-1,m-1)
-range<-matrix(c(-1-1.7/m,-1-1.4/m,.7+1.7/m,.4+1.4/m),2)
+range<-matrix(c(-1-1.7/m,-1-1.4/m,.8+1.4/m,.4+1.4/m),2)
 Matching_error=0.1
 
 gap1=seq(range[1,1],range[1,2],length.out =m)
@@ -97,17 +97,13 @@ Combine1 = Diagm3Combine(X_split,m,Diag_split,range,maxdimension,maxscale,error)
 PD = Combine1$diagram
 
 
-# Have the split diagrams
-Diag_split <- DiagContm2(X,m,maxscale,maxdimension,range)
-Combine1 = Diagm3Combine(X_split,m,Diag_split,range,maxdimension,maxscale,error)
-PD = Combine1$diagram
-
 # This function works for d=1 case.
 
 # Combine1 is the merged features.
 
 # Plot for Combine1 representative data points.
 plot3D::scatter2D(Combine1[[2]][[1]][,1],Combine1[[2]][[1]][,2])
+plot3D::scatter2D(Combine1[[2]][[2]][,1],Combine1[[2]][[2]][,2])
 
 # Diagram
 Combine1$diagram

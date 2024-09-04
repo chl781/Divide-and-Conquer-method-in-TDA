@@ -101,11 +101,8 @@ Diagm3Combine <- function(X_split,m,Diag_split,
   ###################### The following is to merge the suspicious data
   
   ######### Combine the data from sub-regions by using the suspicious data but not projected boundary.
-  if(Reduce("+",Filter(Negate(is.null),ind_suspicious))>0){
-    # put everything there.
-    dist_bound = matrix(Inf,length_bound,length_bound) # Construct the distance matrix among all of the suspicious features.
-    diag(dist_bound)=0 # Denote the distance of feature itself is 0
-  }
+  dist_bound = matrix(Inf,length_bound,length_bound) # Construct the distance matrix among all of the suspicious features.
+  diag(dist_bound)=0 # Denote the distance of feature itself is 0
   
   ##
   
