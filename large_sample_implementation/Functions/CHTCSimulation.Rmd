@@ -1,0 +1,815 @@
+---
+title: "CHTCSimulation"
+author: "Chenghui Li"
+date: "2021/10/23"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(pacman)
+p_load("dplyr","plotrix","spatstat","TDA","hitandrun","functional","Rfast","plotly","viridis","plot3D","ggplot2")
+require(vrmlgen)
+require(rgl)
+require(fields)
+require(knitr)
+library("profmem") # used for testing memory
+library(mph) # Linearized approximation to Rips Filtration
+source('functions/DiagCirSimp.R')# Add another Esimate method.
+source('functions/PlotRepeat.R')
+source('functions/PlotRepeat1.R')
+source('functions/BirthRecal.R')
+source('functions/DeathRecal1.R')
+source('functions/DeathRecal2.R')
+source('functions/ThreePointsCal.R')
+source('functions/MinLength.R')
+```
+
+This file is to test a convex case for in total 7 situations. We will plot this 7 situations out. Also, we will change the number of points. Finally, plot the corresponding MSE out.
+
+## 50 points
+
+First, set number of points to be 50.
+
+```{r}
+nCircle=50# add more points on circle to prevent the singularity.
+# Setup the MSE matrix
+dataMSE=matrix(0,nrow = 9,ncol = 11)
+colnames(dataMSE)<-c("ReBirth","ReDeath","T2MSE","AddedBirth","AddedMSEBirth","AddedDeath","Add2MSEDeath","Add3MSEDeath","Add4MSEDeath","ApprBirth","ApproDeath")
+```
+
+#### To 1/4
+Compress to 1/4. hold it at X.
+```{r}
+set.seed(2022)
+
+n1=100
+T2=S3=S2=S1=matrix(0,nrow=n1,ncol=2)
+Add1=Add2=Add3=Add4=matrix(0,nrow=n1,ncol=2)
+
+n=40 # increase the supplemental points
+maxscale=2
+maxdimension=1
+gap=0
+
+MSE_Linear_birth=MSE_Linear_death=0
+for (i in 1:n1) {
+  X <- circleUnif(nCircle,1)
+  X[,1]=X[,1]/4
+  if(i==1){
+    plot(X)
+  }
+  t1 = DiagCirSimp(X,gap,maxscale,maxdimension,n)
+  S1[i,]=t1[1,]
+  S2[i,]=t1[2,]
+  S3[i,]=t1[3,]
+  T2[i,]=t1[4,]
+  Add1[i,]=t1[5,]
+  Add2[i,]=t1[6,]
+  Add3[i,]=t1[7,]
+  Add4[i,]=t1[8,]
+  
+  # Do the linearized approximation to Rips filtration.
+  gmra = gmra.create.ipca(X, eps=0, dim=1, maxKids=1, stop=4)
+  res <- multiscale.rips(gmra, maxD = 1)
+  t2<-which.max(res$diagram[res$diagram[,4]==1,2]-
+           res$diagram[res$diagram[,4]==1,1])
+  if(sum(res$diagram[res$diagram[,4]==1,])==0){
+    MSE_Linear_birth=MSE_Linear_birth+(t1[9,1])^2
+    MSE_Linear_death=MSE_Linear_death+(t1[9,2])^2
+  }else{
+    MSE_Linear_birth=MSE_Linear_birth+(res$diagram[which(res$diagram[,4]==1)[t2],1]-t1[9,1])^2
+    MSE_Linear_death=MSE_Linear_death+(res$diagram[which(res$diagram[,4]==1)[t2],2]-t1[9,2])^2
+  }
+}
+MSE_Linear_birth_1=MSE_Linear_birth/n1
+MSE_Linear_death_1=MSE_Linear_death/n1
+
+# Combine S2 and S3 to derive a easy computed estimation
+T1=matrix(0,nrow=n1,ncol=2)
+for(i in 1:n1){
+  T1[i,1]=max(S2[i,1],S3[i,1])# Change it to max but not min.
+  T1[i,2]=max(S2[i,2],S3[i,2])
+}
+
+#### T2 is just the complicated computed one.
+
+#### T3 is the combined one.
+T3=matrix(0,nrow=n1,ncol=2)
+T3[,1]=T1[,1]
+T3[,2]=T2[,2]
+
+#### Then, plot them into PD form.
+# PlotRepeat(S1,T1,T2)
+# PlotRepeat1(S1,T3)
+
+#### Calculate MSE
+T2MSEBirth_1=sum((T2-S1)[,1]^2)/n1
+T2MSEDeath_1=sum((T2-S1)[,2]^2)/n1
+T2MSE_1=sum((T2-S1)^2)/n1
+T1MSEBirth_1=sum((T1-S1)[,1]^2)/n1 # Only calculate for the birth time.
+
+#Added Estimates calculation
+AddedMSEBirth_1=sum((Add1-S1)[,1]^2)/n1
+Add1MSEDeath_1=sum((Add1-S1)[,2]^2)/n1
+Add2MSEDeath_1=sum((Add2-S1)[,2]^2)/n1
+Add3MSEDeath_1=sum((Add3-S1)[,2]^2)/n1
+Add4MSEDeath_1=sum((Add4-S1)[,2]^2)/n1
+
+dataMSE[1,]<-c(T2MSEBirth_1,T2MSEDeath_1,T2MSE_1,T1MSEBirth_1,AddedMSEBirth_1,
+          Add1MSEDeath_1,Add2MSEDeath_1,Add3MSEDeath_1,Add4MSEDeath_1,MSE_Linear_birth_1,MSE_Linear_death_1)
+```
+
+
+Compress it at y.
+```{r}
+set.seed(2023)
+
+n1=100
+T2=S3=S2=S1=matrix(0,nrow=n1,ncol=2)
+Add1=Add2=Add3=Add4=matrix(0,nrow=n1,ncol=2)
+
+n=40 # Increase the number of supplemental points.
+maxscale=2
+maxdimension=1
+gap=0
+
+MSE_Linear_birth=MSE_Linear_death=0
+for (i in 1:n1) {
+  X <- circleUnif(nCircle,1)
+  X[,2]=X[,2]/4
+  if(i==1){
+    plot(X)
+  }
+  t1 = DiagCirSimp(X,gap,maxscale,maxdimension,n)
+  S1[i,]=t1[1,]
+  S2[i,]=t1[2,]
+  S3[i,]=t1[3,]
+  T2[i,]=t1[4,]
+  Add1[i,]=t1[5,]
+  Add2[i,]=t1[6,]
+  Add3[i,]=t1[7,]
+  Add4[i,]=t1[8,]
+  
+  # Do the linearized approximation to Rips filtration.
+  gmra = gmra.create.ipca(X, eps=0, dim=1, maxKids=1, stop=4)
+  res <- multiscale.rips(gmra, maxD = 1)
+  t2<-which.max(res$diagram[res$diagram[,4]==1,2]-
+           res$diagram[res$diagram[,4]==1,1])
+  if(sum(res$diagram[res$diagram[,4]==1,])==0){
+    MSE_Linear_birth=MSE_Linear_birth+(t1[9,1])^2
+    MSE_Linear_death=MSE_Linear_death+(t1[9,2])^2
+  }else{
+    MSE_Linear_birth=MSE_Linear_birth+(res$diagram[which(res$diagram[,4]==1)[t2],1]-t1[9,1])^2
+    MSE_Linear_death=MSE_Linear_death+(res$diagram[which(res$diagram[,4]==1)[t2],2]-t1[9,2])^2
+  }
+}
+MSE_Linear_birth_2=MSE_Linear_birth/n1
+MSE_Linear_death_2=MSE_Linear_death/n1
+
+# Combine S2 and S3 to derive a easy computed estimation
+T1=matrix(0,nrow=n1,ncol=2)
+for(i in 1:n1){
+  T1[i,1]=max(S2[i,1],S3[i,1])# Change it to max but not min.
+  T1[i,2]=max(S2[i,2],S3[i,2])
+}
+
+#### T2 is just the complicated computed one.
+
+#### T3 is the combined one.
+T3=matrix(0,nrow=n1,ncol=2)
+T3[,1]=T1[,1]
+T3[,2]=T2[,2]
+
+#### Then, plot them into PD form.
+# PlotRepeat(S1,T1,T2)
+# PlotRepeat1(S1,T3)
+
+#### Calculate MSE
+T2MSEBirth_2=sum((T2-S1)[,1]^2)/n1
+T2MSEDeath_2=sum((T2-S1)[,2]^2)/n1
+T2MSE_2=sum((T2-S1)^2)/n1
+T1MSEBirth_2=sum((T1-S1)[,1]^2)/n1 # Only calculate for the birth time.
+
+#Added Estimates calculation
+AddedMSEBirth_2=sum((Add1-S1)[,1]^2)/n1
+Add1MSEDeath_2=sum((Add1-S1)[,2]^2)/n1
+Add2MSEDeath_2=sum((Add2-S1)[,2]^2)/n1
+Add3MSEDeath_2=sum((Add3-S1)[,2]^2)/n1
+Add4MSEDeath_2=sum((Add4-S1)[,2]^2)/n1
+
+dataMSE[2,]<-c(T2MSEBirth_2,T2MSEDeath_2,T2MSE_2,T1MSEBirth_2,AddedMSEBirth_2,
+          Add1MSEDeath_2,Add2MSEDeath_2,Add3MSEDeath_2,Add4MSEDeath_2,MSE_Linear_birth_2,MSE_Linear_death_2)
+```
+
+Rotate it to 60 degree.
+
+```{r}
+set.seed(2040)
+
+n1=100
+T2=S3=S2=S1=matrix(0,nrow=n1,ncol=2)
+Add1=Add2=Add3=Add4=matrix(0,nrow=n1,ncol=2)
+
+n=40 # Increase the number of supplemental points.
+maxscale=2
+maxdimension=1
+gap=0
+
+MSE_Linear_birth=MSE_Linear_death=0
+for (i in 1:n1) {
+  X <- circleUnif(nCircle,1)
+  X[,2]=X[,2]/4
+  X=X%*%matrix(c(sqrt(3)/2,-1/2,1/2,sqrt(3)/2),nrow = 2,byrow = T)#rotate 60 degree.
+  if(i==1){
+    plot(X)
+  }
+  t1 = DiagCirSimp(X,gap,maxscale,maxdimension,n)
+  S1[i,]=t1[1,]
+  S2[i,]=t1[2,]
+  S3[i,]=t1[3,]
+  T2[i,]=t1[4,]
+  Add1[i,]=t1[5,]
+  Add2[i,]=t1[6,]
+  Add3[i,]=t1[7,]
+  Add4[i,]=t1[8,]
+  
+  # Do the linearized approximation to Rips filtration.
+  gmra = gmra.create.ipca(X, eps=0, dim=1, maxKids=1, stop=4)
+  res <- multiscale.rips(gmra, maxD = 1)
+  t2<-which.max(res$diagram[res$diagram[,4]==1,2]-
+           res$diagram[res$diagram[,4]==1,1])
+  if(sum(res$diagram[res$diagram[,4]==1,])==0){
+    MSE_Linear_birth=MSE_Linear_birth+(t1[9,1])^2
+    MSE_Linear_death=MSE_Linear_death+(t1[9,2])^2
+  }else{
+    MSE_Linear_birth=MSE_Linear_birth+(res$diagram[which(res$diagram[,4]==1)[t2],1]-t1[9,1])^2
+    MSE_Linear_death=MSE_Linear_death+(res$diagram[which(res$diagram[,4]==1)[t2],2]-t1[9,2])^2
+  }
+}
+MSE_Linear_birth_3=MSE_Linear_birth/n1
+MSE_Linear_death_3=MSE_Linear_death/n1
+
+# Combine S2 and S3 to derive a easy computed estimation
+T1=matrix(0,nrow=n1,ncol=2)
+for(i in 1:n1){
+  T1[i,1]=max(S2[i,1],S3[i,1])# Change it to max but not min.
+  T1[i,2]=max(S2[i,2],S3[i,2])
+}
+
+#### T2 is just the complicated computed one.
+
+#### T3 is the combined one.
+T3=matrix(0,nrow=n1,ncol=2)
+T3[,1]=T1[,1]
+T3[,2]=T2[,2]
+
+#### Then, plot them into PD form.
+# PlotRepeat(S1,T1,T2)
+# PlotRepeat1(S1,T3)
+
+#### Calculate MSE
+T2MSEBirth_3=sum((T2-S1)[,1]^2)/n1
+T2MSEDeath_3=sum((T2-S1)[,2]^2)/n1
+T2MSE_3=sum((T2-S1)^2)/n1
+T1MSEBirth_3=sum((T1-S1)[,1]^2)/n1 # Only calculate for the birth time.
+
+#Added Estimates calculation
+AddedMSEBirth_3=sum((Add1-S1)[,1]^2)/n1
+Add1MSEDeath_3=sum((Add1-S1)[,2]^2)/n1
+Add2MSEDeath_3=sum((Add2-S1)[,2]^2)/n1
+Add3MSEDeath_3=sum((Add3-S1)[,2]^2)/n1
+Add4MSEDeath_3=sum((Add4-S1)[,2]^2)/n1
+
+dataMSE[3,]<-c(T2MSEBirth_3,T2MSEDeath_3,T2MSE_3,T1MSEBirth_3,AddedMSEBirth_3,
+          Add1MSEDeath_3,Add2MSEDeath_3,Add3MSEDeath_3,Add4MSEDeath_3,MSE_Linear_birth_3,MSE_Linear_death_3)
+```
+
+Rotate it 30 degree.
+```{r}
+set.seed(2050)
+
+n1=100
+T2=S3=S2=S1=matrix(0,nrow=n1,ncol=2)
+Add1=Add2=Add3=Add4=matrix(0,nrow=n1,ncol=2)
+
+n=40 # Increase the number of supplemental points.
+maxscale=2
+maxdimension=1
+gap=0
+
+MSE_Linear_birth=MSE_Linear_death=0
+for (i in 1:n1) {
+  X <- circleUnif(nCircle,1)
+  X[,2]=X[,2]/4
+  X=X%*%matrix(c(1/2,-sqrt(3)/2,sqrt(3)/2,1/2),nrow = 2,byrow = T)# rotate it 30 degree.
+  if(i==1){
+    plot(X)
+  }
+  t1 = DiagCirSimp(X,gap,maxscale,maxdimension,n)
+  S1[i,]=t1[1,]
+  S2[i,]=t1[2,]
+  S3[i,]=t1[3,]
+  T2[i,]=t1[4,]
+  Add1[i,]=t1[5,]
+  Add2[i,]=t1[6,]
+  Add3[i,]=t1[7,]
+  Add4[i,]=t1[8,]
+  
+  # Do the linearized approximation to Rips filtration.
+  gmra = gmra.create.ipca(X, eps=0, dim=1, maxKids=1, stop=4)
+  res <- multiscale.rips(gmra, maxD = 1)
+  t2<-which.max(res$diagram[res$diagram[,4]==1,2]-
+           res$diagram[res$diagram[,4]==1,1])
+  if(sum(res$diagram[res$diagram[,4]==1,])==0){
+    MSE_Linear_birth=MSE_Linear_birth+(t1[9,1])^2
+    MSE_Linear_death=MSE_Linear_death+(t1[9,2])^2
+  }else{
+    MSE_Linear_birth=MSE_Linear_birth+(res$diagram[which(res$diagram[,4]==1)[t2],1]-t1[9,1])^2
+    MSE_Linear_death=MSE_Linear_death+(res$diagram[which(res$diagram[,4]==1)[t2],2]-t1[9,2])^2
+  }
+}
+MSE_Linear_birth_4=MSE_Linear_birth/n1
+MSE_Linear_death_4=MSE_Linear_death/n1
+
+# Combine S2 and S3 to derive a easy computed estimation
+T1=matrix(0,nrow=n1,ncol=2)
+for(i in 1:n1){
+  T1[i,1]=max(S2[i,1],S3[i,1])# Change it to max but not min.
+  T1[i,2]=max(S2[i,2],S3[i,2])
+}
+
+#### T2 is just the complicated computed one.
+
+#### T3 is the combined one.
+T3=matrix(0,nrow=n1,ncol=2)
+T3[,1]=T1[,1]
+T3[,2]=T2[,2]
+
+#### Then, plot them into PD form.
+# PlotRepeat(S1,T1,T2)
+# PlotRepeat1(S1,T3)
+
+#### Calculate MSE
+T2MSEBirth_4=sum((T2-S1)[,1]^2)/n1
+T2MSEDeath_4=sum((T2-S1)[,2]^2)/n1
+T2MSE_4=sum((T2-S1)^2)/n1
+T1MSEBirth_4=sum((T1-S1)[,1]^2)/n1 # Only calculate for the birth time.
+
+#Added Estimates calculation
+AddedMSEBirth_4=sum((Add1-S1)[,1]^2)/n1
+Add1MSEDeath_4=sum((Add1-S1)[,2]^2)/n1
+Add2MSEDeath_4=sum((Add2-S1)[,2]^2)/n1
+Add3MSEDeath_4=sum((Add3-S1)[,2]^2)/n1
+Add4MSEDeath_4=sum((Add4-S1)[,2]^2)/n1
+
+dataMSE[4,]<-c(T2MSEBirth_4,T2MSEDeath_4,T2MSE_4,T1MSEBirth_4,AddedMSEBirth_4,
+          Add1MSEDeath_4,Add2MSEDeath_4,Add3MSEDeath_4,Add4MSEDeath_4,MSE_Linear_birth_4,MSE_Linear_death_4)
+```
+
+
+#### To 1/2
+
+Compress to 1/2. hold it at X.
+```{r}
+set.seed(2023)
+
+n1=100
+T2=S3=S2=S1=matrix(0,nrow=n1,ncol=2)
+Add1=Add2=Add3=Add4=matrix(0,nrow=n1,ncol=2)
+
+n=40 # increase the supplemental points
+maxscale=2
+maxdimension=1
+gap=0
+
+MSE_Linear_birth=MSE_Linear_death=0
+for (i in 1:n1) {
+  X <- circleUnif(nCircle,1)
+  X[,1]=X[,1]/2
+  if(i==1){
+    plot(X)
+  }
+  t1 = DiagCirSimp(X,gap,maxscale,maxdimension,n)
+  S1[i,]=t1[1,]
+  S2[i,]=t1[2,]
+  S3[i,]=t1[3,]
+  T2[i,]=t1[4,]
+  Add1[i,]=t1[5,]
+  Add2[i,]=t1[6,]
+  Add3[i,]=t1[7,]
+  Add4[i,]=t1[8,]
+  
+  # Do the linearized approximation to Rips filtration.
+  gmra = gmra.create.ipca(X, eps=0, dim=1, maxKids=1, stop=4)
+  res <- multiscale.rips(gmra, maxD = 1)
+  t2<-which.max(res$diagram[res$diagram[,4]==1,2]-
+           res$diagram[res$diagram[,4]==1,1])
+  if(sum(res$diagram[res$diagram[,4]==1,])==0){
+    MSE_Linear_birth=MSE_Linear_birth+(t1[9,1])^2
+    MSE_Linear_death=MSE_Linear_death+(t1[9,2])^2
+  }else{
+    MSE_Linear_birth=MSE_Linear_birth+(res$diagram[which(res$diagram[,4]==1)[t2],1]-t1[9,1])^2
+    MSE_Linear_death=MSE_Linear_death+(res$diagram[which(res$diagram[,4]==1)[t2],2]-t1[9,2])^2
+  }
+}
+MSE_Linear_birth_5=MSE_Linear_birth/n1
+MSE_Linear_death_5=MSE_Linear_death/n1
+
+# Combine S2 and S3 to derive a easy computed estimation
+T1=matrix(0,nrow=n1,ncol=2)
+for(i in 1:n1){
+  T1[i,1]=max(S2[i,1],S3[i,1])# Change it to max but not min.
+  T1[i,2]=max(S2[i,2],S3[i,2])
+}
+
+#### T2 is just the complicated computed one.
+
+#### T3 is the combined one.
+T3=matrix(0,nrow=n1,ncol=2)
+T3[,1]=T1[,1]
+T3[,2]=T2[,2]
+
+#### Then, plot them into PD form.
+# PlotRepeat(S1,T1,T2)
+# PlotRepeat1(S1,T3)
+
+#### Calculate MSE
+T2MSEBirth_5=sum((T2-S1)[,1]^2)/n1
+T2MSEDeath_5=sum((T2-S1)[,2]^2)/n1
+T2MSE_5=sum((T2-S1)^2)/n1
+T1MSEBirth_5=sum((T1-S1)[,1]^2)/n1 # Only calculate for the birth time.
+
+#Added Estimates calculation
+AddedMSEBirth_5=sum((Add1-S1)[,1]^2)/n1
+Add1MSEDeath_5=sum((Add1-S1)[,2]^2)/n1
+Add2MSEDeath_5=sum((Add2-S1)[,2]^2)/n1
+Add3MSEDeath_5=sum((Add3-S1)[,2]^2)/n1
+Add4MSEDeath_5=sum((Add4-S1)[,2]^2)/n1
+
+dataMSE[5,]<-c(T2MSEBirth_5,T2MSEDeath_5,T2MSE_5,T1MSEBirth_5,AddedMSEBirth_5,
+          Add1MSEDeath_5,Add2MSEDeath_5,Add3MSEDeath_5,Add4MSEDeath_5,MSE_Linear_birth_5,MSE_Linear_death_5)
+```
+
+
+Compress it at y.
+```{r}
+set.seed(2024)
+
+n1=100
+T2=S3=S2=S1=matrix(0,nrow=n1,ncol=2)
+Add1=Add2=Add3=Add4=matrix(0,nrow=n1,ncol=2)
+
+n=40 # Increase the number of supplemental points.
+maxscale=2
+maxdimension=1
+gap=0
+
+MSE_Linear_birth=MSE_Linear_death=0
+for (i in 1:n1) {
+  X <- circleUnif(nCircle,1)
+  X[,2]=X[,2]/2
+  if(i==1){
+    plot(X)
+  }
+  t1 = DiagCirSimp(X,gap,maxscale,maxdimension,n)
+  S1[i,]=t1[1,]
+  S2[i,]=t1[2,]
+  S3[i,]=t1[3,]
+  T2[i,]=t1[4,]
+  Add1[i,]=t1[5,]
+  Add2[i,]=t1[6,]
+  Add3[i,]=t1[7,]
+  Add4[i,]=t1[8,]
+  
+  # Do the linearized approximation to Rips filtration.
+  gmra = gmra.create.ipca(X, eps=0, dim=1, maxKids=1, stop=4)
+  res <- multiscale.rips(gmra, maxD = 1)
+  t2<-which.max(res$diagram[res$diagram[,4]==1,2]-
+           res$diagram[res$diagram[,4]==1,1])
+  if(sum(res$diagram[res$diagram[,4]==1,])==0){
+    MSE_Linear_birth=MSE_Linear_birth+(t1[9,1])^2
+    MSE_Linear_death=MSE_Linear_death+(t1[9,2])^2
+  }else{
+    MSE_Linear_birth=MSE_Linear_birth+(res$diagram[which(res$diagram[,4]==1)[t2],1]-t1[9,1])^2
+    MSE_Linear_death=MSE_Linear_death+(res$diagram[which(res$diagram[,4]==1)[t2],2]-t1[9,2])^2
+  }
+}
+MSE_Linear_birth_6=MSE_Linear_birth/n1
+MSE_Linear_death_6=MSE_Linear_death/n1
+
+# Combine S2 and S3 to derive a easy computed estimation
+T1=matrix(0,nrow=n1,ncol=2)
+for(i in 1:n1){
+  T1[i,1]=max(S2[i,1],S3[i,1])# Change it to max but not min.
+  T1[i,2]=max(S2[i,2],S3[i,2])
+}
+
+#### T2 is just the complicated computed one.
+
+#### T3 is the combined one.
+T3=matrix(0,nrow=n1,ncol=2)
+T3[,1]=T1[,1]
+T3[,2]=T2[,2]
+
+#### Then, plot them into PD form.
+# PlotRepeat(S1,T1,T2)
+# PlotRepeat1(S1,T3)
+
+#### Calculate MSE
+T2MSEBirth_6=sum((T2-S1)[,1]^2)/n1
+T2MSEDeath_6=sum((T2-S1)[,2]^2)/n1
+T2MSE_6=sum((T2-S1)^2)/n1
+T1MSEBirth_6=sum((T1-S1)[,1]^2)/n1 # Only calculate for the birth time.
+
+#Added Estimates calculation
+AddedMSEBirth_6=sum((Add1-S1)[,1]^2)/n1
+Add1MSEDeath_6=sum((Add1-S1)[,2]^2)/n1
+Add2MSEDeath_6=sum((Add2-S1)[,2]^2)/n1
+Add3MSEDeath_6=sum((Add3-S1)[,2]^2)/n1
+Add4MSEDeath_6=sum((Add4-S1)[,2]^2)/n1
+
+dataMSE[6,]<-c(T2MSEBirth_6,T2MSEDeath_6,T2MSE_6,T1MSEBirth_6,AddedMSEBirth_6,
+          Add1MSEDeath_6,Add2MSEDeath_6,Add3MSEDeath_6,Add4MSEDeath_6,MSE_Linear_birth_6,MSE_Linear_death_6)
+```
+
+Rotate it to 60 degree.
+
+```{r}
+set.seed(2041)
+
+n1=100
+T2=S3=S2=S1=matrix(0,nrow=n1,ncol=2)
+Add1=Add2=Add3=Add4=matrix(0,nrow=n1,ncol=2)
+
+n=40 # Increase the number of supplemental points.
+maxscale=2
+maxdimension=1
+gap=0
+
+MSE_Linear_birth=MSE_Linear_death=0
+for (i in 1:n1) {
+  X <- circleUnif(nCircle,1)
+  X[,2]=X[,2]/2
+  X=X%*%matrix(c(sqrt(3)/2,-1/2,1/2,sqrt(3)/2),nrow = 2,byrow = T)#rotate 60 degree.
+  if(i==1){
+    plot(X)
+  }
+  t1 = DiagCirSimp(X,gap,maxscale,maxdimension,n)
+  S1[i,]=t1[1,]
+  S2[i,]=t1[2,]
+  S3[i,]=t1[3,]
+  T2[i,]=t1[4,]
+  Add1[i,]=t1[5,]
+  Add2[i,]=t1[6,]
+  Add3[i,]=t1[7,]
+  Add4[i,]=t1[8,]
+  
+  # Do the linearized approximation to Rips filtration.
+  gmra = gmra.create.ipca(X, eps=0, dim=1, maxKids=1, stop=4)
+  res <- multiscale.rips(gmra, maxD = 1)
+  t2<-which.max(res$diagram[res$diagram[,4]==1,2]-
+           res$diagram[res$diagram[,4]==1,1])
+  if(sum(res$diagram[res$diagram[,4]==1,])==0){
+    MSE_Linear_birth=MSE_Linear_birth+(t1[9,1])^2
+    MSE_Linear_death=MSE_Linear_death+(t1[9,2])^2
+  }else{
+    MSE_Linear_birth=MSE_Linear_birth+(res$diagram[which(res$diagram[,4]==1)[t2],1]-t1[9,1])^2
+    MSE_Linear_death=MSE_Linear_death+(res$diagram[which(res$diagram[,4]==1)[t2],2]-t1[9,2])^2
+  }
+}
+MSE_Linear_birth_7=MSE_Linear_birth/n1
+MSE_Linear_death_7=MSE_Linear_death/n1
+
+# Combine S2 and S3 to derive a easy computed estimation
+T1=matrix(0,nrow=n1,ncol=2)
+for(i in 1:n1){
+  T1[i,1]=max(S2[i,1],S3[i,1])# Change it to max but not min.
+  T1[i,2]=max(S2[i,2],S3[i,2])
+}
+
+#### T2 is just the complicated computed one.
+
+#### T3 is the combined one.
+T3=matrix(0,nrow=n1,ncol=2)
+T3[,1]=T1[,1]
+T3[,2]=T2[,2]
+
+#### Then, plot them into PD form.
+# PlotRepeat(S1,T1,T2)
+# PlotRepeat1(S1,T3)
+
+#### Calculate MSE
+T2MSEBirth_7=sum((T2-S1)[,1]^2)/n1
+T2MSEDeath_7=sum((T2-S1)[,2]^2)/n1
+T2MSE_7=sum((T2-S1)^2)/n1
+T1MSEBirth_7=sum((T1-S1)[,1]^2)/n1 # Only calculate for the birth time.
+
+#Added Estimates calculation
+AddedMSEBirth_7=sum((Add1-S1)[,1]^2)/n1
+Add1MSEDeath_7=sum((Add1-S1)[,2]^2)/n1
+Add2MSEDeath_7=sum((Add2-S1)[,2]^2)/n1
+Add3MSEDeath_7=sum((Add3-S1)[,2]^2)/n1
+Add4MSEDeath_7=sum((Add4-S1)[,2]^2)/n1
+
+dataMSE[7,]<-c(T2MSEBirth_7,T2MSEDeath_7,T2MSE_7,T1MSEBirth_7,AddedMSEBirth_7,
+          Add1MSEDeath_7,Add2MSEDeath_7,Add3MSEDeath_7,Add4MSEDeath_7,MSE_Linear_birth_7,MSE_Linear_death_7)
+```
+
+Rotate it 30 degree.
+```{r}
+set.seed(2051)
+
+n1=100
+T2=S3=S2=S1=matrix(0,nrow=n1,ncol=2)
+Add1=Add2=Add3=Add4=matrix(0,nrow=n1,ncol=2)
+
+n=40 # Increase the number of supplemental points.
+maxscale=2
+maxdimension=1
+gap=0
+
+MSE_Linear_birth=MSE_Linear_death=0
+for (i in 1:n1) {
+  X <- circleUnif(nCircle,1)
+  X[,2]=X[,2]/2
+  X=X%*%matrix(c(1/2,-sqrt(3)/2,sqrt(3)/2,1/2),nrow = 2,byrow = T)# rotate it 30 degree.
+  if(i==1){
+    plot(X)
+  }
+  t1 = DiagCirSimp(X,gap,maxscale,maxdimension,n)
+  S1[i,]=t1[1,]
+  S2[i,]=t1[2,]
+  S3[i,]=t1[3,]
+  T2[i,]=t1[4,]
+  Add1[i,]=t1[5,]
+  Add2[i,]=t1[6,]
+  Add3[i,]=t1[7,]
+  Add4[i,]=t1[8,]
+  
+  # Do the linearized approximation to Rips filtration.
+  gmra = gmra.create.ipca(X, eps=0, dim=1, maxKids=1, stop=4)
+  res <- multiscale.rips(gmra, maxD = 1)
+  t2<-which.max(res$diagram[res$diagram[,4]==1,2]-
+           res$diagram[res$diagram[,4]==1,1])
+  if(sum(res$diagram[res$diagram[,4]==1,])==0){
+    MSE_Linear_birth=MSE_Linear_birth+(t1[9,1])^2
+    MSE_Linear_death=MSE_Linear_death+(t1[9,2])^2
+  }else{
+    MSE_Linear_birth=MSE_Linear_birth+(res$diagram[which(res$diagram[,4]==1)[t2],1]-t1[9,1])^2
+    MSE_Linear_death=MSE_Linear_death+(res$diagram[which(res$diagram[,4]==1)[t2],2]-t1[9,2])^2
+  }
+}
+MSE_Linear_birth_8=MSE_Linear_birth/n1
+MSE_Linear_death_8=MSE_Linear_death/n1
+
+# Combine S2 and S3 to derive a easy computed estimation
+T1=matrix(0,nrow=n1,ncol=2)
+for(i in 1:n1){
+  T1[i,1]=max(S2[i,1],S3[i,1])# Change it to max but not min.
+  T1[i,2]=max(S2[i,2],S3[i,2])
+}
+
+#### T2 is just the complicated computed one.
+
+#### T3 is the combined one.
+T3=matrix(0,nrow=n1,ncol=2)
+T3[,1]=T1[,1]
+T3[,2]=T2[,2]
+
+#### Then, plot them into PD form.
+# PlotRepeat(S1,T1,T2)
+# PlotRepeat1(S1,T3)
+
+#### Calculate MSE
+T2MSEBirth_8=sum((T2-S1)[,1]^2)/n1
+T2MSEDeath_8=sum((T2-S1)[,2]^2)/n1
+T2MSE_8=sum((T2-S1)^2)/n1
+T1MSEBirth_8=sum((T1-S1)[,1]^2)/n1 # Only calculate for the birth time.
+
+#Added Estimates calculation
+AddedMSEBirth_8=sum((Add1-S1)[,1]^2)/n1
+Add1MSEDeath_8=sum((Add1-S1)[,2]^2)/n1
+Add2MSEDeath_8=sum((Add2-S1)[,2]^2)/n1
+Add3MSEDeath_8=sum((Add3-S1)[,2]^2)/n1
+Add4MSEDeath_8=sum((Add4-S1)[,2]^2)/n1
+
+dataMSE[8,]<-c(T2MSEBirth_8,T2MSEDeath_8,T2MSE_8,T1MSEBirth_8,AddedMSEBirth_8,
+          Add1MSEDeath_8,Add2MSEDeath_8,Add3MSEDeath_8,Add4MSEDeath_8,MSE_Linear_birth_8,MSE_Linear_death_8)
+```
+
+
+#### Do not compress.
+
+This will not have any compression.
+```{r}
+set.seed(2052)
+
+n1=100
+T2=S3=S2=S1=matrix(0,nrow=n1,ncol=2)
+Add1=Add2=Add3=Add4=matrix(0,nrow=n1,ncol=2)
+
+n=40 # Increase the number of supplemental points.
+maxscale=2
+maxdimension=1
+gap=0
+
+MSE_Linear_birth=MSE_Linear_death=0
+for (i in 1:n1) {
+  X <- circleUnif(nCircle,1)
+  if(i==1){
+    plot(X)
+  }
+  t1 = DiagCirSimp(X,gap,maxscale,maxdimension,n)
+  S1[i,]=t1[1,]
+  S2[i,]=t1[2,]
+  S3[i,]=t1[3,]
+  T2[i,]=t1[4,]
+  Add1[i,]=t1[5,]
+  Add2[i,]=t1[6,]
+  Add3[i,]=t1[7,]
+  Add4[i,]=t1[8,]
+  
+  # Do the linearized approximation to Rips filtration.
+  gmra = gmra.create.ipca(X, eps=0, dim=1, maxKids=1, stop=4)
+  res <- multiscale.rips(gmra, maxD = 1)
+  t2<-which.max(res$diagram[res$diagram[,4]==1,2]-
+           res$diagram[res$diagram[,4]==1,1])
+  if(sum(res$diagram[res$diagram[,4]==1,])==0){
+    MSE_Linear_birth=MSE_Linear_birth+(t1[9,1])^2
+    MSE_Linear_death=MSE_Linear_death+(t1[9,2])^2
+  }else{
+    MSE_Linear_birth=MSE_Linear_birth+(res$diagram[which(res$diagram[,4]==1)[t2],1]-t1[9,1])^2
+    MSE_Linear_death=MSE_Linear_death+(res$diagram[which(res$diagram[,4]==1)[t2],2]-t1[9,2])^2
+  }
+}
+MSE_Linear_birth_9=MSE_Linear_birth/n1
+MSE_Linear_death_9=MSE_Linear_death/n1
+
+# Combine S2 and S3 to derive a easy computed estimation
+T1=matrix(0,nrow=n1,ncol=2)
+for(i in 1:n1){
+  T1[i,1]=max(S2[i,1],S3[i,1])# Change it to max but not min.
+  T1[i,2]=max(S2[i,2],S3[i,2])
+}
+
+#### T2 is just the complicated computed one.
+
+#### T3 is the combined one.
+T3=matrix(0,nrow=n1,ncol=2)
+T3[,1]=T1[,1]
+T3[,2]=T2[,2]
+
+#### Then, plot them into PD form.
+# PlotRepeat(S1,T1,T2)
+# PlotRepeat1(S1,T3)
+
+#### Calculate MSE
+T2MSEBirth_9=sum((T2-S1)[,1]^2)/n1
+T2MSEDeath_9=sum((T2-S1)[,2]^2)/n1
+T2MSE_9=sum((T2-S1)^2)/n1
+T1MSEBirth_9=sum((T1-S1)[,1]^2)/n1 # Only calculate for the birth time.
+
+#Added Estimates calculation
+AddedMSEBirth_9=sum((Add1-S1)[,1]^2)/n1
+Add1MSEDeath_9=sum((Add1-S1)[,2]^2)/n1
+Add2MSEDeath_9=sum((Add2-S1)[,2]^2)/n1
+Add3MSEDeath_9=sum((Add3-S1)[,2]^2)/n1
+Add4MSEDeath_9=sum((Add4-S1)[,2]^2)/n1
+
+dataMSE[9,]<-c(T2MSEBirth_9,T2MSEDeath_9,T2MSE_9,T1MSEBirth_9,AddedMSEBirth_9,
+          Add1MSEDeath_9,Add2MSEDeath_9,Add3MSEDeath_9,Add4MSEDeath_9,MSE_Linear_birth_9,MSE_Linear_death_9)
+```
+
+## Plot 
+
+First try to plot it.
+```{r}
+dataDiv=data.frame(example=rep(1:9,each=6),MSE=c(dataMSE[,c(1,2,4,6,10,11)]),estimates=rep(c("ReBirth","ReDeath","AddedBirth","AddedDeath","ApprBirth","ApproDeath"),9))
+
+
+ggplot(dataDiv, aes(example,MSE, colour = estimates)) + 
+  geom_point() + 
+  ggtitle("MSE Estimates divide by Re-estimates after log") +
+  xlab("Examples") +
+  ylab("Divided MSE")
+
+```
+
+Plot the result with respect to the re-estimates.
+
+```{r}
+dataDiv=data.frame(example=rep(1:9,each=4),MSE=c(dataMSE[,c(4,10)]/dataMSE[,1],dataMSE[,c(6,11)]/dataMSE[,2]),estimates=rep(c("AddedBirth","ApprBirth","AddedDeath","ApproDeath"),9))
+
+  
+ggplot(dataDiv, aes(example,MSE, colour = estimates)) + 
+  geom_point() + 
+  ggtitle("MSE Estimates divide by Re-estimates after log") +
+  xlab("Examples") +
+  ylab("Divided MSE") 
+
+```
+
+
+## The number of points is 150.
+
