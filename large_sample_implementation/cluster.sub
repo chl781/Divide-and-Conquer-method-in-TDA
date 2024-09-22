@@ -1,11 +1,11 @@
 universe = container 
 container_image = docker://opensciencegrid/osgvo-el7:latest
-log = Folder/hello-chtc_$(Cluster).log
+log = Folder/cluster_$(Cluster).log
 
 executable = run_R1.sh
 arguments = $(Process) 1600
-output = Folder/hello-chtc_$(Cluster)_$(Process).out
-error = Folder/hello-chtc_$(Cluster)_$(Process).err
+output = Folder/cluster_$(Cluster)_$(Process).out
+error = Folder/cluster_$(Cluster)_$(Process).err
 
 should_transfer_files = YES
 when_to_transfer_output = ON_EXIT
