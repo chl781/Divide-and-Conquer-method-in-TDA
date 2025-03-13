@@ -51,15 +51,7 @@ source("Functions3Combine/BirthRecal2_.R")
 source("Functions3Combine/DeathRecal0_.R")
 source("Functions3Combine/DeathRecal1_.R")
 
-# Parameter Setup
-m=4 # Split the data into 7*7 subregions
 
-range=matrix(c( -1, 1, -1, 1),nrow = 2, byrow=T)
-maxscale=6
-
-# Equal spaced sub-regions
-gap1=seq(range[1,1], range[1,2], length.out = m)
-gap2=seq(range[2,1], range[2,2], length.out = m)
 
 # Maxdimension setup
 maxdimension=1
