@@ -10,6 +10,7 @@
 # Required packages
 require(tidyverse)
 require(TDA)
+require(sfsmisc) #integrate.xy
 require(this.path) #to autoselect working directory (ignore if you set manually)
 
 # Working directory
@@ -186,4 +187,48 @@ ggplot(df1b, aes(x=Tseq)) +
                      labels = round(c(min(tseq), rep(c(median(tseq), max(tseq)),4)),2))
 
 
-###################################
+################################### Permutation test
+# Permutation function
+funPerm <- function(fun, tseq){
+  #Permutation test for functions
+  which_fun <- sample(1:ncol(fun), ncol(fun)/2, replace = FALSE)
+  mean0 <- apply(fun[,which_fun],1,mean)		
+  mean1 <- apply(fun[,-which_fun],1,mean)
+  return(integrate.xy(tseq,abs(mean0 - mean1))) #L1 distance between means
+}
+
+# Define group0 (north H1 landscapes) and group1 (south H1 landscapes)
+## Using concatenated layers
+group0 = do.call(rbind, land_north) 
+group1 = do.call(rbind, land_south) 
+mean0 = apply(group0, 1, mean)
+mean1 = apply(group1, 1, mean)
+
+tseq_expanded = c(tseq, tseq+max(tseq), tseq+2*max(tseq), tseq+3*max(tseq))
+tstat_obs <- integrate.xy(tseq_expanded,abs(mean0 - mean1)) #Test statistic
+
+# Quick visualization of north and south mean landscapes
+plot(tseq_expanded, mean0,"l", lwd=3)
+lines(tseq_expanded, mean1, col=2, lwd=3)
+legend("topright", legend = c("North", "South"), col=1:2, lty=1, lwd=3)
+
+
+# Run the permutation test
+set.seed(2847)
+Nperm = 500 # Number of permutations (paper uses Nperm = 5000)
+tstat_perm = c() # Store permuted test statistics
+
+fun_use = cbind(group0, group1)
+for(ii in 1:Nperm){ # Takes < 1 minute for Nperm = 500
+  tstat_perm[ii] = funPerm(fun_use, tseq_expanded)
+}
+
+# Quick visualization of permuted test statistics
+hist(tstat_perm)
+abline(v=tstat_obs)
+
+# Permutation p-value
+sum(tstat_perm >= tstat_obs)/Nperm # perm p-value = 0.0144 in paper with 5000 permutations
+
+
+
