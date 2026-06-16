@@ -2,10 +2,12 @@
 ##Chenghui Li and Jessi Cisewski-Kehe titled, 
 ##"A Divide-and-Conquer Approach to Persistent Homology." 
 #Full citation:  [To be added once available]
+#arXiv: arXiv:2410.01839.
 
 # Data source:  https://apps.dnr.wi.gov/lakes/lakepages/Results.aspx
 # Cleaned data file used in paper:  lakes_wi_updated.csv
-# DaC persistence diagrams:  
+# DaC persistence diagrams for northern region: pd_north.rds  
+# DaC persistence diagrams for southern region: pd_south.rds  
 
 # Required packages
 require(tidyverse)
@@ -29,6 +31,11 @@ partition_coordinates = readRDS("partition_coordinates.rds") #lat/long for south
 # Plot of lake locations
 ggplot(lakes) +
   geom_point(aes(x=long,y=lat))
+
+# The following plots the lakes plus the partitions
+## It takes about 30 seconds to run
+source("partition_plot.R")
+PlotLakes()
 
 
 ################################### Load and visualize persistence diagrams
@@ -59,6 +66,7 @@ for(land_layer in 1:num_layers){ #This takes about a minute to run.
     land_north[[land_layer]][,i] = landscape(pd_north[[i]],K=land_layer, tseq=tseq)
     land_south[[land_layer]][,i] = landscape(pd_south[[i]],K=land_layer, tseq=tseq)
   }}
+
 
 
 ################################### Visualize landscape functions
@@ -100,8 +108,10 @@ for(land_layer in 1:num_layers){
   print(pp)
 }
 
+
+
 ################################### Bootstrapped landscape function confidence bands
-# Variable width bootstrap 
+# Variable width bootstrap confidence band
 set.seed(98765)
 B = 50 # We use B = 5000 in paper
 n_samples = 8
@@ -146,6 +156,8 @@ qNvar = quantile(landN_boot_var,B_quantile)
 qSvar = quantile(landS_boot_var,B_quantile)
 
 
+
+
 ################################### Visualize variable-width bootstrap confidence bands
 
 # Set data frame 
@@ -185,6 +197,8 @@ ggplot(df1b, aes(x=Tseq)) +
         legend.title = element_blank()) +
   scale_x_continuous(breaks = tseq_expanded[c(1,500, 1000,1500,2000,2500,3000,3500,4000)],
                      labels = round(c(min(tseq), rep(c(median(tseq), max(tseq)),4)),2))
+
+
 
 
 ################################### Permutation test
