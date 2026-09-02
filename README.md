@@ -6,16 +6,16 @@ Full citation:  [To be added once finalized]
 
 
 
-This is the divide-and-conquer method for computing a persistence diagram using a Vietroris-Rips filtration, implemented in R. 
+This is the divide-and-conquer method for computing a persistence diagram using a Vietoris-Rips filtration, implemented in R. 
 
-There are two illustration implementation codes for 1D case and 2D case where test data are provided in data repo. Wisconsin lake data implementation is in large_sample_implementation; this is a parallel implementation of this method for high performance computing.
+There are two illustration implementation codes for the 1D and 2D cases, where test data is provided in the data repo. Wisconsin lake data implementation is in large_sample_implementation; this is a parallel implementation of this method for high-performance computing.
 
-We provide a detailed implementation code in each folder.
+We provide detailed implementation code in each folder.
 
 
 1.  2D-DaC-Example.R
-- Illustrates the proposed DaC method on a 2D point cloud that includes a large and small loop.
-- Outputs a DaC H1 persistence diagram
+- Illustrates the proposed DaC method on a 2D point cloud that includes a large and a small loop.
+- Outputs a DaC H1 persistence diagram.
 
 
 2.  3D-DaC-Example.R
@@ -24,7 +24,7 @@ We provide a detailed implementation code in each folder.
 
 
 3.  data
-- ADD description
+- Simulated data sets used in the paper, including a 1-dimensional circle, a 2-dimensional sphere, the Stanford Bunny example, and 2 disjoint circles.
 
 
 4. Functions
