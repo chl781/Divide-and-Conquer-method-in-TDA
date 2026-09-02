@@ -28,15 +28,15 @@ We provide a detailed implementation code in each folder.
 
 
 4. Functions
-- ADD description
+- Support functions for the DaC method when m=1.
 
 
 5.  Functions3Combine
-- ADD description
+- Support functions for the DaC method when m=2.
 
 
 6.  large_sample_implementation
-- ADD description
+- Support functions for the DaC method are implemented using parallel computation.
 
 
 7.  wi_lakes_analysis
