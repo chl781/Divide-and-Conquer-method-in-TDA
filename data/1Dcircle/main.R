@@ -48,46 +48,37 @@ source("Functions3Combine/BirthRecal2_.R")
 source("Functions3Combine/DeathRecal0_.R")
 source("Functions3Combine/DeathRecal1_.R")
 
-# Load data from 2closeCircles_1.csv
-
-# Parameter Setup
-# Split the data into 2*2 subregions
-m=3
-
-range=matrix(c( min(X[,1]), max(X[,1]),min(X[,2]), max(pc_down[,2]), min(pc_down[,3]), max(pc_down[,3])),nrow = 3, byrow=T)
-maxscale=1
-
-# Equal spaced sub-regions
-gap1=seq(range[1,1], range[1,2], length.out = m)
-gap2=seq(range[2,1], range[2,2], length.out = m)
-gap3=seq(range[3,1], range[3,2], length.out = m)
-
 # Maxdimension setup
-maxdimension=2
+maxdimension=1
 
 # Load data and do basic transform
-j2=1
-X=pc_down
+j2=2
+X=read.csv2(paste0("data/1Dcircle/2closeCircles_",j2,".csv"),header=F,sep=",")
+X=as.numeric(as.matrix(X))
+X=matrix(X,ncol=2)
 
 
 # Generate divide data in sub-regions.
-X_split = array(list(),c(m-1,m-1,m-1))
+m=3
+X_split=matrix(list(),m-1,m-1)
+range<-matrix(c(-1-1.7/m,-1-1.4/m,.8+1.4/m,.4+1.4/m),2)
+Matching_error=0.1
+
+gap1=seq(range[1,1],range[1,2],length.out =m)
+gap2=seq(range[2,1],range[2,2],length.out =m)
+
 for (i in 1:(m-1)) {
   for(j in 1:(m-1)){
-    for(k in 1:(m-1)){
-      X_split[[i,j,k]] = X[ X[,1] >= gap1[i] & X[,1] < gap1[i+1] 
-                            & X[,2] >= gap2[j] & X[,2] < gap2[j+1]
-                            &X[,3] >= gap3[k] & X[,3] < gap3[k+1],]
-    }
+    X_split[[i,j]]=X[X[,1]>gap1[i]&X[,2]>gap2[j]&X[,1]<gap1[i+1]&X[,2]<gap2[j+1],]
   }
 }
 
 
+maxdimension=1
+maxscale=4
+error=1
 
-
-# Have the split diagram
-Diag_split=DiagContm2_(X,m,X_split,gap1,gap2,gap3,maxscale,maxdimension) # This function works for d=2 case.
-
-# Merge the sub-regions
-Combine1=Diagm3Combine_(X_split,m,Diag_split,
-                        gap1,gap2,gap3,maxdimension,maxscale)
+# Have the split diagrams
+Diag_split <- DiagContm2(X,m,maxscale,maxdimension,range)
+Combine1 = Diagm3Combine(X_split,m,Diag_split,range,maxdimension,maxscale,error)
+PD = Combine1$diagram
