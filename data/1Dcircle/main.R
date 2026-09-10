@@ -51,8 +51,8 @@ source("Functions3Combine/DeathRecal1_.R")
 # Load data from 2closeCircles_1.csv
 
 # Parameter Setup
-# Split the data into 7*7 subregions
-m=9
+# Split the data into 2*2 subregions
+m=3
 
 range=matrix(c( min(X[,1]), max(X[,1]),min(X[,2]), max(pc_down[,2]), min(pc_down[,3]), max(pc_down[,3])),nrow = 3, byrow=T)
 maxscale=1
