@@ -61,7 +61,7 @@ error=1  # [Chenghui: add brief explanation for this]
 
 # Load data and do basic transform 
 which_data_set = 5 # Select which iid data set from {1, 2, ..., 100}
-X=read.csv(paste0("data/1Dcircle/2closeCircles_",which_data_set,".csv"),header=FALSE)
+X=read.csv(paste0("data/1Dcircles/2closeCircles_",which_data_set,".csv"),header=FALSE)
 X = as.matrix(X, ncol = 2)
 
 # Quick visualization of data (one big circle and one small circle)

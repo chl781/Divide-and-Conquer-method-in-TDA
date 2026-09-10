@@ -53,7 +53,7 @@ maxdimension=1
 
 # Load data and do basic transform
 j2=2
-X=read.csv2(paste0("data/1Dcircle/2closeCircles_",j2,".csv"),header=F,sep=",")
+X=read.csv2(paste0("data/1Dcircles/2closeCircles_",j2,".csv"),header=F,sep=",")
 X=as.numeric(as.matrix(X))
 X=matrix(X,ncol=2)
 
