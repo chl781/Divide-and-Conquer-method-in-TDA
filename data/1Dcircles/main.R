@@ -1,6 +1,4 @@
-
-# Load packages
-
+# Load packages for DaC method and visualization.
 library(pacman)
 p_load("dplyr","plotrix","spatstat","TDA","hitandrun","functional","Rfast","plotly","viridis","plot3D","ggplot2")
 require(vrmlgen)
@@ -50,39 +48,37 @@ source("Functions3Combine/BirthRecal2_.R")
 source("Functions3Combine/DeathRecal0_.R")
 source("Functions3Combine/DeathRecal1_.R")
 
-# Parameter Setup
-m=5 # Split the data into 4*4*4 subregions
-
-range=matrix(c( -1, 1,-1, 1),nrow = 2, byrow=T)
-maxscale=6
-
-# Equally spaced sub-regions
-gap1=seq(range[1,1], range[1,2], length.out = m)
-gap2=seq(range[2,1], range[2,2], length.out = m)
-
 # Maxdimension setup
 maxdimension=1
 
 # Load data and do basic transform
-j2=1
-X=read.csv2(paste0("data",j2,".csv"),header=T,sep=";")
+j2=2
+X=read.csv2(paste0("2closeCircles_",j2,".csv"),header=F,sep=",")
 X=as.numeric(as.matrix(X))
 X=matrix(X,ncol=2)
 
 
 # Generate divide data in sub-regions.
-X_split = array(list(),c(m-1,m-1))
+m=3
+X_split=matrix(list(),m-1,m-1)
+range<-matrix(c(-1-1.7/m,-1-1.4/m,.8+1.4/m,.4+1.4/m),2)
+Matching_error=0.1
+
+gap1=seq(range[1,1],range[1,2],length.out =m)
+gap2=seq(range[2,1],range[2,2],length.out =m)
+
 for (i in 1:(m-1)) {
   for(j in 1:(m-1)){
     X_split[[i,j]]=X[X[,1]>gap1[i]&X[,2]>gap2[j]&X[,1]<gap1[i+1]&X[,2]<gap2[j+1],]
   }
 }
 
+
+maxdimension=1
+maxscale=4
 error=0.1
 
-
-# Have the split diagram
+# Have the split diagrams
 Diag_split <- DiagContm2(X,m,maxscale,maxdimension,range)
 Combine1 = Diagm3Combine(X_split,m,Diag_split,range,maxdimension,maxscale,error)
 PD = Combine1$diagram
-
