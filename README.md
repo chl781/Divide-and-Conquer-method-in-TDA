@@ -24,7 +24,7 @@ We provide detailed implementation code in each folder.
 
 
 3.  data
-- Simulated data sets used in the paper, including a 1-dimensional circle, a 2-dimensional sphere, the Stanford Bunny example, and 2 disjoint circles.
+- Simulated data sets used in the paper, including a 1-dimensional circle, two 1-dimensional circles, a 2-dimensional sphere, and the Stanford Bunny example.
 
 
 4. Functions
