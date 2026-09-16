@@ -1,5 +1,7 @@
 # Stanford Bunny dataset
 # This file is not for the csv but for the original 3D data preprecessing and running DaC method.
+# If you do not want to download the original data and process it, you can skip to the section below
+###with header "Load processed data and perform DaC analysis"
 
 #install.packages("Rvcg")
 #install.packages("rgl")
@@ -7,7 +9,7 @@
 library(Rvcg)
 library(rgl)
 
-# Load the bunny mesh from original file.
+###----------------------------------------------------- Load the bunny mesh from original file.
 # The file can be downloaded from the Stanford 3D Scanning Repository: http://graphics.stanford.edu/data/3Dscanrep/
 mesh <- vcgPlyRead("bun_zipper.ply", updateNormals = TRUE)
 
@@ -45,6 +47,8 @@ write.table(
   quote = FALSE
 )
 
+
+###-----------------------------------------------------Load processed data and perform DaC analysis
 # Load packages for DaC method and visualization.
 library(pacman)
 p_load("dplyr","plotrix","spatstat","TDA","hitandrun","functional","Rfast","plotly","viridis","plot3D","ggplot2")
@@ -60,44 +64,47 @@ require(geometry)
 
 
 # Load function files
-source('Functions/DiagCirSimp.R')# Add another Esimate method.
-source('Functions/DiagCir4Pieces.R')
-source('Functions/PlotRepeat.R')
-source('Functions/PlotRepeat1.R')
-source('Functions/BirthRecal2.R')
-source('Functions/DeathRecal0.R')
-source('Functions/DeathRecal1.R')
-source('Functions/DeathRecal2.R')
-source('Functions/DeathRecal_Circle.R')
-source('Functions/ThreePointsCal.R')
-source('Functions/MinLength.R')
-source('Functions/DiagCir3d.R')
-source('Functions/DeathRecal_Sphere.R')
-source('Functions/Continuous.R')
-source('Functions/DiagCirCont4.R')
-source('Functions/DiagCont3d.R')
-source('Functions/DiagContm2.R')
-source('Functions/BoundaryConnect.R')
-source('Functions/Utils.R')
-source('Functions/Utils2.R')
-source('Functions/Projected_Merge.R')
-source('Functions/Diagm3Combine.R')
-source('Functions/boundFind.R')
-source('Functions/Matching2.R')
+source('../../Functions/DiagCirSimp.R')# Add another Esimate method.
+source('../../Functions/DiagCir4Pieces.R')
+source('../../Functions/PlotRepeat.R')
+source('../../Functions/PlotRepeat1.R')
+source('../../Functions/BirthRecal2.R')
+source('../../Functions/DeathRecal0.R')
+source('../../Functions/DeathRecal1.R')
+source('../../Functions/DeathRecal2.R')
+source('../../Functions/DeathRecal_Circle.R')
+source('../../Functions/ThreePointsCal.R')
+source('../../Functions/MinLength.R')
+source('../../Functions/DiagCir3d.R')
+source('../../Functions/DeathRecal_Sphere.R')
+source('../../Functions/Continuous.R')
+source('../../Functions/DiagCirCont4.R')
+source('../../Functions/DiagCont3d.R')
+source('../../Functions/DiagContm2.R')
+source('../../Functions/BoundaryConnect.R')
+source('../../Functions/Utils.R')
+source('../../Functions/Utils2.R')
+source('../../Functions/Projected_Merge.R')
+source('../../Functions/Diagm3Combine.R')
+source('../../Functions/boundFind.R')
+source('../../Functions/Matching2.R')
 
 # Load 3D function files
-source("Functions3Combine/3DiagContm2.R")
-source("Functions3Combine/BoundaryConnect_.R")
-source("Functions3Combine/Diagm3Combine_.R")
-source("Functions3Combine/Utils_.R")
-source("Functions3Combine/Utils2_.R")
-source("Functions3Combine/BirthRecal2_.R")
-source("Functions3Combine/DeathRecal0_.R")
-source("Functions3Combine/DeathRecal1_.R")
+source("../../Functions3Combine/3DiagContm2.R")
+source("../../Functions3Combine/BoundaryConnect_.R")
+source("../../Functions3Combine/Diagm3Combine_.R")
+source("../../Functions3Combine/Utils_.R")
+source("../../Functions3Combine/Utils2_.R")
+source("../../Functions3Combine/BirthRecal2_.R")
+source("../../Functions3Combine/DeathRecal0_.R")
+source("../../Functions3Combine/DeathRecal1_.R")
 
 # Parameter Setup
 # Split the data into 7*7*7 subregions
 m=8
+
+###Read in the processed Stanford Bunny file
+pc_down = read.csv("Stanford_Bunny.csv", header = FALSE)
 
 range=matrix(c( min(pc_down[,1]), max(pc_down[,1]),min(pc_down[,2]), max(pc_down[,2]), min(pc_down[,3]), max(pc_down[,3])),nrow = 3, byrow=T)
 maxscale=1

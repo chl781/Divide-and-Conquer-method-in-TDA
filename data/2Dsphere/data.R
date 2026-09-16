@@ -1,4 +1,5 @@
-# Generate some spheres data
+# Generate two-dimensional spheres
+#Note:  uncomment the `write.csv2` line to save the generated datasets
 set.seed(2023)
 
 j1=1600
@@ -11,5 +12,6 @@ for(i in 1:100){
   
   X=cbind(X1,X2,X3)
   X=X/sqrt(rowSums(X^2))
-  write.csv2(X,paste0("data",i,".csv"),col.names = F,row.names=F)
+  #write.csv2(X,paste0("data",i,".csv"),col.names = F,row.names=F)
 }
+
