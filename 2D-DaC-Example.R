@@ -7,7 +7,6 @@
 library(tidyverse)
 library(pacman)
 p_load("dplyr","plotrix","spatstat","TDA","hitandrun","functional","Rfast","plotly","viridis","plot3D","ggplot2")
-require(vrmlgen)
 require(rgl)
 require(fields)
 require(knitr)
