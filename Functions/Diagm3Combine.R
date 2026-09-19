@@ -4,10 +4,11 @@
 # Diag_split is the persistent diagram with cycles into different subregions.
 # range is the range of data that we consider.
 # maxdimension and maxscale are inputs to ripsDiag
-# error is te error bound allowed to use in the cancellation method.
+# error is the error bound allowed to use in the cancellation method.
+# if_retrieve_suspicious_data is a boolean flag indicating whether to retrieve the suspicious data.
 
 Diagm3Combine <- function(X_split,m,Diag_split,
-                          range,maxdimension,maxscale,error,if_apply_cancellation=True){
+                          range,maxdimension,maxscale,error,if_retrieve_suspicious_data=TRUE){
   gap1 = seq(range[1,1], range[1,2], length.out = m)
   gap2 = seq(range[2,1], range[2,2], length.out = m)
   
@@ -81,19 +82,19 @@ Diagm3Combine <- function(X_split,m,Diag_split,
   
   if(sum(length_subfeature) > 0){
     #for(i in 1:(m-1)^2){
-        # for(k in sequence(length_subfeature[i])){
-        #   if(i==1){
-        #     subfeature_cycles[[k]] = 
-        #       Diag_split[[i]]$cycleLocation[[ ind_subfeature[[i]][k] ]]
-        #   }else{
-        #     subfeature_cycles[[ sum(length_subfeature[1:(i-1)])+k ]]=
-        #       Diag_split[[i]]$cycleLocation[[ ind_subfeature[[i]][k] ]]
-        #   }
-        # }
-      subfeature_cycles = mapply(X_split = X_split,Diag_split = Diag_split, 
-                                 ind_subfeature = ind_subfeature,
-                                 FUN = subfeature_cycle_Find, SIMPLIFY = F)
-      subfeature_cycles = unlist_part(subfeature_cycles[!sapply(subfeature_cycles,is.null)])
+    # for(k in sequence(length_subfeature[i])){
+    #   if(i==1){
+    #     subfeature_cycles[[k]] = 
+    #       Diag_split[[i]]$cycleLocation[[ ind_subfeature[[i]][k] ]]
+    #   }else{
+    #     subfeature_cycles[[ sum(length_subfeature[1:(i-1)])+k ]]=
+    #       Diag_split[[i]]$cycleLocation[[ ind_subfeature[[i]][k] ]]
+    #   }
+    # }
+    subfeature_cycles = mapply(X_split = X_split,Diag_split = Diag_split, 
+                               ind_subfeature = ind_subfeature,
+                               FUN = subfeature_cycle_Find, SIMPLIFY = F)
+    subfeature_cycles = unlist_part(subfeature_cycles[!sapply(subfeature_cycles,is.null)])
     #}
   }
   
@@ -101,26 +102,109 @@ Diagm3Combine <- function(X_split,m,Diag_split,
   ###################### The following is to merge the suspicious data
   
   ######### Combine the data from sub-regions by using the suspicious data but not projected boundary.
-  dist_bound = matrix(Inf,length_bound,length_bound) # Construct the distance matrix among all of the suspicious features.
-  diag(dist_bound)=0 # Denote the distance of feature itself is 0
+  # Build X_suspicious and its source-index map at the same time.  Previously,
+  # X_suspicious was filtered by drop_list(), whereas non_empty was built from
+  # the unfiltered length_bound_matrix.  As soon as one short cycle was removed,
+  # row k of non_empty no longer described X_suspicious[[k]].
+  X_suspicious <- list()
+  non_empty_rows <- list()
+  non_empty_all_rows <- list()
   
-  ##
+  # Outer j / inner i preserves the column-major order used when the matrices
+  # above were created from mapply()/sapply().
+  for (j1 in seq_len(m - 1L)) {
+    for (i1 in seq_len(m - 1L)) {
+      local_diag_ids <- ind_suspicious[[i1, j1]]
+      
+      if (length(local_diag_ids) != length_bound_matrix[i1, j1]) {
+        stop(sprintf(
+          "Inconsistent suspicious-feature count in block (%d, %d): ind_suspicious has %d but length_bound_matrix records %d.",
+          i1, j1, length(local_diag_ids), length_bound_matrix[i1, j1]
+        ))
+      }
+      
+      for (local_feature in seq_along(local_diag_ids)) {
+        all_id <- length(non_empty_all_rows) + 1L
+        non_empty_all_rows[[all_id]] <- c(
+          block_i = i1,
+          block_j = j1,
+          local_feature = local_feature
+        )
+        
+        diag_id <- local_diag_ids[[local_feature]]
+        point_ids <- unique(as.integer(as.vector(
+          Diag_split[[i1, j1]][["cycleLocation"]][[diag_id]]
+        )))
+        point_ids <- point_ids[
+          !is.na(point_ids) &
+            point_ids >= 1L &
+            point_ids <= NROW(X_split[[i1, j1]])
+        ]
+        
+        candidate_cycle <-
+          X_split[[i1, j1]][point_ids, , drop = FALSE]
+        candidate_cycle <- drop_list(candidate_cycle)
+        
+        # Apply the original filter, but discard the source-index row together
+        # with the cycle so that the two objects cannot become misaligned.
+        if (is.null(candidate_cycle)) {
+          next
+        }
+        
+        new_id <- length(X_suspicious) + 1L
+        X_suspicious[[new_id]] <- candidate_cycle
+        non_empty_rows[[new_id]] <- c(
+          block_i = i1,
+          block_j = j1,
+          local_feature = local_feature
+        )
+      }
+    }
+  }
   
-  # extract all of cycles data 
-  X_suspicious <- mapply(Diag_split = Diag_split, ind_suspicious = ind_suspicious, X_split = X_split,
-                         FUN = suspicious_Find, SIMPLIFY = F)
-  X_suspicious = unlist_part(X_suspicious[!sapply(X_suspicious,is.null)])
-  X_suspicious = mapply(X_suspicious, FUN = drop_list,SIMPLIFY = F) # drop short list
-  X_suspicious = unlist_part(X_suspicious[!sapply(X_suspicious,is.null)])
+  if (length(non_empty_rows) > 0L) {
+    non_empty <- do.call(rbind, non_empty_rows)
+    storage.mode(non_empty) <- "integer"
+  } else {
+    non_empty <- matrix(
+      integer(0), nrow = 0L, ncol = 3L,
+      dimnames = list(NULL, c("block_i", "block_j", "local_feature"))
+    )
+  }
+  
+  # Projected_Merge() historically receives the complete map, including short
+  # cycles. Keep that contract separate from the filtered Rips-vertex map.
+  if (length(non_empty_all_rows) > 0L) {
+    non_empty_all <- do.call(rbind, non_empty_all_rows)
+    storage.mode(non_empty_all) <- "integer"
+  } else {
+    non_empty_all <- matrix(
+      integer(0), nrow = 0L, ncol = 3L,
+      dimnames = list(NULL, c("block_i", "block_j", "local_feature"))
+    )
+  }
+  
+  stopifnot(length(X_suspicious) == NROW(non_empty))
+  stopifnot(NROW(non_empty_all) == length_bound)
   
   ##
   ## dist construction
   length_dist_bound = length(X_suspicious)
-  dist_bound = matrix(mapply(FUN = dist_construct, X = rep(X_suspicious,times=length_dist_bound),
-                           Y = rep(X_suspicious,each=length_dist_bound)),
-                    length_dist_bound,length_dist_bound)
+  if (length_dist_bound > 0L) {
+    dist_bound = matrix(
+      mapply(
+        FUN = dist_construct,
+        X = rep(X_suspicious, times = length_dist_bound),
+        Y = rep(X_suspicious, each = length_dist_bound)
+      ),
+      nrow = length_dist_bound,
+      ncol = length_dist_bound
+    )
+  } else {
+    dist_bound = matrix(numeric(0), nrow = 0L, ncol = 0L)
+  }
   
-################
+  ################
   ### Below is the classical for loop way to construct the dist matrix. Ignore
   
   # for (i1 in 1:((m-1)^2-1) ) { 
@@ -171,7 +255,7 @@ Diagm3Combine <- function(X_split,m,Diag_split,
   #     }
   #   }
   # }
-####################
+  ####################
   
   ## Constuct dist_matrix for the suspicious features within each block
   # for (i1 in 1:(m-1)^2 ) {
@@ -213,64 +297,79 @@ Diagm3Combine <- function(X_split,m,Diag_split,
   # }
   
   # The above is the for loop way to construct the dist matrix.
-
-    
+  
+  
   # Notice that the maxscale in the following function cannot be too large.
   # Running the Rips filtration based on the dist matrix among different suspicious features.
-  if apply_cancellation{
-    diag_suspicious = ripsDiag(dist_bound, maxdimension, maxscale = maxscale,
-                               library = "Dionysus", dist="arbitrary",
-                               location = T)
-    suspicious_ind = which(diag_suspicious$diagram[,1] == 1)
-    Combined = vector("list",length(suspicious_ind))
-    Combined_diag_indices = vector("list",length(suspicious_ind))
-    Combined_bound = vector("list",length(suspicious_ind))
-    
-    # Record the indexes that save the data in suspicious data.
-    non_empty = c()
-    for(j1 in 1:(m-1)){ #j1 here
-      for(i1 in 1:(m-1)){ #i1 here
-        t=1
-        if(length_bound_matrix[i1,j1]!=0){
-          non_empty = rbind(non_empty,
-                          cbind(matrix(rep(c(i1,j1),length_bound_matrix[i1,j1]),
-                                      nrow = length_bound_matrix[i1,j1],
-                                      byrow = T),1:length_bound_matrix[i1,j1]))
-        }
-      }
-    }
-
-    ##### Retrieve the data
-
-    #The below is trying to do for loop to retrieve the data splited for distance method.
-    
+  
+  if (length_dist_bound > 0L) {
+    diag_suspicious = ripsDiag(
+      dist_bound, maxdimension, maxscale = maxscale,
+      library = "Dionysus", dist = "arbitrary",
+      location = TRUE
+    )
+    suspicious_ind = which(diag_suspicious$diagram[, 1] == 1)
+  } else {
+    # ripsDiag() cannot operate on a 0 x 0 distance matrix.
+    diag_suspicious = list(
+      diagram = matrix(numeric(0), nrow = 0L, ncol = 3L),
+      cycleLocation = list()
+    )
+    suspicious_ind = integer(0)
+  }
+  Combined = vector("list",length(suspicious_ind))
+  Combined_diag_indices = vector("list",length(suspicious_ind))
+  Combined_bound = vector("list",length(suspicious_ind))
+  
+  ##### Retrieve the data
+  
+  #The below is to retrieve the data splited for distance method.
+  if (if_retrieve_suspicious_data){
     num=1
     for(one in suspicious_ind){
       Combined_ind = unique(as.vector(diag_suspicious$cycleLocation[[one]]))
+      if (anyNA(Combined_ind) ||
+          any(Combined_ind < 1L | Combined_ind > NROW(non_empty))) {
+        stop(sprintf(
+          "ripsDiag returned a cycle vertex outside non_empty: valid range is 1:%d; observed range is %s:%s.",
+          NROW(non_empty), min(Combined_ind, na.rm = TRUE),
+          max(Combined_ind, na.rm = TRUE)
+        ))
+      }
+      Combined_ind <- as.integer(Combined_ind)
       #col = 1
       for(i in Combined_ind){
         df = Diag_split[[non_empty[i,1],non_empty[i,2]]][["cycleLocation"]] # Retrieve the index
         df1 = df[[ind_suspicious[[non_empty[i,1], non_empty[i,2] ]][ non_empty[i,3] ] ]] 
-        df1 = unique(df1[as.vector(df1)<=NROW(X_split[[non_empty[i,1],non_empty[i,2]]])])
+        df1 = unique(as.integer(as.vector(df1)))
+        df1 = df1[
+          !is.na(df1) & df1 >= 1L &
+            df1 <= NROW(X_split[[non_empty[i,1],non_empty[i,2]]])
+        ]
         if(length(df1) <= 1){
-          stop()
+          stop(sprintf(
+            "Mapped suspicious cycle %d in block (%d, %d) has fewer than two valid points.",
+            non_empty[i,3], non_empty[i,1], non_empty[i,2]
+          ))
         }
-        Suspicious_i = cbind(X_split[[non_empty[i,1],non_empty[i,2]]][df1,]
-                            #,rep(col,NROW(X_split[[non_empty[i,1],non_empty[i,2]]][df1,]))
-                            ) # Retrieve the data
+        Suspicious_i = cbind(X_split[[non_empty[i,1],non_empty[i,2]]][df1, , drop = FALSE]
+                             #,rep(col,NROW(X_split[[non_empty[i,1],non_empty[i,2]]][df1,]))
+        ) # Retrieve the data
         
         #colnames(Suspicious_i) <- c("x","y","col")
         colnames(Suspicious_i) <- c("x","y")
         Combined[[num]] = rbind(Combined[[num]],Suspicious_i)
-        Combined_diag_indices[[num]] = rbind(Combined_diag_indices[[num]],
-                                          non_empty[i,]) # This saves all of points constructing the loops.
+        Combined_diag_indices[[num]] = rbind(
+          Combined_diag_indices[[num]],
+          non_empty[i, , drop = FALSE]
+        ) # This saves all of points constructing the loops.
         #col=col+1
       }
       num = num+1
     }
   }
   ##############  
-    
+  
   ##### The following code tries to use cancellation method to merge. Only allow using
   ##### 2 or 3 suspicious features to merge.
   
@@ -280,22 +379,17 @@ Diagm3Combine <- function(X_split,m,Diag_split,
   Suspicious=Suspicious_bound[[2]]
   
   # The following uses the projected method.
-  Projected_Merge_ <- Projected_Merge(ind_suspicious,bound,range,Diag_split,X_split,Suspicious,non_empty
+  Projected_Merge_ <- Projected_Merge(ind_suspicious,bound,range,Diag_split,X_split,Suspicious,non_empty_all
                                       ,m,gap1,gap2)
   Projected_Merge1=Projected_Merge_[[1]]
-  Combined_diag_indices2=Projected_Merge_[[2]]
+  
   
   # Combine the lists
-  if apply_cancellation{
-    Combined1 <- append(Combined,Projected_Merge1)
-    Combined_diag_indices1=append(Combined_diag_indices,Combined_diag_indices2)
-  }else{
-    Combined1 <- Projected_Merge1
-    Combined_diag_indices1=Projected_Merge2
-  }
   Combined1 <- append(Combined,Projected_Merge1)
-  t<-c()
-  for(i in 1:length(Combined1)){
+  Combined_diag_indices2=Projected_Merge_[[2]]
+  Combined_diag_indices1=append(Combined_diag_indices,Combined_diag_indices2)
+  t<-integer(0)
+  for(i in seq_along(Combined1)){
     if(is.null(Combined1[[i]])){
       t = c(t,i)
     }
@@ -312,8 +406,8 @@ Diagm3Combine <- function(X_split,m,Diag_split,
   PD <- matrix(0,ncol=3,nrow=length(Combined1))
   colnames(PD) <- c("dimension","birth","death")
   PD[,1]=1
-  for (i in 1:NROW(PD) ) {
-    PD[i,2] = BirthRecal2(Diag_split,Combined_diag_indices[[i]],ind_suspicious)
+  for (i in seq_len(NROW(PD)) ) {
+    PD[i,2] = BirthRecal2(Diag_split,Combined_diag_indices1[[i]],ind_suspicious)
     PD[i,3] = DeathRecal0(unique(Combined1[[i]])[,c(1,2)]) # This is a specific death estimate.
   }
   

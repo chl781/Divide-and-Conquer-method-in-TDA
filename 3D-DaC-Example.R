@@ -57,7 +57,7 @@ maxscale=6 # Maximum distance scale considered
 m = 8 # Split the data into 7*7*7 subregions
 
 
-# [Chenghui:what is this for?]
+# Define the range of the data that we consider.  This is used to define the subregions for the divide step.
 range=matrix(c( -1, 1,-1, 1, -1, 1),nrow = 3, byrow=T)
 
 
@@ -91,7 +91,8 @@ for (i in 1:(m-1)) {
 
 
 
-# Have the split diagram  # [Chenghui: what does this mean??] (This function works for H2 case with 3D data.)
+
+# Generate persistent diagrams for each subregion (This function works for H2 case with 3D data.)
 Diag_split=DiagContm2_(X,m,X_split,gap1,gap2,gap3,maxscale,maxdimension) 
 
 # Merge the subregions (This function works for H2 case with 3D data.)
@@ -101,7 +102,7 @@ Combine1=Diagm3Combine_(X_split,m,Diag_split, # Combine1 is the merged features.
 
 # Plot for Combine1 representative data points.
 plot3D::scatter3D(Combine1[[2]][[2]][,1],Combine1[[2]][[2]][,2],Combine1[[2]][[2]][,3]) 
-# [Chenghui:  I changed this from Combine1[[2]][[1]] to Combine1[[2]][[2]], because the first feature had lower persistence]
+
 
 # H2 DaC Diagram
 dac_diagram_h2 = Combine1$diagram

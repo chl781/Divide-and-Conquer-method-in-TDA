@@ -58,7 +58,7 @@ source("Functions3Combine/DeathRecal1_.R")
 
 # Parameter Setup
 
-m=5
+m=8
 X=circle_data[,1:2]
 
 range=matrix(c( min(X[,1]), max(X[,1]),min(X[,2]), max(X[,2])),nrow = 2, byrow=T)
@@ -72,7 +72,6 @@ gap2=seq(range[2,1], range[2,2], length.out = m)
 maxdimension=1
 
 # Load data and do basic transform
-j2=1
 error=0.1
 
 # Generate divide data in sub-regions.
@@ -89,14 +88,14 @@ for (i in 1:(m-1)) {
 
 # Have the split diagram
 Diag_split <- DiagContm2(X,m,maxscale,maxdimension,range)
-Combine1 = Diagm3Combine(X_split,m,Diag_split,range,maxdimension,maxscale,error,FALSE)
+Combine1 = Diagm3Combine(X_split,m,Diag_split,range,maxdimension,maxscale,error)
 PD = Combine1$diagram
 
 
 
 # Plot the diagram
-birth <- PD_[, 2]
-death <- PD_[, 3]
+birth <- PD[, 2]
+death <- PD[, 3]
 
 lims <- range(c(birth, death), finite = TRUE)
 

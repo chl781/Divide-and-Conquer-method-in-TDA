@@ -56,7 +56,7 @@ source("Functions3Combine/DeathRecal1_.R")
 # Input parameters for DaC and persistent homology
 maxdimension=1 # Maximum homology dimension considered
 maxscale=4 # Maximum distance scale considered
-error=1  # [Chenghui: add brief explanation for this]
+error=0.1  # Set the error bound for the cancellation method
 
 # Load data and do basic transform 
 which_data_set = 5 # Select which iid data set from {1, 2, ..., 100}
@@ -72,25 +72,24 @@ ggplot(as_tibble(X), aes(x=V1, y=V2)) +
 # Generate divide data in sub-regions.
 m=15 # Number of subregions
 X_split=matrix(list(),m-1,m-1)
-range<-matrix(c(-1-1.7/m,-1-1.4/m,.8+1.4/m,.4+1.4/m),2) # [Chenghui: add brief explanation for this]
-Matching_error=0.1 # [Chenghui: add brief explanation for this]
+range<-matrix(c(-1-1.7/m,-1-1.4/m,.8+1.4/m,.4+1.4/m),2) # Set the range of the data for the divide step
 
 gap1=seq(range[1,1],range[1,2],length.out =m)
 gap2=seq(range[2,1],range[2,2],length.out =m)
 
 
-# [Chenghui: add brief explanation for this]
+# Split the data into sub-regions based on the grid defined by gap1 and gap2
 for (i in 1:(m-1)) {
   for(j in 1:(m-1)){
     X_split[[i,j]]=X[X[,1]>gap1[i]&X[,2]>gap2[j]&X[,1]<gap1[i+1]&X[,2]<gap2[j+1],]
   }
 }
 
-
-# Have the split diagrams  # [Chenghui: what does this mean??]
-Diag_split <- DiagContm2(X,m,maxscale,maxdimension,range) # [Chenghui: what is this doing?]
-Combine1 = Diagm3Combine(X_split,m,Diag_split,range,maxdimension,maxscale,error) # [Chenghui: what is this doing?] # Combine1 is the merged features.
-PD = Combine1$diagram # [Chenghui: what is this?  Final DaC persistence diagram?]
+# Produce the persistence diagram for each sub-region using the DiagContm2 function
+Diag_split <- DiagContm2(X,m,maxscale,maxdimension,range) # Produce the persistence diagram for each sub-region using the DiagContm2 function
+Combine1 = Diagm3Combine(X_split,m,Diag_split,range,maxdimension,maxscale,error) # Combine the persistence diagrams from each sub-region
+# Combine1 is the merged features.
+PD = Combine1$diagram #  Final DaC persistence diagram
 # This function works for d=1 case.
 
 
