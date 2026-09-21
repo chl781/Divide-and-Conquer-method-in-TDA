@@ -70,7 +70,7 @@ X=as.numeric(as.matrix(X))
 X=matrix(X,ncol=3)
 
 
-# Generate divide data in sub-regions. #[Chenghui:  correct grammar...it is unclear what you are trying to say here]
+# Generate the split data in different sub-regions
 X_split = array(list(),c(m-1,m-1,m-1))
 for (i in 1:(m-1)) {
   for(j in 1:(m-1)){
