@@ -14,7 +14,7 @@ require(geometry)
 
 
 # Load function files
-source('../../Functions/DiagCirSimp.R')# Add another Estimate method.
+source('../../Functions/DiagCirSimp.R')
 source('../../Functions/DiagCir4Pieces.R')
 source('../../Functions/PlotRepeat.R')
 source('../../Functions/PlotRepeat1.R')

@@ -1,4 +1,4 @@
-# Generate some spheres data
+# Generate some spheres datadata from 1D circle.
 set.seed(2023)
 
 j1=400

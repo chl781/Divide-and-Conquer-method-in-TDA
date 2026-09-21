@@ -4,7 +4,7 @@
 j1=400
 
 maxscale=2
-maxdimension=1 # maxdimension = 2
+maxdimension=1 
 
 for(i in 1:100){
   # Uniform generate data, and the distance between two circles is far.
@@ -14,11 +14,11 @@ for(i in 1:100){
   X <- X/2/sqrt(rowSums(X^2))
   X<- X - matrix(c(-.1,.3),ncol=2,nrow=j1,byrow=T)
   
-  X1=rnorm(j1/30)# 15
-  X2=rnorm(j1/30)# 15
+  X1=rnorm(j1/30)
+  X2=rnorm(j1/30)
   Y <- cbind(X1,X2)
   Y <- Y/30/sqrt(rowSums(Y^2))
-  Y <- Y+matrix(c(20/30,10/30),ncol=2,nrow=j1/30,byrow=T) #j1/15
+  Y <- Y+matrix(c(20/30,10/30),ncol=2,nrow=j1/30,byrow=T)
   
   
   X<-rbind(X,Y)
@@ -29,17 +29,4 @@ for(i in 1:100){
 }
 
 
-
-
-
-# 1 create figures for other datas
-
-for (i in 1:100) {
-  Dataname=paste0(i,"_output.csv")
-  X=read.csv(Dataname, header = F)
-  i=which(X[,1]==1)
-  b_kmeans=X[i,2]
-  d_kmeans=X[i,3]
-  
-}
 

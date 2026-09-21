@@ -136,8 +136,14 @@ for (i in 1:(m-1)) {
 
 
 
-# Have the split diagram
+# Have the split diagram: the following step takes long time to run. To make it efficient, we save it in a Diag_split.rds file
 Diag_split=DiagContm2_(X,m,X_split,gap1,gap2,gap3,maxscale,maxdimension) # This function works for d=2 case.
+
+# Save Diag_split to a RDS file
+saveRDS(Diag_split, file = "Diag_split.rds")
+
+# Read in Diag_split.rds
+Diag_split <- readRDS("Diag_split.rds")
 
 # Merge the sub-regions
 Combine1=Diagm3Combine_(X_split,m,Diag_split,
