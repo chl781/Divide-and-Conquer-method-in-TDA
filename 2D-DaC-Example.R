@@ -95,8 +95,8 @@ PD = Combine1$diagram #  Final DaC persistence diagram
 
 
 # Plot for Combine1 representative data points.
-plot3D::scatter2D(Combine1[[2]][[1]][,1],Combine1[[2]][[1]][,2]) # [Chenghui: what is this?]
-plot3D::scatter2D(Combine1[[2]][[2]][,1],Combine1[[2]][[2]][,2]) # [Chenghui: what is this?]
+plot3D::scatter2D(Combine1[[2]][[1]][,1],Combine1[[2]][[1]][,2]) 
+plot3D::scatter2D(Combine1[[2]][[2]][,1],Combine1[[2]][[2]][,2]) 
 
 # H1 DaC Diagram
 dac_diagram_h1 = Combine1$diagram

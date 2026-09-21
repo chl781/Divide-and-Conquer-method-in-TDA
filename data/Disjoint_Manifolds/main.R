@@ -56,7 +56,10 @@ circle_data <- read.csv("disjoint_circle_manifolds.csv",row.names = FALSE)
 
 # DaC method
 
-
+##Load data file
+circle_data = read.csv("data/Disjoint_Manifolds/disjoint_circle_manifolds.csv")
+  
+  
 # Parameter Setup
 
 m=8
@@ -87,7 +90,7 @@ for (i in 1:(m-1)) {
 
 
 
-# Have the split diagram
+# Have the split diagram - this may take a couple minutes to run
 Diag_split <- DiagContm2(X,m,maxscale,maxdimension,range)
 Combine1 = Diagm3Combine(X_split,m,Diag_split,range,maxdimension,maxscale,error)
 PD = Combine1$diagram

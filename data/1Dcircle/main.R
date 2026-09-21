@@ -64,7 +64,7 @@ maxdimension=1
 
 # Load data and do basic transform
 j2=1
-X=read.csv2(paste0("data",j2,".csv"),header=T,sep=";")
+X=read.csv2(paste0("data/1Dcircle/data",j2,".csv"),header=T,sep=";")
 X=as.numeric(as.matrix(X))
 X=matrix(X,ncol=2)
 
