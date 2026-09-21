@@ -90,6 +90,7 @@ Diag_split=DiagContm2_(X,m,X_split,gap1,gap2,gap3,maxscale,maxdimension) # This 
 # Merge the sub-regions
 Combine1=Diagm3Combine_(X_split,m,Diag_split,
                         gap1,gap2,gap3,maxdimension,maxscale)
+
 # Plot for Combine1 representative data points.
 plot3D::scatter3D(Combine1[[2]][[1]][,1],Combine1[[2]][[1]][,2],Combine1[[2]][[1]][,3])
 
