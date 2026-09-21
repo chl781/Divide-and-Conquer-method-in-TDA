@@ -151,8 +151,14 @@ Combine1=Diagm3Combine_(X_split,m,Diag_split,
 
 # Combine1 is the merged features.
 
+# Save Combine1 to a RDS file
+saveRDS(Combine1, file = "Combine1.rds")
+
+# Read in Combine1.rds
+Combine1 <- readRDS("Combine1.rds")
+
 # Plot for Combine1 representative data points.
-plot3D::scatter3D(Combine1[[2]][[1]][,1],Combine1[[2]][[1]][,2],Combine1[[2]][[1]][,3])
+plot3D::scatter3D(Combine1[[2]][[43]][,1],Combine1[[2]][[43]][,2],Combine1[[2]][[43]][,3])
 
 # Diagram
 Combine1$diagram
