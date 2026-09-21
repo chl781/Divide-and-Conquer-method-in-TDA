@@ -135,31 +135,26 @@ for (i in 1:(m-1)) {
 
 
 
+#NOTE:  The split diagram (Diag_split) and combined diagram (Combine1) take a while to run. 
+##To make it efficient, we save them as rds files which you may load below.
 
-<<<<<<< Updated upstream
-# Have the split diagram: the following step takes long time to run. To make it efficient, we save it in a Diag_split.rds file
-=======
-# Have the split diagram - This step takes a while to compute (>10 minutes because n is large and d=2)
->>>>>>> Stashed changes
-Diag_split=DiagContm2_(X,m,X_split,gap1,gap2,gap3,maxscale,maxdimension) # This function works for d=2 case.
-
+# Compute the split diagram - This step takes a while to compute (>10 minutes because n is large and d=2)
+Diag_split=DiagContm2_(X,m,X_split,gap1,gap2,gap3,maxscale,maxdimension) #SLOW!!! This function works for d=2 case. It takes a while to run.
 # Save Diag_split to a RDS file
-saveRDS(Diag_split, file = "Diag_split.rds")
+# saveRDS(Diag_split, file = "Diag_split.rds")
 
 # Read in Diag_split.rds
-Diag_split <- readRDS("Diag_split.rds")
+Diag_split <- readRDS("data/Stanford_Bunny/Diag_split.rds")
 
 # Merge the sub-regions
-Combine1=Diagm3Combine_(X_split,m,Diag_split,
+Combine1=Diagm3Combine_(X_split,m,Diag_split, # SLOW!!! Combine1 is the merged features.
                         gap1,gap2,gap3,maxdimension,maxscale)
 
-# Combine1 is the merged features.
-
-# Save Combine1 to a RDS file
-saveRDS(Combine1, file = "Combine1.rds")
+# # Save Combine1 to a RDS file
+# saveRDS(Combine1, file = "Combine1.rds")
 
 # Read in Combine1.rds
-Combine1 <- readRDS("Combine1.rds")
+Combine1 <- readRDS("data/Stanford_Bunny/Combine1.rds")
 
 # Plot for Combine1 representative data points.
 plot3D::scatter3D(Combine1[[2]][[43]][,1],Combine1[[2]][[43]][,2],Combine1[[2]][[43]][,3])
