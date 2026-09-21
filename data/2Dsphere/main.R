@@ -12,8 +12,8 @@ require(proxy)
 require(wordspace)
 require(geometry)
 
-
 # Load function files
+<<<<<<< Updated upstream
 source('../../Functions/DiagCirSimp.R')
 source('../../Functions/DiagCir4Pieces.R')
 source('../../Functions/PlotRepeat.R')
@@ -38,16 +38,42 @@ source('../../Functions/Projected_Merge.R')
 source('../../Functions/Diagm3Combine.R')
 source('../../Functions/boundFind.R')
 source('../../Functions/Matching2.R')
+=======
+source('Functions/DiagCirSimp.R')# Add another estimate method.
+source('Functions/DiagCir4Pieces.R')
+source('Functions/PlotRepeat.R')
+source('Functions/PlotRepeat1.R')
+source('Functions/BirthRecal2.R')
+source('Functions/DeathRecal0.R')
+source('Functions/DeathRecal1.R')
+source('Functions/DeathRecal2.R')
+source('Functions/DeathRecal_Circle.R')
+source('Functions/ThreePointsCal.R')
+source('Functions/MinLength.R')
+source('Functions/DiagCir3d.R')
+source('Functions/DeathRecal_Sphere.R')
+source('Functions/Continuous.R')
+source('Functions/DiagCirCont4.R')
+source('Functions/DiagCont3d.R')
+source('Functions/DiagContm2.R')
+source('Functions/BoundaryConnect.R')
+source('Functions/Utils.R')
+source('Functions/Utils2.R')
+source('Functions/Projected_Merge.R')
+source('Functions/Diagm3Combine.R')
+source('Functions/boundFind.R')
+source('Functions/Matching2.R')
+>>>>>>> Stashed changes
 
 # Load 3D function files
-source("../../Functions3Combine/3DiagContm2.R")
-source("../../Functions3Combine/BoundaryConnect_.R")
-source("../../Functions3Combine/Diagm3Combine_.R")
-source("../../Functions3Combine/Utils_.R")
-source("../../Functions3Combine/Utils2_.R")
-source("../../Functions3Combine/BirthRecal2_.R")
-source("../../Functions3Combine/DeathRecal0_.R")
-source("../../Functions3Combine/DeathRecal1_.R")
+source("Functions3Combine/3DiagContm2.R")
+source("Functions3Combine/BoundaryConnect_.R")
+source("Functions3Combine/Diagm3Combine_.R")
+source("Functions3Combine/Utils_.R")
+source("Functions3Combine/Utils2_.R")
+source("Functions3Combine/BirthRecal2_.R")
+source("Functions3Combine/DeathRecal0_.R")
+source("Functions3Combine/DeathRecal1_.R")
 
 # Parameter Setup
 m=8 # Split the data into 7*7*7 subregions
@@ -65,7 +91,7 @@ maxdimension=2
 
 # Load data and do basic transform
 j2=1
-X=read.csv2(paste0("data",j2,".csv"),header=T,sep=";")
+X=read.csv2(paste0("data/2Dsphere/data",j2,".csv"),header=T,sep=";")
 X=as.numeric(as.matrix(X))
 X=matrix(X,ncol=3)
 

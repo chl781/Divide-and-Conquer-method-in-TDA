@@ -63,47 +63,47 @@ require(geometry)
 
 
 # Load function files
-source('../../Functions/DiagCirSimp.R')# Add another Esimate method.
-source('../../Functions/DiagCir4Pieces.R')
-source('../../Functions/PlotRepeat.R')
-source('../../Functions/PlotRepeat1.R')
-source('../../Functions/BirthRecal2.R')
-source('../../Functions/DeathRecal0.R')
-source('../../Functions/DeathRecal1.R')
-source('../../Functions/DeathRecal2.R')
-source('../../Functions/DeathRecal_Circle.R')
-source('../../Functions/ThreePointsCal.R')
-source('../../Functions/MinLength.R')
-source('../../Functions/DiagCir3d.R')
-source('../../Functions/DeathRecal_Sphere.R')
-source('../../Functions/Continuous.R')
-source('../../Functions/DiagCirCont4.R')
-source('../../Functions/DiagCont3d.R')
-source('../../Functions/DiagContm2.R')
-source('../../Functions/BoundaryConnect.R')
-source('../../Functions/Utils.R')
-source('../../Functions/Utils2.R')
-source('../../Functions/Projected_Merge.R')
-source('../../Functions/Diagm3Combine.R')
-source('../../Functions/boundFind.R')
-source('../../Functions/Matching2.R')
+source('Functions/DiagCirSimp.R')# Add another estimate method.
+source('Functions/DiagCir4Pieces.R')
+source('Functions/PlotRepeat.R')
+source('Functions/PlotRepeat1.R')
+source('Functions/BirthRecal2.R')
+source('Functions/DeathRecal0.R')
+source('Functions/DeathRecal1.R')
+source('Functions/DeathRecal2.R')
+source('Functions/DeathRecal_Circle.R')
+source('Functions/ThreePointsCal.R')
+source('Functions/MinLength.R')
+source('Functions/DiagCir3d.R')
+source('Functions/DeathRecal_Sphere.R')
+source('Functions/Continuous.R')
+source('Functions/DiagCirCont4.R')
+source('Functions/DiagCont3d.R')
+source('Functions/DiagContm2.R')
+source('Functions/BoundaryConnect.R')
+source('Functions/Utils.R')
+source('Functions/Utils2.R')
+source('Functions/Projected_Merge.R')
+source('Functions/Diagm3Combine.R')
+source('Functions/boundFind.R')
+source('Functions/Matching2.R')
 
 # Load 3D function files
-source("../../Functions3Combine/3DiagContm2.R")
-source("../../Functions3Combine/BoundaryConnect_.R")
-source("../../Functions3Combine/Diagm3Combine_.R")
-source("../../Functions3Combine/Utils_.R")
-source("../../Functions3Combine/Utils2_.R")
-source("../../Functions3Combine/BirthRecal2_.R")
-source("../../Functions3Combine/DeathRecal0_.R")
-source("../../Functions3Combine/DeathRecal1_.R")
+source("Functions3Combine/3DiagContm2.R")
+source("Functions3Combine/BoundaryConnect_.R")
+source("Functions3Combine/Diagm3Combine_.R")
+source("Functions3Combine/Utils_.R")
+source("Functions3Combine/Utils2_.R")
+source("Functions3Combine/BirthRecal2_.R")
+source("Functions3Combine/DeathRecal0_.R")
+source("Functions3Combine/DeathRecal1_.R")
 
 # Parameter Setup
 # Split the data into 7*7*7 subregions
 m=8
 
 ###Read in the processed Stanford Bunny file
-pc_down = read.csv("Stanford_Bunny.csv", header = FALSE)
+pc_down = read.csv("data/Stanford_Bunny/Stanford_Bunny.csv", header = FALSE)
 
 range=matrix(c( min(pc_down[,1]), max(pc_down[,1]),min(pc_down[,2]), max(pc_down[,2]), min(pc_down[,3]), max(pc_down[,3])),nrow = 3, byrow=T)
 maxscale=1
@@ -136,7 +136,11 @@ for (i in 1:(m-1)) {
 
 
 
+<<<<<<< Updated upstream
 # Have the split diagram: the following step takes long time to run. To make it efficient, we save it in a Diag_split.rds file
+=======
+# Have the split diagram - This step takes a while to compute (>10 minutes because n is large and d=2)
+>>>>>>> Stashed changes
 Diag_split=DiagContm2_(X,m,X_split,gap1,gap2,gap3,maxscale,maxdimension) # This function works for d=2 case.
 
 # Save Diag_split to a RDS file
