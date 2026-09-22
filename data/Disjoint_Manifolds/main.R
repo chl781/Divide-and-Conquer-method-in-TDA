@@ -86,7 +86,7 @@ for (i in 1:(m-1)) {
 
 
 
-# Have the split diagram - this may take a couple minutes to run
+# Generate the split diagram - the Combine1 may take over 20 minutes to compute
 Diag_split <- DiagContm2(X,m,maxscale,maxdimension,range)
 Combine1 = Diagm3Combine(X_split,m,Diag_split,range,maxdimension,maxscale,error)
 PD = Combine1$diagram
