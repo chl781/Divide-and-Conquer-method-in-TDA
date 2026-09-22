@@ -160,8 +160,8 @@ Combine1 <- readRDS("data/Stanford_Bunny/Combine1.rds")
 plot3D::scatter3D(Combine1[[2]][[43]][,1],Combine1[[2]][[43]][,2],Combine1[[2]][[43]][,3])
 
 # Diagram
-Combine1$diagram
-
+Combine1$diagram 
+#One persistent H2 feature and several low-persistence H2 features
 
 ## Visualize the result
 
@@ -175,8 +175,6 @@ df <- data.frame(
 
 # expand limits (increase x-axis scale safely)
 lims <- c(0, max(df$death) * 1.25)
-
-
 ggplot(df, aes(birth, death)) +
   geom_point(size = 3) +
   geom_abline(slope = 1, intercept = 0,

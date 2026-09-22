@@ -122,7 +122,7 @@ approx_diagram_h2 = cbind(approx_diagram$dimension, approx_diagram$birth, approx
 
 # Compare DaC and (very approximate) true H2 diagrams
 ## Note:  These diagrams are not really comparable since they are based on different sample sizes
-approx_diagram_h2[order(true_diagram_h2[, 2]),] # (Very) approximate H2 diagram based on small subsample
+approx_diagram_h2[order(approx_diagram_h2[, 2]),] # (Very) approximate H2 diagram based on small subsample
 dac_diagram_h2[order(dac_diagram_h2[, 2]),] # DaC H2 diagram
 
 
