@@ -1,11 +1,11 @@
 # Divide-and-Conquer-method-in-TDA
 
-This folder contains the code and data for the Wisconsin lake analysis for Li, C. and Cisewski-Kehe, J., 2024. A Divide-and-Conquer Approach to Persistent Homology. arXiv preprint arXiv:2410.01839.
+This folder contains the code and data for the Wisconsin lake analysis for "A Divide-and-Conquer Approach to Persistent Homology"
 
 This folder is self-contained, and includes the following:
 
 1.  wi_lakes_analysis.R 
- - This R script takes you through the WI Lakes analysis.  Hopefully there are enough comments to follow the procedures, but more details are available in the paper.  Email Jessi Cisewski-Kehe (jjkehe@wisc.edu) with any additional questions or issues.
+ - This R script takes you through the WI Lakes analysis.  Hopefully there are enough comments to follow the procedures, but more details are available in the paper.  
 
 2. lakes_wi_updated.csv
 - The data were obtained from https://apps.dnr.wi.gov/lakes/lakepages/Results.aspx

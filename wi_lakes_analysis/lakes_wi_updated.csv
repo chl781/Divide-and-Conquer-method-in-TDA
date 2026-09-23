@@ -103,7 +103,7 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 2165700,Anderson Lake,45,25 FEET,12 FEET,No,No,Yes,"Panfish, Largemouth Bass and Northern Pike",DRAINAGE,NA,Taylor,45.2039498,-90.5887137
 1766800,Anderson Lake,11,11 FEET,NA,No,No,No,Panfish and Northern Pike,DRAINAGE,NA,Taylor,45.2004845,-90.379133
 458700,Anderson Lake,177,40 FEET,23 FEET,Yes,No,No,"Musky, Panfish, Largemouth Bass, Northern Pike and Walleye",DRAINAGE,NA,Oconto,45.1140176,-88.4214329
-968300,Anderson Lake,4,11 FEET,NA,No,No,Yes,NA,SEEPAGE,NA,Lincoln,45.276046,-89.590097600000007
+968300,Anderson Lake,4,11 FEET,NA,No,No,Yes,NA,SEEPAGE,NA,Lincoln,45.276046,-89.5900976
 968400,Anderson Lake,35,11 FEET,NA,No,No,No,"Panfish, Largemouth Bass and Northern Pike",SEEPAGE,NA,Langlade,45.278194,-89.1019808
 968500,Anderson Lake,35,63 FEET,NA,No,No,No,Panfish and Largemouth Bass,SEEPAGE,Very Clear,Vilas,46.1709627,-89.343878
 2754300,Anderson Lake,5,23 FEET,10 FEET,No,No,No,Trout,SEEPAGE,NA,Douglas,46.464554,-91.6951399
@@ -402,11 +402,11 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 2179500,Beaver Lake,5,44 FEET,NA,No,No,No,Panfish and Largemouth Bass,SEEPAGE,NA,Chippewa,45.1761133,-91.309865
 970500,Beaver Lake,7,7 FEET,NA,No,No,No,NA,SEEPAGE,NA,Langlade,45.362948,-89.2393603
 970600,Beaver Lake,12,21 FEET,NA,No,No,No,Panfish and Largemouth Bass,SEEPAGE,NA,Lincoln,45.4033568,-89.5114485
-970700,Beaver Lake,20,8 FEET,NA,No,No,No,"Panfish, Largemouth Bass and Northern Pike",SEEPAGE,NA,Oneida,45.472622200000004,-89.420455
+970700,Beaver Lake,20,8 FEET,NA,No,No,No,"Panfish, Largemouth Bass and Northern Pike",SEEPAGE,NA,Oneida,45.4726222,-89.420455
 970800,Beaver Lake,8,17 FEET,NA,No,No,Yes,Panfish and Largemouth Bass,SEEPAGE,NA,Oneida,45.7265019,-89.5869357
 970900,Beaver Lake,2,11 FEET,NA,No,No,Yes,Panfish,SEEPAGE,NA,Oneida,45.8058546,-89.5897665
 2679200,Beaver Lodge Pond,4,11 FEET,NA,Yes,No,Yes,Trout,SPRING,NA,Washburn,45.7763234,-91.9579684
-679600,Beaver Pond,7,NA,NA,No,No,Yes,NA,NA,NA,Florence,45.8317157,-88.653560100000007
+679600,Beaver Pond,7,NA,NA,No,No,Yes,NA,NA,NA,Florence,45.8317157,-88.6535601
 2253800,Beaverdam Lake,0.95,7 FEET,NA,No,No,Yes,Panfish,SEEPAGE,NA,Price,45.8876836,-90.3055802
 2916700,Beaverdam Lake,97,19 FEET,6 FEET,No,No,Yes,"Musky, Panfish and Largemouth Bass",DRAINAGE,NA,Ashland,46.3193079,-90.8142002
 851700,Beck Lake,15,8 FEET,NA,No,No,No,"Panfish, Largemouth Bass and Northern Pike",SEEPAGE,NA,Washington,43.2181478,-88.3576374
@@ -825,7 +825,7 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 1838200,Burnt Wagon Lake,19,17 FEET,NA,No,No,Yes,NA,SEEPAGE,NA,Chippewa,45.1817445,-91.3441434
 975000,Burrows Lake,149,28 FEET,9 FEET,Yes,No,Yes,"Musky, Panfish and Largemouth Bass",SEEPAGE,NA,Oneida,45.6343269,-89.8581798
 650000,Bush Lake,47,18 FEET,NA,Yes,No,No,"Panfish, Largemouth Bass and Northern Pike",SPRING,NA,Florence,45.7655553,-88.3058263
-2606300,Bushnell Lake,22,12 FEET,NA,No,No,No,NA,SEEPAGE,NA,St. Croix,45.023755800000004,-92.4155331
+2606300,Bushnell Lake,22,12 FEET,NA,No,No,No,NA,SEEPAGE,NA,St. Croix,45.0237558,-92.4155331
 2072600,Bushy Lake,23,10 FEET,NA,No,No,No,NA,SEEPAGE,NA,St. Croix,45.1166222,-92.2256992
 2903800,Buskey Bay,88,51 FEET,15 FEET,Yes,No,No,"Musky, Panfish, Largemouth Bass, Smallmouth Bass, Northern Pike and Walleye",SEEPAGE,NA,Bayfield,46.5278551,-91.3749379
 774900,Buth Lake,3,5 FEET,NA,No,No,No,Largemouth Bass,SEEPAGE,NA,Waukesha,43.038578,-88.4710204
@@ -836,7 +836,7 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 499100,Butterfly Lake,16,15 FEET,NA,No,No,No,NA,SEEPAGE,NA,Marinette,45.3907072,-88.043032
 8300,Buttermilk Lake,13,6 FEET,2 FEET,No,No,Yes,Panfish,SEEPAGE,NA,Fond du Lac,43.5919023,-88.2064491
 692400,Butternut Lake,1246,42 FEET,NA,Yes,No,Yes,"Panfish, Smallmouth Bass, Northern Pike and Walleye",SPRING,Very Clear,Forest,45.9116966,-88.9888058
-2283300,Butternut Lake,983,32 FEET,14 FEET,Yes,No,No,"Musky, Panfish, Largemouth Bass, Smallmouth Bass, Northern Pike, Walleye and Sturgeon",DRAINAGE,Low,"Ashland, Price",45.967840700000004,-90.5186458
+2283300,Butternut Lake,983,32 FEET,14 FEET,Yes,No,No,"Musky, Panfish, Largemouth Bass, Smallmouth Bass, Northern Pike, Walleye and Sturgeon",DRAINAGE,Low,"Ashland, Price",45.9678407,-90.5186458
 2105800,Butternut Lake,145,15 FEET,7 FEET,Yes,No,No,"Panfish, Largemouth Bass and Northern Pike",SEEPAGE,NA,Barron,45.6305259,-91.9045196
 42200,Butzke Lake,16,8 FEET,4 FEET,No,No,Yes,Panfish,DRAINAGE,NA,Fond du Lac,43.5975996,-88.2204261
 4000002,Byhre Lake,70,24 FEET,NA,No,No,Yes,NA,DRAINAGE,NA,Price,45.9376443,-90.1520622
@@ -985,7 +985,7 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 2631400,Chain Lakes,13,NA,NA,No,No,Yes,NA,DRAINAGE,NA,Polk,45.4876318,-92.1615848
 724800,Chain of Lakes,4,NA,NA,No,No,No,NA,NA,NA,Crawford,43.3730722,-91.1773389
 254700,Chalet Lake,30,15 FEET,NA,No,No,No,NA,DRAINAGE,NA,Waupaca,44.280807,-89.094025
-634500,Chalk Hill Flowage,866,30 FEET,10 FEET,Yes,No,No,"Panfish, Largemouth Bass, Smallmouth Bass, Northern Pike and Walleye",DRAINAGE,NA,Marinette,45.5492749,-87.816463100000007
+634500,Chalk Hill Flowage,866,30 FEET,10 FEET,Yes,No,No,"Panfish, Largemouth Bass, Smallmouth Bass, Northern Pike and Walleye",DRAINAGE,NA,Marinette,45.5492749,-87.8164631
 976500,Chamberlain Lake,18,13 FEET,NA,No,No,No,Largemouth Bass and Trout,SEEPAGE,NA,Vilas,46.0913438,-89.2744959
 1840300,Champagne Lake,7,12 FEET,NA,No,No,Yes,NA,SEEPAGE,NA,Sawyer,45.822461,-90.6853737
 183300,Chapin Lake,7,25 FEET,NA,No,No,No,Panfish and Largemouth Bass,SEEPAGE,NA,Waupaca,44.5389163,-88.9556029
@@ -1012,7 +1012,7 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 81200,Chilton Millpond 75,11,7 FEET,3 FEET,Yes,No,Yes,"Panfish, Largemouth Bass, Smallmouth Bass, Northern Pike and Catfish",DRAINAGE,NA,Calumet,44.0257651,-88.1669064
 731500,Chimney Lake,33,NA,NA,No,No,Yes,"Panfish, Largemouth Bass and Northern Pike",NA,NA,Pepin,44.4185703,-92.0998899
 1840700,Chinty Lake,16,24 FEET,10 FEET,Yes,No,No,Panfish and Largemouth Bass,SEEPAGE,NA,Washburn,45.7449524,-91.743322
-2425200,Chip Lake,3,25 FEET,NA,No,No,Yes,NA,SEEPAGE,NA,Sawyer,46.083603599999996,-91.0124616
+2425200,Chip Lake,3,25 FEET,NA,No,No,Yes,NA,SEEPAGE,NA,Sawyer,46.0836036,-91.0124616
 2722800,Chippanazie Lake,57,31 FEET,14 FEET,Yes,No,No,"Panfish, Largemouth Bass, Northern Pike and Walleye",DRAINAGE,NA,Washburn,46.03951,-91.559682
 2152600,Chippewa Falls Flowage 5555,954,29 FEET,11 FEET,Yes,No,No,"Musky, Panfish, Largemouth Bass, Smallmouth Bass, Northern Pike, Walleye, Sturgeon and Catfish",DRAINAGE,NA,"Eau Claire, Chippewa",44.93156,-91.39104
 2431300,Chippewa Lake,274,11 FEET,5 FEET,Yes,No,Yes,Panfish and Largemouth Bass,DRAINED,NA,Bayfield,46.1996488,-90.9838445
@@ -1063,7 +1063,7 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 2350600,Clear Lake,94,74 FEET,29 FEET,Yes,No,Yes,"Musky, Panfish, Largemouth Bass, Smallmouth Bass, Northern Pike and Walleye",DRAINAGE,Moderate,Rusk,45.2978573,-91.4189725
 2303700,Clear Lake,66,20 FEET,NA,No,No,No,"Largemouth Bass, Northern Pike and Walleye",DRAINAGE,NA,Iron,46.2434652,-90.0170784
 2623500,Clear Lake,30,26 FEET,13 FEET,Yes,No,No,"Panfish, Largemouth Bass, Northern Pike and Walleye",SEEPAGE,NA,Polk,45.2613809,-92.2786547
-1210500,Clear Lake,9,8 FEET,NA,No,No,Yes,Largemouth Bass and Northern Pike,SEEPAGE,NA,Crawford,43.1775382,-90.674034700000007
+1210500,Clear Lake,9,8 FEET,NA,No,No,Yes,Largemouth Bass and Northern Pike,SEEPAGE,NA,Crawford,43.1775382,-90.6740347
 1841200,Clear Lake,25,15 FEET,NA,No,No,No,Panfish,SEEPAGE,NA,Chippewa,45.1544386,-91.323988
 1841100,Clear Lake,9,5 FEET,NA,No,No,No,Panfish,SEEPAGE,NA,Chippewa,45.1072885,-91.3120719
 775000,Clear Lake,77,12 FEET,NA,Yes,No,No,"Panfish, Largemouth Bass and Northern Pike",SPRING,Low,Rock,42.7994273,-88.9794856
@@ -1305,7 +1305,7 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 1843300,Davis Lake,5,20 FEET,NA,No,No,Yes,Panfish and Largemouth Bass,SEEPAGE,NA,Sawyer,46.0735926,-91.1386366
 1843400,Davis Lake,8,16 FEET,NA,No,No,Yes,Largemouth Bass,SEEPAGE,NA,Iron,46.1627675,-90.1404257
 2251700,Davis Lake,73,8 FEET,NA,No,No,No,Panfish and Largemouth Bass,SEEPAGE,NA,Price,45.8352099,-90.4859935
-2460000,Dawn Lake,10,12 FEET,NA,No,No,No,NA,SEEPAGE,NA,Bayfield,46.223410199999996,-91.3732186
+2460000,Dawn Lake,10,12 FEET,NA,No,No,No,NA,SEEPAGE,NA,Bayfield,46.2234102,-91.3732186
 2576200,Dawn Lake,5,23 FEET,NA,No,No,No,NA,NA,NA,Bayfield,46.2177638,-91.3776887
 499900,Dawson Lake,9,55 FEET,NA,No,No,No,Panfish and Largemouth Bass,SEEPAGE,NA,Forest,45.5780265,-88.7804911
 2430300,Day Lake,578,20 FEET,7 FEET,Yes,No,Yes,"Musky, Panfish and Largemouth Bass",DRAINAGE,NA,Ashland,46.1874082,-90.9063791
@@ -1552,7 +1552,7 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 94200,East Alaska Lake,50,50 FEET,17 FEET,Yes,No,Yes,"Musky, Panfish, Largemouth Bass and Northern Pike",DRAINED,Moderate,Kewaunee,44.5456773,-87.4990785
 982000,East Apple Lake,6,23 FEET,NA,No,No,No,Panfish and Largemouth Bass,SEEPAGE,NA,Langlade,45.4646644,-89.2484408
 5504414,East Bay Lake,213,NA,NA,No,No,Yes,NA,DRAINAGE,NA,NA,46.2039895,-89.3988385
-2462100,East Davis Lake,11,10 FEET,NA,No,No,Yes,Panfish and Largemouth Bass,SEEPAGE,NA,Bayfield,46.302664300000004,-91.0895808
+2462100,East Davis Lake,11,10 FEET,NA,No,No,Yes,Panfish and Largemouth Bass,SEEPAGE,NA,Bayfield,46.3026643,-91.0895808
 2462200,East Eightmile Lake,32,22 FEET,10 FEET,No,No,No,"Panfish, Largemouth Bass and Northern Pike",SEEPAGE,NA,Bayfield,46.4185013,-91.4609899
 2331300,East Ellerson Lake,136,26 FEET,NA,Yes,No,Yes,Panfish and Largemouth Bass,SEEPAGE,NA,Vilas,46.0043847,-89.7553034
 982200,East First Small Lake,1,2 FEET,NA,No,No,Yes,NA,SEEPAGE,NA,Forest,45.8246646,-89.0410421
@@ -1766,7 +1766,7 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 642100,Fischer Lake,24,15 FEET,NA,Yes,No,No,"Panfish, Largemouth Bass and Trout",DRAINAGE,NA,Florence,45.7257768,-88.1060194
 2888200,Fish Creek Spring,0.74,3 FEET,NA,No,No,Yes,Trout,SPRING,NA,Bayfield,46.5717488,-90.9858789
 1376100,Fish Lake,41,NA,NA,Yes,No,No,NA,DRAINAGE,NA,Juneau,44.0204149,-90.0044942
-1491400,Fish Lake,40,18 FEET,NA,No,No,No,Panfish,DRAINED,NA,Lincoln,45.433036800000004,-89.4465464
+1491400,Fish Lake,40,18 FEET,NA,No,No,No,Panfish,DRAINED,NA,Lincoln,45.4330368,-89.4465464
 1570600,Fish Lake,71,7 FEET,NA,No,No,No,"Musky, Panfish, Largemouth Bass, Smallmouth Bass, Northern Pike and Walleye",DRAINAGE,NA,Oneida,45.6236781,-89.2558032
 186100,Fish Lake,12,20 FEET,NA,No,No,No,Panfish,SEEPAGE,NA,Waushara,44.224103,-89.2919536
 2697900,Fish Lake,12,9 FEET,NA,No,No,No,Panfish,SEEPAGE,NA,Washburn,46.0670226,-91.744221
@@ -1789,7 +1789,7 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 2761900,Five Island Lake,50,24 FEET,13 FEET,No,No,Yes,"Panfish, Largemouth Bass and Smallmouth Bass",SEEPAGE,NA,Bayfield,46.512821,-91.348561
 985200,Flag Lake,8,6 FEET,NA,No,No,No,Panfish and Largemouth Bass,SEEPAGE,NA,Oneida,45.6281256,-89.5120398
 2762000,Flakefjord Lake,10,17 FEET,NA,No,No,Yes,Panfish and Largemouth Bass,SEEPAGE,NA,Bayfield,46.4035044,-91.2801034
-2464600,Flamang Lake,8,17 FEET,NA,No,No,No,Panfish and Largemouth Bass,SEEPAGE,NA,Douglas,46.3279371,-91.694456400000007
+2464600,Flamang Lake,8,17 FEET,NA,No,No,No,Panfish and Largemouth Bass,SEEPAGE,NA,Douglas,46.3279371,-91.6944564
 2320500,Flambeau Lake,1166,78 FEET,28 FEET,Yes,No,No,"Musky, Panfish, Largemouth Bass, Smallmouth Bass, Northern Pike and Walleye",DRAINAGE,Very Clear,Vilas,45.9646013,-89.9237403
 748800,Flanagan Lake,11,24 FEET,8 FEET,No,No,No,Panfish and Largemouth Bass,SEEPAGE,NA,Kenosha,42.6113164,-88.1792712
 1849280,Flannagan Lake,2,15 FEET,NA,No,No,No,NA,SEEPAGE,NA,Iron,46.1529418,-90.0854092
@@ -1936,7 +1936,7 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 56600,Gerber Lake,15,37 FEET,NA,No,No,No,"Panfish, Largemouth Bass and Northern Pike",SPRING,NA,Sheboygan,43.8065497,-87.9579091
 986800,Gerbick Lake,35,17 FEET,NA,No,No,No,Largemouth Bass and Northern Pike,SEEPAGE,NA,Lincoln,45.459274,-89.6020264
 585900,Gertrude Lake,10,32 FEET,NA,No,No,Yes,Panfish and Largemouth Bass,SEEPAGE,NA,Forest,45.9206683,-89.0015934
-2762400,Getsey Lake,19,25 FEET,NA,No,No,Yes,"Panfish, Largemouth Bass and Northern Pike",SEEPAGE,NA,Bayfield,46.497681300000004,-91.2917488
+2762400,Getsey Lake,19,25 FEET,NA,No,No,Yes,"Panfish, Largemouth Bass and Northern Pike",SEEPAGE,NA,Bayfield,46.4976813,-91.2917488
 1850600,Geyser Lake,2,13 FEET,NA,No,No,No,Panfish,SEEPAGE,NA,Iron,46.1888351,-90.023195
 2423000,Ghost Lake,384,12 FEET,5 FEET,Yes,No,No,"Musky, Panfish, Largemouth Bass and Walleye",DRAINAGE,NA,Sawyer,46.0917731,-91.0543411
 1558100,Ghost Lake,2,9 FEET,NA,No,No,No,"Panfish, Largemouth Bass and Northern Pike",DRAINAGE,NA,Lincoln,45.4347558,-89.5140994
@@ -1952,7 +1952,7 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 2466000,Gilbert Lake,6,4 FEET,NA,No,No,Yes,NA,SEEPAGE,NA,Douglas,46.4030942,-91.7885783
 2465900,Gilbert Lake,14,14 FEET,NA,No,No,No,Panfish and Largemouth Bass,SEEPAGE,NA,Polk,45.3529246,-92.2003176
 2762500,Gilbert Lake,8,30 FEET,NA,No,No,No,Panfish and Largemouth Bass,SEEPAGE,NA,Vilas,46.2065707,-89.4619584
-186400,Gilbert Lake,139,65 FEET,NA,Yes,No,Yes,"Panfish, Largemouth Bass, Smallmouth Bass, Northern Pike and Walleye",SEEPAGE,Very Clear,Waushara,44.2126686,-89.169298800000007
+186400,Gilbert Lake,139,65 FEET,NA,Yes,No,Yes,"Panfish, Largemouth Bass, Smallmouth Bass, Northern Pike and Walleye",SEEPAGE,Very Clear,Waushara,44.2126686,-89.1692988
 2942300,Gile Flowage,3138,25 FEET,NA,Yes,No,No,"Musky, Panfish, Smallmouth Bass, Northern Pike and Walleye",DRAINAGE,Low,Iron,46.395531,-90.230584
 382800,Gilkey Lake,19,42 FEET,NA,No,No,No,Panfish and Largemouth Bass,SEEPAGE,NA,Langlade,45.3531511,-89.0211371
 462300,Gilkey Lake,21,6 FEET,NA,Yes,No,Yes,Panfish and Largemouth Bass,DRAINED,NA,Oconto,45.2463069,-88.3465806
@@ -2205,7 +2205,7 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 2468400,Hawthorn Lake,11,6 FEET,NA,No,No,No,NA,SEEPAGE,NA,Polk,45.6735781,-92.3789425
 9300,Hawthorne Hills Pond,6,NA,NA,No,No,Yes,NA,NA,NA,Ozaukee,43.451307,-87.9782796
 2260100,Hay Creek Flowage,95,5 FEET,NA,Yes,No,No,Panfish and Northern Pike,DRAINAGE,NA,Iron,46.0098259,-90.2654895
-2643700,Hay Creek Flowage,34,NA,NA,No,No,No,NA,NA,NA,Burnett,45.803793400000004,-92.6736338
+2643700,Hay Creek Flowage,34,NA,NA,No,No,No,NA,NA,NA,Burnett,45.8037934,-92.6736338
 2210000,Hay Creek Pond,11,9 FEET,NA,No,No,No,Panfish and Largemouth Bass,DRAINAGE,NA,Price,45.5455806,-90.3495667
 2433300,Hay Creek Springs,4,18 FEET,NA,No,No,Yes,Trout,SPRING,NA,Sawyer,46.054957,-91.1793238
 1853300,Hay Lake,7,14 FEET,NA,No,No,No,NA,SEEPAGE,NA,Chippewa,45.1902488,-91.3297288
@@ -2329,7 +2329,7 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 990500,Hobo Lake,14,20 FEET,NA,No,No,No,Panfish and Largemouth Bass,SEEPAGE,NA,Vilas,45.9981942,-89.5057173
 990600,Hodag Lake,16,20 FEET,NA,Yes,No,Yes,"Panfish, Largemouth Bass and Northern Pike",SEEPAGE,NA,Oneida,45.6704095,-89.5647674
 1853700,Hodge Lake,38,33 FEET,NA,No,No,Yes,Panfish and Largemouth Bass,SEEPAGE,NA,Chippewa,45.230394,-91.4033342
-990700,Hodstradt Lake,119,36 FEET,21 FEET,Yes,No,Yes,"Panfish, Largemouth Bass, Smallmouth Bass and Walleye",SEEPAGE,NA,Oneida,45.8073114,-89.563530600000007
+990700,Hodstradt Lake,119,36 FEET,21 FEET,Yes,No,Yes,"Panfish, Largemouth Bass, Smallmouth Bass and Walleye",SEEPAGE,NA,Oneida,45.8073114,-89.5635306
 447400,Hoerth Lake,7,23 FEET,NA,No,No,No,"Panfish, Largemouth Bass and Northern Pike",SEEPAGE,NA,Oconto,45.031337,-88.3048722
 2291800,Hoffman Lake,84,6 FEET,NA,No,No,Yes,Northern Pike,SEEPAGE,NA,Ashland,45.9970877,-90.3287948
 767800,Hogan Lake,8,3 FEET,NA,No,No,Yes,NA,SEEPAGE,NA,Waukesha,42.8510556,-88.4145945
@@ -2957,7 +2957,7 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 2314000,Lake Tahoe,35,32 FEET,NA,No,No,No,"Musky, Panfish, Largemouth Bass, Northern Pike and Walleye",SPRING,NA,Iron,46.1646659,-90.0839676
 2302900,Lake Ten,13,7 FEET,NA,No,No,No,Largemouth Bass,DRAINAGE,NA,Iron,46.2534085,-90.0803053
 1859400,Lake Ten,42,37 FEET,17 FEET,Yes,No,No,"Panfish, Largemouth Bass and Northern Pike",SEEPAGE,NA,Price,45.6221827,-90.4867267
-1762500,Lake Thirty,20,30 FEET,NA,No,No,Yes,Panfish and Largemouth Bass,DRAINAGE,NA,Taylor,45.228585699999996,-90.543212
+1762500,Lake Thirty,20,30 FEET,NA,No,No,Yes,Panfish and Largemouth Bass,DRAINAGE,NA,Taylor,45.2285857,-90.543212
 2099900,Lake Thirty,75,27 FEET,13 FEET,Yes,No,No,"Panfish, Largemouth Bass and Northern Pike",SEEPAGE,NA,Barron,45.5808041,-91.901262
 2473700,Lake Thirty Two,19,17 FEET,NA,No,No,No,"Panfish, Largemouth Bass and Northern Pike",SEEPAGE,NA,Burnett,45.6479934,-92.1128366
 1569900,Lake Thompson,401,30 FEET,NA,Yes,No,No,"Musky, Panfish, Largemouth Bass, Smallmouth Bass, Northern Pike and Walleye",DRAINAGE,Low,Oneida,45.6338778,-89.3304024
@@ -2965,7 +2965,7 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 1859500,Lake Three,24,22 FEET,NA,No,No,No,Panfish and Largemouth Bass,SEEPAGE,NA,Price,45.627991,-90.4775808
 2915800,Lake Three,61,13 FEET,6 FEET,Yes,No,Yes,Panfish and Largemouth Bass,DRAINAGE,NA,Ashland,46.3194665,-90.8510574
 1342100,Lake Tomah,245,19 FEET,4 FEET,Yes,No,Yes,"Panfish, Largemouth Bass and Northern Pike",DRAINAGE,Very Low,Monroe,43.98156,-90.52309
-29700,Lake Twelve,45,20 FEET,6 FEET,Yes,No,No,"Panfish, Largemouth Bass and Northern Pike",SPRING,NA,Washington,43.521035500000004,-88.0515588
+29700,Lake Twelve,45,20 FEET,6 FEET,Yes,No,No,"Panfish, Largemouth Bass and Northern Pike",SPRING,NA,Washington,43.5210355,-88.0515588
 1859600,Lake Twenty-seven,55,21 FEET,NA,No,No,No,"Panfish, Largemouth Bass, Smallmouth Bass and Northern Pike",SEEPAGE,NA,Sawyer,45.9210163,-91.4731562
 996400,Lake Two,7,38 FEET,NA,Yes,No,No,Largemouth Bass,SEEPAGE,NA,Langlade,45.4301581,-89.4212731
 2904300,Lake Two,15,7 FEET,NA,No,No,Yes,Trout,DRAINAGE,NA,Bayfield,46.4539462,-91.2979964
@@ -3747,7 +3747,7 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 2706800,McKenzie Lake,1129,71 FEET,19 FEET,Yes,No,No,"Musky, Panfish, Largemouth Bass, Smallmouth Bass, Northern Pike, Walleye and Sturgeon",DRAINAGE,Moderate,"Washburn, Burnett",45.9182914,-92.0385448
 2667300,McKenzie Lake,52,25 FEET,9 FEET,Yes,No,No,"Panfish, Largemouth Bass and Northern Pike",DRAINAGE,NA,Polk,45.6102996,-92.3029992
 2711500,McKenzie Springs,2,7 FEET,NA,No,No,Yes,Trout,SPRING,NA,Washburn,45.9888399,-91.8803942
-2710100,McKinley Lake,103,23 FEET,12 FEET,Yes,No,No,"Panfish, Largemouth Bass and Northern Pike",SEEPAGE,NA,Washburn,45.912122599999996,-91.9240042
+2710100,McKinley Lake,103,23 FEET,12 FEET,Yes,No,No,"Panfish, Largemouth Bass and Northern Pike",SEEPAGE,NA,Washburn,45.9121226,-91.9240042
 692700,McKinley Lake,48,20 FEET,NA,Yes,No,Yes,Panfish and Largemouth Bass,SEEPAGE,NA,Forest,45.9238469,-88.9744349
 1865800,McKinney Lake,13,23 FEET,NA,No,No,Yes,Panfish and Largemouth Bass,SEEPAGE,NA,Vilas,46.1292656,-89.8932078
 2481600,McLain Lake,143,30 FEET,11 FEET,Yes,No,No,"Panfish, Largemouth Bass, Northern Pike and Walleye",SEEPAGE,Moderate,Washburn,46.0480562,-91.9490371
@@ -3771,7 +3771,7 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 2935300,Meder Lake,135,10 FEET,7 FEET,Yes,No,No,"Panfish, Largemouth Bass, Northern Pike and Walleye",DRAINAGE,Moderate,Ashland,46.2757699,-90.6458607
 1766600,Medford Flowage,18,8 FEET,NA,Yes,No,No,"Panfish, Largemouth Bass and Northern Pike",DRAINAGE,NA,Taylor,45.1413395,-90.3496541
 1611700,Medicine Lake,396,45 FEET,22 FEET,Yes,No,Yes,"Musky, Panfish, Largemouth Bass, Smallmouth Bass, Northern Pike and Walleye",DRAINAGE,Low,Oneida,45.8138,-89.12607
-275600,Meed Lake,10,38 FEET,NA,No,No,No,"Panfish, Largemouth Bass and Northern Pike",DRAINAGE,NA,Waupaca,44.4290433,-89.159031100000007
+275600,Meed Lake,10,38 FEET,NA,No,No,No,"Panfish, Largemouth Bass and Northern Pike",DRAINAGE,NA,Waupaca,44.4290433,-89.1590311
 2481900,Meeker Run Lake,21,1 FEET,NA,No,No,No,NA,SEEPAGE,NA,Burnett,46.0085885,-92.1038565
 1004200,Meier Pond,9,NA,NA,No,No,No,NA,NA,NA,Dane,43.1720034,-89.5874795
 105900,Meilke Lake,16,5 FEET,NA,No,No,No,Panfish,SEEPAGE,NA,Waushara,44.0295766,-89.2961595
@@ -3804,7 +3804,7 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 1866100,Middle Ellerson Lake,59,51 FEET,NA,No,No,Yes,Panfish and Largemouth Bass,SEEPAGE,NA,Vilas,46.0024346,-89.7620874
 778300,Middle Genesee Lake,98,40 FEET,8 FEET,Yes,No,No,"Panfish, Largemouth Bass and Northern Pike",SEEPAGE,NA,Waukesha,43.0509037,-88.4792119
 2330700,Middle Gresham Lake,97,17 FEET,NA,No,No,Yes,"Musky, Panfish, Largemouth Bass, Northern Pike and Walleye",DRAINAGE,NA,Vilas,46.0556377,-89.7491432
-2691900,Middle Kimball Lake,96,77 FEET,31 FEET,No,No,No,"Panfish, Largemouth Bass and Northern Pike",SEEPAGE,Very Clear,Washburn,46.1288983,-91.951056500000007
+2691900,Middle Kimball Lake,96,77 FEET,31 FEET,No,No,No,"Panfish, Largemouth Bass and Northern Pike",SEEPAGE,Very Clear,Washburn,46.1288983,-91.9510565
 755700,Middle Lake,259,40 FEET,NA,Yes,No,No,"Panfish, Largemouth Bass, Northern Pike and Walleye",DRAINAGE,Moderate,Walworth,42.7700086,-88.5697917
 702600,Middle Lake,83,54 FEET,27 FEET,No,No,No,"Panfish, Largemouth Bass, Smallmouth Bass, Northern Pike and Walleye",DRAINAGE,NA,Florence,45.89738,-88.13639
 83000,Middle Lake,7,7 FEET,NA,No,No,Yes,NA,SEEPAGE,NA,Brown,44.4215982,-87.8499476
@@ -4052,7 +4052,7 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 589600,Mud Lake,24,8 FEET,NA,No,No,No,NA,SEEPAGE,NA,Florence,45.7277389,-88.6082378
 589700,Mud Lake,3,16 FEET,NA,No,No,Yes,NA,SEEPAGE,NA,Forest,45.9477484,-88.6995852
 589800,Mud Lake,24,15 FEET,NA,No,No,No,Panfish and Largemouth Bass,SEEPAGE,NA,Florence,45.9369294,-88.2458324
-332700,Mud Lake,4,6 FEET,NA,No,No,No,NA,DRAINAGE,NA,Langlade,45.056119700000004,-89.0757115
+332700,Mud Lake,4,6 FEET,NA,No,No,No,NA,DRAINAGE,NA,Langlade,45.0561197,-89.0757115
 2484000,Mud Lake,12,4 FEET,NA,No,No,No,NA,SEEPAGE,NA,Polk,45.4248685,-92.3904206
 2484100,Mud Lake,39,4 FEET,NA,No,No,Yes,NA,SEEPAGE,NA,Sawyer,45.9574811,-91.5224661
 2484300,Mud Lake,14,17 FEET,NA,No,No,No,Panfish,SEEPAGE,NA,Washburn,45.9520162,-91.9300309
@@ -4198,14 +4198,14 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 194300,Nelson Lake,7,44 FEET,NA,No,No,No,Panfish,SEEPAGE,NA,Langlade,45.4409742,-89.16639
 346600,Neopit Mill Pond,193,10 FEET,NA,No,No,No,Smallmouth Bass and Trout,DRAINAGE,NA,Menominee,44.9837769,-88.8472431
 856800,Neosho Mill Pond,176,6 FEET,4 FEET,Yes,No,No,"Panfish, Largemouth Bass and Northern Pike",DRAINAGE,NA,Dodge,43.3100304,-88.5045112
-1389800,Nepco Lake,496,29 FEET,10 FEET,Yes,Yes,Yes,"Panfish, Largemouth Bass, Smallmouth Bass, Northern Pike and Walleye",DRAINAGE,NA,Wood,44.3333977,-89.829890700000007
+1389800,Nepco Lake,496,29 FEET,10 FEET,Yes,Yes,Yes,"Panfish, Largemouth Bass, Smallmouth Bass, Northern Pike and Walleye",DRAINAGE,NA,Wood,44.3333977,-89.8298907
 1576600,Neptune Lake,127,7 FEET,NA,No,No,No,"Panfish, Largemouth Bass and Northern Pike",DRAINAGE,NA,Oneida,45.5896864,-89.1735296
 149800,Neshkoro Millpond,208,9 FEET,3 FEET,Yes,No,No,"Panfish, Largemouth Bass, Northern Pike and Trout",DRAINAGE,NA,"Waushara, Marquette",43.96691,-89.23061
 1653500,Neshonoc Lake,606,11 FEET,4 FEET,Yes,Yes,Yes,"Panfish, Largemouth Bass, Northern Pike and Catfish",DRAINAGE,NA,La Crosse,43.9086923,-91.0565886
 265200,Nessling Lake,9,55 FEET,22 FEET,No,No,No,"Musky, Panfish, Largemouth Bass, Smallmouth Bass, Northern Pike, Trout and Walleye",DRAINAGE,NA,Waupaca,44.3357828,-89.1560836
 2770100,Nestle Lake,6,10 FEET,NA,No,No,No,NA,SEEPAGE,NA,Bayfield,46.5076882,-91.3754809
 1870000,Net Lake,23,24 FEET,NA,No,No,No,Panfish and Largemouth Bass,SEEPAGE,NA,Iron,46.1942631,-90.0151123
-1870100,Nettie B Lake,39,10 FEET,NA,No,No,Yes,Panfish and Largemouth Bass,SEEPAGE,NA,Price,45.9611245,-90.144535200000007
+1870100,Nettie B Lake,39,10 FEET,NA,No,No,Yes,Panfish and Largemouth Bass,SEEPAGE,NA,Price,45.9611245,-90.1445352
 74000,Neumeyer Lake,0.52,6 FEET,NA,No,No,No,NA,SEEPAGE,NA,Manitowoc,44.0130523,-87.9301005
 37200,New Fane Millpond,7,5 FEET,3 FEET,No,No,No,"Panfish, Largemouth Bass, Northern Pike and Walleye",DRAINAGE,NA,Fond du Lac,43.555794,-88.187874
 1306000,New Lisbon Lake,196,15.2 FEET,NA,Yes,No,No,"Panfish, Largemouth Bass, Smallmouth Bass, Northern Pike and Walleye",DRAINAGE,NA,Juneau,43.8854442,-90.162678
@@ -4235,7 +4235,7 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 590200,No Bottom Lake,3,14 FEET,NA,No,No,No,Panfish,SEEPAGE,NA,Florence,45.735291,-88.0799359
 2312100,No Mans Lake,230,31 FEET,NA,No,No,No,"Musky, Panfish, Largemouth Bass and Walleye",DRAINAGE,NA,Vilas,46.2835334,-89.8979861
 425400,No Mans Lake,2,24 FEET,NA,No,No,No,NA,SEEPAGE,NA,Oconto,45.0473423,-88.2968646
-2486300,No Mans Lake,63,23 FEET,7 FEET,Yes,No,No,"Panfish, Largemouth Bass and Northern Pike",SEEPAGE,NA,"Washburn, Burnett",46.119627,-92.049966800000007
+2486300,No Mans Lake,63,23 FEET,7 FEET,Yes,No,No,"Panfish, Largemouth Bass and Northern Pike",SEEPAGE,NA,"Washburn, Burnett",46.119627,-92.0499668
 1870800,Noble Lake,13,25 FEET,NA,No,No,Yes,Panfish and Largemouth Bass,SEEPAGE,NA,Sawyer,46.1389508,-90.9763448
 1008000,Noboken Lake,23,53 FEET,NA,No,No,No,"Panfish, Largemouth Bass and Northern Pike",SEEPAGE,NA,Langlade,45.3354162,-89.1461996
 2295400,Nokomis Lake,16,15 FEET,NA,No,No,No,"Panfish, Largemouth Bass and Walleye",SEEPAGE,NA,Iron,46.107765,-90.1660089
@@ -4447,7 +4447,7 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 106600,Patrick Lake,39,21 FEET,10 FEET,Yes,Yes,Yes,"Panfish, Largemouth Bass and Northern Pike",SEEPAGE,NA,Adams,43.8861801,-89.6588433
 2770600,Patsy Lake,5,14 FEET,NA,No,No,Yes,NA,SEEPAGE,NA,Bayfield,46.5443452,-91.2727384
 1872400,Patsy Lake,55,13 FEET,7 FEET,No,No,Yes,Panfish and Largemouth Bass,SEEPAGE,NA,"Bayfield, Sawyer",46.1555566,-91.114021
-653700,Patten Lake,254,52 FEET,18 FEET,Yes,No,Yes,"Panfish, Largemouth Bass, Trout and Walleye",DRAINAGE,Moderate,Florence,45.8541748,-88.419859400000007
+653700,Patten Lake,254,52 FEET,18 FEET,Yes,No,Yes,"Panfish, Largemouth Bass, Trout and Walleye",DRAINAGE,Moderate,Florence,45.8541748,-88.4198594
 1009800,Patterson Lake,17,17 FEET,NA,No,No,No,Panfish and Largemouth Bass,SEEPAGE,NA,"Oneida, Vilas",45.8994391,-89.863459
 1872500,Patterson Lake,65,34 FEET,15 FEET,Yes,No,Yes,Trout,SEEPAGE,NA,Price,45.9727245,-90.1724012
 1009700,Patterson Lake,3,NA,NA,No,No,No,NA,NA,NA,Portage,44.3348585,-89.4134082
@@ -4789,7 +4789,7 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 145900,Puchyan Millpond,5,6 FEET,NA,No,No,No,"Panfish, Smallmouth Bass and Northern Pike",DRAINAGE,NA,Green Lake,43.8552128,-88.948398
 158700,Puckaway Lake,5013,5 FEET,3 FEET,Yes,No,No,"Musky, Panfish, Largemouth Bass, Northern Pike, Walleye and Catfish",DRAINAGE,Low,"Marquette, Green Lake",43.7565511,-89.1704039
 1875900,Pulaski Lake,125,40 FEET,17 FEET,Yes,No,No,"Musky, Panfish, Largemouth Bass, Smallmouth Bass, Northern Pike and Walleye",SEEPAGE,NA,Rusk,45.3367135,-91.2804473
-1013400,Pumpkin Seed Lake,1,NA,NA,No,No,No,NA,NA,NA,Waushara,44.2051023,-89.446373500000007
+1013400,Pumpkin Seed Lake,1,NA,NA,No,No,No,NA,NA,NA,Waushara,44.2051023,-89.4463735
 1013500,Punch Lake,23,40 FEET,NA,No,No,Yes,Musky and Largemouth Bass,SEEPAGE,NA,Vilas,45.9838453,-89.7185074
 352800,Punchout Springs,2,16 FEET,NA,No,No,No,Trout,SPRING,NA,Langlade,45.1290572,-88.8934784
 503700,Purdy Lake,17,15 FEET,NA,No,No,Yes,NA,SEEPAGE,NA,Forest,45.5709453,-88.6103046
@@ -4804,7 +4804,7 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 1872000,Quimette Lake,15,15 FEET,NA,No,No,Yes,Panfish and Largemouth Bass,SEEPAGE,NA,Price,45.9767195,-90.1927635
 350200,Rabe Lake,6,10 FEET,NA,Yes,No,Yes,Trout,DRAINAGE,NA,Langlade,45.1446208,-88.9900884
 1013600,Rade Lake,39,15 FEET,NA,Yes,No,No,Panfish and Largemouth Bass,SEEPAGE,NA,Vilas,45.9740006,-89.2031955
-2687500,Radigan Flowage,62,10 FEET,2 FEET,Yes,No,No,Panfish and Northern Pike,DRAINAGE,NA,Douglas,46.2198261,-92.222008400000007
+2687500,Radigan Flowage,62,10 FEET,2 FEET,Yes,No,No,Panfish and Northern Pike,DRAINAGE,NA,Douglas,46.2198261,-92.2220084
 2397400,Radisson Flowage,178,12 FEET,5 FEET,Yes,No,No,"Musky, Panfish, Largemouth Bass, Smallmouth Bass, Northern Pike, Walleye, Sturgeon and Catfish",DRAINAGE,NA,Sawyer,45.7708443,-91.1931042
 34700,Radtke Lake,9,14 FEET,7 FEET,No,No,No,Panfish and Largemouth Bass,SEEPAGE,NA,Washington,43.3967842,-88.0952246
 2491700,Rahn Lake,8,3 FEET,NA,No,No,No,NA,SEEPAGE,NA,Burnett,45.9370383,-92.4641463
@@ -4904,7 +4904,7 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 1406500,Rice Lake,25,14 FEET,NA,Yes,No,No,"Panfish, Largemouth Bass and Northern Pike",SPRING,NA,Marathon,44.8331231,-89.3420729
 2650600,Rice Lake,12,NA,NA,No,No,No,NA,DRAINAGE,NA,Polk,45.6885006,-92.5101969
 2650200,Rice Lake,87,13 FEET,NA,No,No,No,"Panfish, Largemouth Bass and Northern Pike",SEEPAGE,NA,Burnett,45.7049533,-92.5734161
-2615400,Rice Lake,90,6 FEET,4 FEET,No,No,No,"Panfish, Largemouth Bass and Northern Pike",DRAINAGE,NA,Polk,45.271725000000004,-92.551458
+2615400,Rice Lake,90,6 FEET,4 FEET,No,No,No,"Panfish, Largemouth Bass and Northern Pike",DRAINAGE,NA,Polk,45.271725,-92.551458
 2696000,Rice Lake,92,11 FEET,5 FEET,No,No,No,"Panfish, Largemouth Bass, Northern Pike and Walleye",DRAINAGE,NA,Washburn,46.1256604,-91.8709698
 779500,Rice Lake,117,8 FEET,NA,No,No,No,Panfish,DRAINAGE,Very Low,Dane,42.8983179,-89.0329202
 1214500,Rice Lake,73,5 FEET,NA,Yes,No,Yes,"Panfish, Largemouth Bass and Northern Pike",SEEPAGE,NA,Grant,43.1976045,-90.5239137
@@ -5447,7 +5447,7 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 717400,Spectacle Lake,166,35 FEET,12 FEET,Yes,No,Yes,"Panfish, Largemouth Bass, Smallmouth Bass, Trout and Walleye",SEEPAGE,Moderate,Vilas,46.0005878,-89.0207512
 2346400,Spence Lake,12,86 FEET,NA,No,No,Yes,Panfish and Largemouth Bass,SEEPAGE,NA,Chippewa,45.2873772,-91.3165291
 504600,Spencer Lake,3,4 FEET,NA,No,No,No,NA,SEEPAGE,NA,Marinette,45.401309,-88.1229435
-2658400,Spencer Lake,189,19 FEET,10 FEET,No,No,Yes,"Panfish, Largemouth Bass and Northern Pike",SEEPAGE,NA,Burnett,45.7378993,-92.184946299999993
+2658400,Spencer Lake,189,19 FEET,10 FEET,No,No,Yes,"Panfish, Largemouth Bass and Northern Pike",SEEPAGE,NA,Burnett,45.7378993,-92.1849463
 255000,Spencer Lake,70,53 FEET,30 FEET,Yes,No,No,"Panfish, Largemouth Bass, Smallmouth Bass, Northern Pike and Walleye",DRAINAGE,Moderate,Waupaca,44.2898558,-89.1034984
 445900,Spice Lake,20,34 FEET,NA,No,No,Yes,NA,DRAINAGE,NA,Oconto,44.9300864,-88.3387134
 391400,Spider Creek Flowage,55,NA,NA,Yes,No,No,NA,DRAINAGE,NA,Langlade,45.4155668,-89.0281995
@@ -5487,7 +5487,7 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 2956400,Spread Lake,20,4 FEET,NA,No,No,No,Panfish,SPRING,NA,Vilas,46.2364172,-89.7586709
 2677400,Spring Brook Springs,5,11 FEET,NA,No,No,Yes,Trout,SPRING,NA,Burnett,45.8250834,-92.1617283
 1561950,Spring Creek,8,NA,NA,No,No,No,NA,NA,NA,Lincoln,45.52674,-89.6022
-2216400,Spring Creek Flowage,58,6 FEET,NA,Yes,No,Yes,Panfish and Northern Pike,DRAINAGE,NA,Price,45.5964938,-90.463749000000007
+2216400,Spring Creek Flowage,58,6 FEET,NA,Yes,No,Yes,Panfish and Northern Pike,DRAINAGE,NA,Price,45.5964938,-90.463749
 2176500,Spring Creek Flowage No. 1,9,7 FEET,NA,No,No,No,Trout,DRAINAGE,NA,Chippewa,45.2087617,-91.2508896
 2177300,Spring Creek Flowage No. 2,7,4 FEET,NA,No,No,No,NA,DRAINAGE,NA,Chippewa,45.2122312,-91.2479157
 2720000,Spring Creek Springs,2,1 FEET,NA,No,No,No,Northern Pike and Trout,SPRING,NA,Washburn,45.9647556,-91.7053674
@@ -5520,7 +5520,7 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 2724900,Spring Lake,202,18 FEET,10 FEET,No,No,No,"Panfish, Largemouth Bass, Northern Pike and Walleye",DRAINAGE,NA,Sawyer,45.9704775,-91.4235255
 199200,Spring Lake,5,12 FEET,NA,No,No,No,Panfish and Largemouth Bass,SEEPAGE,NA,Langlade,45.2975336,-88.8781959
 30500,Spring Lake,60,22 FEET,7 FEET,No,No,No,"Panfish, Largemouth Bass and Northern Pike",SEEPAGE,NA,"Ozaukee, Sheboygan",43.541023,-87.9628123
-298700,Spring Lake,6,5 FEET,NA,No,No,No,NA,SEEPAGE,NA,Waupaca,44.672996500000004,-88.6752578
+298700,Spring Lake,6,5 FEET,NA,No,No,No,NA,SEEPAGE,NA,Waupaca,44.6729965,-88.6752578
 780100,Spring Lake,14,8 FEET,NA,No,No,Yes,NA,SEEPAGE,NA,Waukesha,43.0125145,-88.4648889
 235700,Spring Lake,1,21 FEET,NA,No,No,Yes,NA,NA,NA,Forest,45.5109719,-88.8845414
 2774400,Spring Lake,20,11 FEET,NA,No,No,No,Panfish and Largemouth Bass,SEEPAGE,NA,Bayfield,46.5696292,-91.4566901
@@ -5931,7 +5931,7 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 618400,Trout Haven Pond,2,8 FEET,NA,No,No,Yes,Trout,DRAINAGE,NA,Marinette,45.5719213,-88.1257208
 493100,Trout Lake,18,20 FEET,NA,No,No,No,Panfish and Largemouth Bass,SPRING,NA,Oconto,45.2399323,-88.6294334
 633200,Trout Lake,3,6 FEET,NA,No,No,No,"Panfish, Largemouth Bass, Smallmouth Bass, Northern Pike and Trout",DRAINAGE,NA,Marinette,45.5956161,-88.2968913
-632600,Trout Lake,19,3 FEET,NA,No,No,No,NA,SPRING,NA,Marinette,45.5956013,-88.296859799999993
+632600,Trout Lake,19,3 FEET,NA,No,No,No,NA,SPRING,NA,Marinette,45.5956013,-88.2968598
 592600,Trout Lake,10,14 FEET,NA,No,No,No,NA,SEEPAGE,NA,Marinette,45.4491767,-88.1453984
 2775900,Trout Lake,15,29 FEET,NA,No,No,Yes,"Panfish, Largemouth Bass and Trout",SEEPAGE,NA,Bayfield,46.4911071,-91.3752517
 793000,Trout Lake,10,NA,NA,No,No,No,NA,DRAINAGE,NA,Walworth,42.6401502,-88.7650659
@@ -6113,8 +6113,8 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 580700,Un Spring,1,3 FEET,NA,No,No,No,NA,NA,NA,Forest,45.5926841,-88.8730717
 581100,Un Spring,0.34,1 FEET,NA,No,No,No,NA,NA,NA,Forest,45.5842062,-88.9298076
 581200,Un Spring,0.17,1 FEET,NA,No,No,No,NA,NA,NA,Forest,45.5842538,-88.9292337
-581800,Un Spring,2,1 FEET,NA,No,No,No,NA,NA,NA,Forest,45.6568139,-88.869263900000007
-581900,Un Spring,1,1 FEET,NA,No,No,No,NA,NA,NA,Forest,45.6568139,-88.869263900000007
+581800,Un Spring,2,1 FEET,NA,No,No,No,NA,NA,NA,Forest,45.6568139,-88.8692639
+581900,Un Spring,1,1 FEET,NA,No,No,No,NA,NA,NA,Forest,45.6568139,-88.8692639
 582100,Un Spring,0.45,3 FEET,NA,No,No,No,NA,NA,NA,Forest,45.6558243,-88.889716
 2019200,Un Spring,2,1 FEET,NA,No,No,No,NA,NA,NA,Ashland,46.1201,-90.4344028
 49200,Un Spring,0.77,2 FEET,NA,No,No,No,NA,NA,NA,Sheboygan,43.5469527,-87.9015282
@@ -6335,7 +6335,7 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 698100,Un Spring,0.74,1 FEET,NA,No,No,Yes,NA,NA,NA,Forest,45.8584484,-88.8738148
 698200,Un Spring,0.82,1 FEET,NA,No,No,Yes,NA,NA,NA,Forest,45.85697,-88.8728975
 698500,Un Spring,1,1 FEET,NA,No,No,No,NA,NA,NA,Forest,45.8514333,-88.8901333
-698700,Un Spring,0.19,1 FEET,NA,No,No,Yes,NA,NA,NA,Forest,45.846819000000004,-88.9075147
+698700,Un Spring,0.19,1 FEET,NA,No,No,Yes,NA,NA,NA,Forest,45.846819,-88.9075147
 698800,Un Spring,1,2 FEET,NA,No,No,No,NA,NA,NA,Forest,45.8479556,-88.9055139
 699200,Un Spring,0.21,1 FEET,NA,No,No,Yes,NA,NA,NA,Forest,45.847935,-88.9268463
 395800,Un Spring,1,2 FEET,NA,No,No,No,NA,NA,NA,Forest,45.4849333,-88.8693028
@@ -6645,7 +6645,7 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 314300,Un Spring,0.22,1 FEET,NA,No,No,No,NA,NA,NA,Langlade,45.0391221,-89.183023
 314400,Un Spring,0.15,5 FEET,NA,No,No,No,NA,NA,NA,Langlade,45.0397344,-89.1797694
 314700,Un Spring,3,1 FEET,NA,No,No,No,NA,NA,NA,Shawano,45.0103972,-89.1302111
-323100,Un Spring,1,4 FEET,NA,No,No,No,NA,NA,NA,Shawano,44.8088667,-88.561469399999993
+323100,Un Spring,1,4 FEET,NA,No,No,No,NA,NA,NA,Shawano,44.8088667,-88.5614694
 328300,Un Spring,1,2 FEET,NA,No,No,No,NA,NA,NA,Shawano,44.8742733,-88.7926804
 2959500,Un Spring,2,10 FEET,NA,No,No,No,NA,NA,NA,Vilas,46.2236468,-89.6040053
 237600,Un Spring,4,22 FEET,NA,No,No,No,NA,NA,NA,Waupaca,44.3433534,-89.0492793
@@ -6709,7 +6709,7 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 237700,Un Spring,0.45,32 FEET,NA,No,No,No,NA,NA,NA,Waupaca,44.3433935,-89.0512912
 237800,Un Spring,2,5 FEET,NA,No,No,No,NA,NA,NA,Waupaca,44.4917389,-89.1406972
 237900,Un Spring,14,3 FEET,NA,No,No,No,NA,NA,NA,Portage,44.5866191,-89.3279093
-238000,Un Spring,0.76,4 FEET,NA,No,No,No,NA,NA,NA,Waupaca,44.507706399999996,-89.0683711
+238000,Un Spring,0.76,4 FEET,NA,No,No,No,NA,NA,NA,Waupaca,44.5077064,-89.0683711
 238100,Un Spring,1,17 FEET,NA,No,No,No,NA,NA,NA,Waupaca,44.5596031,-88.9699165
 238300,Un Spring,0.08,4 FEET,NA,No,No,No,NA,NA,NA,Marathon,44.7524565,-89.3221842
 238400,Un Spring,0.18,2 FEET,NA,No,No,No,NA,NA,NA,Marathon,44.7510345,-89.3228524
@@ -6859,7 +6859,7 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 379100,Un Spring,0.28,6 FEET,NA,No,No,Yes,NA,NA,NA,Forest,45.4561377,-88.7759205
 379500,Un Spring,0.36,8 FEET,NA,No,No,No,NA,NA,NA,Langlade,45.3427645,-88.8575953
 379800,Un Spring,1,5 FEET,NA,No,No,No,NA,NA,NA,Langlade,45.3274089,-88.9216117
-380200,Un Spring,0.22,3 FEET,NA,No,No,No,NA,NA,NA,Langlade,45.332421600000004,-88.9268569
+380200,Un Spring,0.22,3 FEET,NA,No,No,No,NA,NA,NA,Langlade,45.3324216,-88.9268569
 380400,Un Spring,1,3 FEET,NA,No,No,No,NA,NA,NA,Langlade,45.3315703,-88.9327927
 382600,Un Spring,0.41,3 FEET,NA,No,No,No,NA,NA,NA,Langlade,45.3547057,-89.0122141
 384300,Un Spring,1,2 FEET,NA,No,No,No,NA,NA,NA,Langlade,45.3706528,-89.0788028
@@ -7222,7 +7222,7 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 2034100,Unnamed,1,5 FEET,NA,No,No,No,NA,NA,NA,Iron,46.1829397,-90.0428096
 2281700,Unnamed,0.5,10 FEET,NA,No,No,No,NA,NA,NA,Price,45.834545,-90.6658687
 2284600,Unnamed,5,6 FEET,NA,No,No,No,NA,NA,NA,Ashland,46.011578,-90.5232655
-2286300,Unnamed,0.2,NA,NA,No,No,No,NA,NA,NA,Ashland,46.093969800000004,-90.4260144
+2286300,Unnamed,0.2,NA,NA,No,No,No,NA,NA,NA,Ashland,46.0939698,-90.4260144
 2286400,Unnamed,25,NA,NA,No,No,No,NA,NA,NA,Ashland,46.1065368,-90.3948574
 2287600,Unnamed,0.79,7 FEET,NA,No,No,No,NA,NA,NA,Price,45.8636079,-90.5467165
 2288500,Unnamed,2,5 FEET,NA,No,No,No,NA,NA,NA,Price,45.8736558,-90.5198414
@@ -7420,7 +7420,7 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 1037100,Unnamed,2,7 FEET,NA,No,No,No,NA,NA,NA,Portage,44.5482706,-89.6485471
 1037300,Unnamed,5,13 FEET,NA,No,No,No,NA,NA,NA,Portage,44.538573,-89.6490131
 1037400,Unnamed,6,40 FEET,NA,No,No,No,NA,NA,NA,Portage,44.5207755,-89.6454332
-1037500,Unnamed,1,10 FEET,NA,No,No,No,NA,NA,NA,Portage,44.517140499999996,-89.6317639
+1037500,Unnamed,1,10 FEET,NA,No,No,No,NA,NA,NA,Portage,44.5171405,-89.6317639
 1037600,Unnamed,0.43,6 FEET,NA,No,No,No,NA,NA,NA,Portage,44.5929512,-89.5987039
 1037700,Unnamed,0.4,7 FEET,NA,No,No,No,NA,NA,NA,Portage,44.5522714,-89.5970885
 1038000,Unnamed,0.53,15 FEET,NA,No,No,No,NA,NA,NA,Portage,44.6580722,-89.6861611
@@ -7474,7 +7474,7 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 510800,Unnamed,1,7 FEET,NA,No,No,No,NA,NA,NA,Forest,45.5119972,-88.5202306
 510900,Unnamed,0.49,18 FEET,NA,No,No,Yes,NA,NA,NA,Forest,45.4994126,-88.5071807
 511000,Unnamed,4,14 FEET,NA,No,No,Yes,NA,NA,NA,Forest,45.4996361,-88.5137301
-511100,Unnamed,4,8 FEET,NA,No,No,Yes,NA,NA,NA,Forest,45.494930600000004,-88.4759016
+511100,Unnamed,4,8 FEET,NA,No,No,Yes,NA,NA,NA,Forest,45.4949306,-88.4759016
 511300,Unnamed,1,5 FEET,NA,No,No,No,NA,NA,NA,Marinette,45.4934189,-88.4093621
 511400,Unnamed,5,5 FEET,NA,No,No,No,NA,NA,NA,Marinette,45.4817913,-88.3755443
 511500,Unnamed,2,8 FEET,NA,No,No,No,NA,NA,NA,Marinette,45.4855497,-88.3930076
@@ -7507,7 +7507,7 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 514300,Unnamed,6,17 FEET,NA,No,No,Yes,NA,NA,NA,Forest,45.7087766,-88.4930638
 514400,Unnamed,0.81,11 FEET,NA,No,No,No,NA,NA,NA,Forest,45.7074462,-88.4284003
 514500,Unnamed,20,5 FEET,NA,No,No,No,NA,SEEPAGE,NA,Forest,45.6736272,-88.461222
-514700,Unnamed,0.22,9 FEET,NA,No,No,No,NA,NA,NA,Forest,45.656765300000004,-88.5139697
+514700,Unnamed,0.22,9 FEET,NA,No,No,No,NA,NA,NA,Forest,45.6567653,-88.5139697
 514800,Unnamed,9,8 FEET,NA,No,No,Yes,NA,NA,NA,Marinette,45.7006617,-88.4233945
 514900,Unnamed,2,7 FEET,NA,No,No,No,NA,NA,NA,"Forest, Marinette",45.6980299,-88.4254564
 2427400,Unnamed,15,11 FEET,NA,No,No,Yes,NA,NA,NA,Ashland,46.1215224,-90.8847272
@@ -7567,7 +7567,7 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 2524900,Unnamed,11,28 FEET,NA,No,No,No,NA,NA,NA,Washburn,45.7042148,-91.8405388
 2525000,Unnamed,9,8 FEET,NA,No,No,No,NA,NA,NA,Washburn,45.7022778,-91.8361568
 2525100,Unnamed,2,7 FEET,NA,No,No,No,NA,NA,NA,Washburn,45.7009489,-91.8364628
-2525200,Unnamed,5,5 FEET,NA,No,No,Yes,NA,NA,NA,Washburn,45.6953332,-91.798330000000007
+2525200,Unnamed,5,5 FEET,NA,No,No,Yes,NA,NA,NA,Washburn,45.6953332,-91.79833
 2525300,Unnamed,2,9 FEET,NA,No,No,Yes,NA,NA,NA,Washburn,45.690429,-91.8036281
 2525400,Unnamed,1,7 FEET,NA,No,No,No,NA,NA,NA,Washburn,45.6875961,-91.7927976
 2525500,Unnamed,1,17 FEET,NA,No,No,Yes,NA,NA,NA,Washburn,45.6848413,-91.7961903
@@ -7719,7 +7719,7 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 203400,Unnamed,3,3 FEET,NA,No,No,No,NA,NA,NA,Portage,44.3710839,-89.2387602
 203500,Unnamed,0.47,11 FEET,NA,No,No,No,NA,NA,NA,Waupaca,44.4167683,-89.1171881
 203600,Unnamed,3,3 FEET,NA,No,No,No,NA,NA,NA,Waupaca,44.3904561,-89.1320615
-203900,Unnamed,1,5 FEET,NA,No,No,No,NA,NA,NA,Waupaca,44.342333000000004,-89.1848953
+203900,Unnamed,1,5 FEET,NA,No,No,No,NA,NA,NA,Waupaca,44.342333,-89.1848953
 204000,Unnamed,2,5 FEET,NA,No,No,No,NA,NA,NA,Waupaca,44.3440539,-89.160927
 204200,Unnamed,0.7,18 FEET,NA,No,No,No,NA,NA,NA,Waupaca,44.3949499,-89.0724872
 204300,Unnamed,1,8 FEET,NA,No,No,No,NA,NA,NA,Waupaca,44.3933399,-89.0718542
@@ -7852,7 +7852,7 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 1065500,Unnamed,2,30 FEET,NA,No,No,No,NA,NA,NA,Langlade,45.374126,-89.2960407
 1065600,Unnamed,6,17 FEET,NA,No,No,No,NA,NA,NA,Langlade,45.3739792,-89.2995492
 1065700,Unnamed,0.14,12 FEET,NA,No,No,No,NA,NA,NA,Langlade,45.3704924,-89.2886011
-1065900,Unnamed,0.26,16 FEET,NA,No,No,No,NA,NA,NA,Langlade,45.366588900000004,-89.2971
+1065900,Unnamed,0.26,16 FEET,NA,No,No,No,NA,NA,NA,Langlade,45.3665889,-89.2971
 1065950,Unnamed,0.19,NA,NA,No,No,No,NA,NA,NA,Langlade,45.3641263,-89.2813595
 1066000,Unnamed,0.17,24 FEET,NA,No,No,No,NA,NA,NA,Langlade,45.3568883,-89.2443237
 1066100,Unnamed,2,22 FEET,NA,No,No,No,NA,NA,NA,Langlade,45.3534984,-89.2474501
@@ -7871,7 +7871,7 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 1067700,Unnamed,1,9 FEET,NA,No,No,Yes,NA,NA,NA,Langlade,45.3379505,-89.1989712
 1067800,Unnamed,3,8 FEET,NA,No,No,No,NA,NA,NA,Langlade,45.345409,-89.2200991
 1068000,Unnamed,1,15 FEET,NA,No,No,No,NA,NA,NA,Langlade,45.3480284,-89.240604
-1068100,Unnamed,0.77,5 FEET,NA,No,No,No,NA,NA,NA,Langlade,45.3439941,-89.246097700000007
+1068100,Unnamed,0.77,5 FEET,NA,No,No,No,NA,NA,NA,Langlade,45.3439941,-89.2460977
 1068200,Unnamed,5,48 FEET,NA,No,No,No,NA,NA,NA,Langlade,45.3432567,-89.2523099
 1068300,Unnamed,3,16 FEET,NA,No,No,No,NA,NA,NA,Langlade,45.3390305,-89.2415262
 1068400,Unnamed,3,17 FEET,NA,No,No,No,NA,NA,NA,Langlade,45.3412981,-89.2482523
@@ -8072,7 +8072,7 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 2115600,Unnamed,1,20 FEET,NA,No,No,No,NA,NA,NA,Sawyer,45.7212772,-91.5124272
 2115700,Unnamed,2,27 FEET,NA,No,No,No,NA,NA,NA,Sawyer,45.7198773,-91.5159901
 2116100,Unnamed,5,13 FEET,NA,No,No,No,NA,NA,NA,Sawyer,45.7444087,-91.5003522
-2119700,Unnamed,2,10 FEET,NA,No,No,No,NA,NA,NA,Pepin,44.6724952,-91.674822700000007
+2119700,Unnamed,2,10 FEET,NA,No,No,No,NA,NA,NA,Pepin,44.6724952,-91.6748227
 2123800,Unnamed,27,NA,NA,No,No,No,NA,NA,NA,Eau Claire,44.7727473,-91.5537315
 2126100,Unnamed,1,NA,NA,No,No,No,NA,NA,NA,Eau Claire,44.7300694,-91.4042314
 2127400,Unnamed,1,NA,NA,No,No,No,NA,NA,NA,Eau Claire,44.6370114,-91.3689827
@@ -8563,7 +8563,7 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 2547000,Unnamed,4,16 FEET,NA,No,No,No,NA,NA,NA,Burnett,45.8894448,-92.1783013
 2547100,Unnamed,8,5 FEET,NA,No,No,No,NA,NA,NA,Burnett,45.8962502,-92.2409671
 2547200,Unnamed,3,3 FEET,NA,No,No,No,NA,NA,NA,Burnett,45.8971528,-92.2480636
-2547300,Unnamed,23,3 FEET,NA,No,No,No,NA,SEEPAGE,NA,Burnett,45.898460300000004,-92.2575274
+2547300,Unnamed,23,3 FEET,NA,No,No,No,NA,SEEPAGE,NA,Burnett,45.8984603,-92.2575274
 2547400,Unnamed,7,33 FEET,NA,No,No,No,NA,NA,NA,Burnett,45.8736282,-92.2772807
 2547500,Unnamed,1,NA,NA,No,No,No,NA,NA,NA,Burnett,45.8864451,-92.2168614
 2547600,Unnamed,1,5 FEET,NA,No,No,No,NA,NA,NA,Burnett,45.8824611,-92.1890139
@@ -8722,7 +8722,7 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 1119900,Unnamed,0.18,12 FEET,NA,No,No,No,NA,NA,NA,Oneida,45.7137804,-89.6838224
 1120000,Unnamed,6,19 FEET,NA,No,No,No,NA,NA,NA,Oneida,45.7021815,-89.7209144
 1120100,Unnamed,4,17 FEET,NA,No,No,No,NA,NA,NA,Oneida,45.7022075,-89.7232053
-1120300,Unnamed,5,6 FEET,NA,No,No,No,NA,NA,NA,Oneida,45.698760299999996,-89.7290164
+1120300,Unnamed,5,6 FEET,NA,No,No,No,NA,NA,NA,Oneida,45.6987603,-89.7290164
 1120400,Unnamed,1,15 FEET,NA,No,No,No,NA,NA,NA,Oneida,45.6600003,-89.7186568
 1120500,Unnamed,2,9 FEET,NA,No,No,No,NA,NA,NA,Oneida,45.6571617,-89.7168467
 1120600,Unnamed,1,15 FEET,NA,No,No,Yes,NA,NA,NA,Oneida,45.6508983,-89.7113862
@@ -8985,7 +8985,7 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 741950,Unnamed,0.46,NA,NA,No,No,No,NA,NA,NA,Kenosha,42.6326,-88.1246
 310,Unnamed,6,NA,NA,No,No,No,NA,NA,NA,Kenosha,42.54586,-87.83723
 1029470,Unnamed,0.66,NA,NA,No,No,No,NA,NA,NA,Sauk,43.6115181,-89.8398793
-1278775,Unnamed,2,NA,NA,No,No,No,NA,NA,NA,Sauk,43.5270417,-90.016738899999993
+1278775,Unnamed,2,NA,NA,No,No,No,NA,NA,NA,Sauk,43.5270417,-90.0167389
 1273850,Unnamed,0.58,NA,NA,No,No,Yes,NA,NA,NA,Sauk,43.455198,-89.732855
 1029430,Unnamed,0.33,NA,NA,No,No,No,NA,NA,NA,Sauk,43.6001167,-90.1106417
 370,Unnamed,1,NA,NA,No,No,Yes,NA,NA,NA,Racine,42.760563,-87.859314
@@ -9008,7 +9008,7 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 12050,Unnamed,0.99,NA,NA,No,No,Yes,NA,NA,NA,Washington,43.2335574,-88.1556863
 390,Unnamed,2,NA,NA,No,No,Yes,NA,NA,NA,Milwaukee,42.9476051,-88.0592211
 380,Unnamed,0.5,NA,NA,No,No,No,NA,NA,NA,Milwaukee,42.888386,-87.90948
-320,Unnamed,0.6,NA,NA,No,No,No,NA,NA,NA,Kenosha,42.633327800000004,-87.8286944
+320,Unnamed,0.6,NA,NA,No,No,No,NA,NA,NA,Kenosha,42.6333278,-87.8286944
 12025,Unnamed,29,NA,NA,No,No,No,NA,NA,NA,Waukesha,43.0704681,-88.0794203
 35750,Unnamed,6,NA,NA,No,No,Yes,NA,NA,NA,Washington,43.4135562,-88.2167883
 742275,Unnamed,20,30 FEET,NA,No,Yes,Yes,NA,SEEPAGE,NA,Waukesha,43.074378,-88.1725779
@@ -9348,7 +9348,7 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 5566336,Unnamed,0.51,NA,NA,No,No,Yes,NA,NA,NA,NA,43.583141,-91.2381513
 5566339,Unnamed,0.09,NA,NA,No,No,No,NA,NA,NA,NA,43.5829182,-91.2563402
 5566341,Unnamed,0.66,NA,NA,No,No,No,NA,NA,NA,NA,43.5829101,-91.2400298
-5566367,Unnamed,0.21,NA,NA,No,No,No,NA,NA,NA,NA,43.582110900000004,-91.2396122
+5566367,Unnamed,0.21,NA,NA,No,No,No,NA,NA,NA,NA,43.5821109,-91.2396122
 5566928,Unnamed,0.3,NA,NA,No,No,No,NA,NA,NA,NA,43.5605818,-91.2416053
 5566968,Unnamed,0.24,NA,NA,No,No,Yes,NA,NA,NA,NA,43.5591629,-91.240663
 5567048,Unnamed,0.27,NA,NA,No,No,No,NA,NA,NA,NA,43.5557046,-91.2544561
@@ -9523,7 +9523,7 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 1139400,Unnamed,2,12 FEET,NA,No,No,Yes,NA,NA,NA,Oneida,45.806523,-89.4928327
 1139500,Unnamed,2,8 FEET,NA,No,No,Yes,NA,NA,NA,Oneida,45.813881,-89.5158205
 1139600,Unnamed,3,7 FEET,NA,No,No,Yes,NA,NA,NA,Oneida,45.8177591,-89.5299927
-1139700,Unnamed,0.26,18 FEET,NA,No,No,Yes,NA,NA,NA,Oneida,45.801861100000004,-89.5296721
+1139700,Unnamed,0.26,18 FEET,NA,No,No,Yes,NA,NA,NA,Oneida,45.8018611,-89.5296721
 1139800,Unnamed,1,5 FEET,NA,No,No,Yes,NA,NA,NA,Oneida,45.7947597,-89.5264411
 1139900,Unnamed,8,13 FEET,NA,No,No,Yes,NA,NA,NA,Oneida,45.7909075,-89.5220214
 1140000,Unnamed,7,9 FEET,NA,No,No,Yes,NA,NA,NA,Oneida,45.7909198,-89.5276136
@@ -9579,7 +9579,7 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 1983100,Unnamed,11,35 FEET,NA,No,No,No,NA,NA,NA,Washburn,45.7774989,-91.5850483
 1983300,Unnamed,1,10 FEET,NA,No,No,No,NA,NA,NA,Washburn,45.7628646,-91.6050101
 1983400,Unnamed,8,12 FEET,NA,No,No,No,NA,NA,NA,Washburn,45.7633973,-91.6109027
-1983500,Unnamed,0.72,4 FEET,NA,No,No,No,NA,NA,NA,Washburn,45.759540200000004,-91.6141098
+1983500,Unnamed,0.72,4 FEET,NA,No,No,No,NA,NA,NA,Washburn,45.7595402,-91.6141098
 1983600,Unnamed,0.68,8 FEET,NA,No,No,No,NA,NA,NA,Washburn,45.7569652,-91.5913646
 1983700,Unnamed,2,8 FEET,NA,No,No,No,NA,NA,NA,Washburn,45.7536384,-91.5984678
 1983800,Unnamed,8,28 FEET,NA,No,No,No,NA,NA,NA,Washburn,45.7661771,-91.5703148
@@ -9629,7 +9629,7 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 1936100,Unnamed,1,NA,NA,No,No,No,NA,NA,NA,Barron,45.5401611,-92.0746972
 1936300,Unnamed,2,14 FEET,NA,No,No,No,NA,NA,NA,Barron,45.529582,-92.0768301
 1936400,Unnamed,0.13,8 FEET,NA,No,No,No,NA,NA,NA,Barron,45.5318251,-92.0323181
-1936500,Unnamed,1,13 FEET,NA,No,No,No,NA,NA,NA,Barron,45.496149,-92.070244400000007
+1936500,Unnamed,1,13 FEET,NA,No,No,No,NA,NA,NA,Barron,45.496149,-92.0702444
 1936600,Unnamed,1,6 FEET,NA,No,No,No,NA,NA,NA,Barron,45.4835957,-92.0801637
 1936700,Unnamed,0.78,6 FEET,NA,No,No,No,NA,NA,NA,Price,45.6378544,-90.3331708
 1936800,Unnamed,5,9 FEET,NA,No,No,No,NA,NA,NA,Price,45.6110783,-90.354948
@@ -9671,7 +9671,7 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 1940800,Unnamed,2,7 FEET,NA,No,No,No,NA,NA,NA,Barron,45.6045237,-91.6423689
 1940900,Unnamed,2,5 FEET,NA,No,No,No,NA,NA,NA,Barron,45.6087172,-91.6533644
 1941000,Unnamed,1,13 FEET,NA,No,No,No,NA,NA,NA,Barron,45.6035246,-91.6544137
-1941200,Unnamed,2,11 FEET,NA,No,No,No,NA,NA,NA,Barron,45.601486800000004,-91.6496075
+1941200,Unnamed,2,11 FEET,NA,No,No,No,NA,NA,NA,Barron,45.6014868,-91.6496075
 1941300,Unnamed,2,8 FEET,NA,No,No,No,NA,NA,NA,Barron,45.5989912,-91.6427527
 1941400,Unnamed,0.44,5 FEET,NA,No,No,No,NA,NA,NA,Barron,45.5989187,-91.6553781
 1941500,Unnamed,4,14 FEET,NA,No,No,No,NA,NA,NA,Barron,45.5929185,-91.6430843
@@ -9805,7 +9805,7 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 2013550,Unnamed,4,13 FEET,NA,No,No,No,NA,NA,NA,Vilas,46.0301708,-89.924672
 2013600,Unnamed,10,27 FEET,NA,No,No,No,NA,NA,NA,Vilas,46.0236998,-89.9249355
 2013700,Unnamed,1,8 FEET,NA,No,No,No,NA,NA,NA,Vilas,46.0167869,-89.9216033
-2013800,Unnamed,0.67,5 FEET,NA,No,No,No,NA,NA,NA,Vilas,46.016875400000004,-89.9239567
+2013800,Unnamed,0.67,5 FEET,NA,No,No,No,NA,NA,NA,Vilas,46.0168754,-89.9239567
 2013950,Unnamed,3,NA,NA,No,No,No,NA,NA,NA,Vilas,46.0173681,-89.8537342
 2014000,Unnamed,0.89,16 FEET,NA,No,No,No,NA,NA,NA,Vilas,45.9981975,-89.849973
 2014100,Unnamed,5,16 FEET,NA,No,No,No,NA,NA,NA,Vilas,45.9961716,-89.9229762
@@ -9818,7 +9818,7 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 1334300,Unnamed,22,4 FEET,NA,No,No,No,NA,NA,NA,Monroe,44.1203218,-90.4073848
 1334500,Unnamed,4,3 FEET,NA,No,No,No,NA,NA,NA,Monroe,44.118243,-90.4105603
 1335100,Unnamed,7,7 FEET,NA,No,No,No,NA,NA,NA,Monroe,44.1464521,-90.4447938
-1336700,Unnamed,53,NA,NA,No,No,No,NA,NA,NA,Jackson,44.175747200000004,-90.4284459
+1336700,Unnamed,53,NA,NA,No,No,No,NA,NA,NA,Jackson,44.1757472,-90.4284459
 1337400,Unnamed,11,5 FEET,NA,No,No,No,NA,NA,NA,Jackson,44.1872204,-90.4413184
 1338400,Unnamed,2,8 FEET,NA,No,No,No,NA,NA,NA,Jackson,44.2027176,-90.499333
 1339500,Unnamed,109,NA,NA,No,No,No,NA,NA,NA,Monroe,44.0204719,-90.4788952
@@ -9843,7 +9843,7 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 5566450,Unnamed,0.66,NA,NA,No,No,No,NA,NA,NA,NA,43.5785056,-91.2367758
 5566971,Unnamed,0.12,NA,NA,No,No,No,NA,NA,NA,NA,43.5590765,-91.2419822
 5567036,Unnamed,0.07,NA,NA,No,No,No,NA,NA,NA,NA,43.5564332,-91.2559168
-5567085,Unnamed,3,NA,NA,No,No,No,NA,NA,NA,NA,43.554184,-91.250606199999993
+5567085,Unnamed,3,NA,NA,No,No,No,NA,NA,NA,NA,43.554184,-91.2506062
 5567147,Unnamed,0.15,NA,NA,No,No,No,NA,NA,NA,NA,43.5514716,-91.2539849
 5567239,Unnamed,0.56,NA,NA,No,No,No,NA,NA,NA,NA,43.5481559,-91.2511702
 5567325,Unnamed,3,NA,NA,No,No,No,NA,NA,NA,NA,43.5435629,-91.2538252
@@ -10018,7 +10018,7 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 1994000,Unnamed,1,9 FEET,NA,No,No,Yes,NA,NA,NA,Price,45.8901479,-90.3282104
 1994200,Unnamed,2,4 FEET,NA,No,No,No,NA,NA,NA,Price,45.8955316,-90.3772256
 1994300,Unnamed,0.36,4 FEET,NA,No,No,No,NA,NA,NA,Price,45.8577438,-90.3917164
-1994400,Unnamed,0.12,17 FEET,NA,No,No,No,NA,NA,NA,Price,45.849933299999996,-90.3918754
+1994400,Unnamed,0.12,17 FEET,NA,No,No,No,NA,NA,NA,Price,45.8499333,-90.3918754
 1994500,Unnamed,1,12 FEET,NA,No,No,No,NA,NA,NA,Price,45.8495253,-90.3925915
 1994600,Unnamed,2,22 FEET,NA,No,No,Yes,NA,NA,NA,Price,45.8546154,-90.3312589
 232100,Unnamed,0.73,6 FEET,NA,No,No,No,NA,NA,NA,Langlade,45.4243006,-88.9482428
@@ -10084,7 +10084,7 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 1890160,Unnamed,8,5 FEET,NA,No,No,Yes,NA,NA,NA,Dunn,44.7068933,-91.899916
 1893500,Unnamed,10,8 FEET,NA,No,No,No,NA,NA,NA,Chippewa,45.1074051,-91.327885
 1895100,Unnamed,1,13 FEET,NA,No,No,No,NA,NA,NA,Chippewa,45.1957121,-91.1831503
-1896400,Unnamed,2,9 FEET,NA,No,No,No,NA,NA,NA,Chippewa,45.1931566,-91.352312800000007
+1896400,Unnamed,2,9 FEET,NA,No,No,No,NA,NA,NA,Chippewa,45.1931566,-91.3523128
 1898000,Unnamed,3,15 FEET,NA,No,No,No,NA,NA,NA,Chippewa,45.1723493,-91.3679191
 1901300,Unnamed,0.14,21 FEET,NA,No,No,Yes,NA,NA,NA,Taylor,45.2477926,-90.4582856
 1913700,Unnamed,6,22 FEET,NA,No,No,No,NA,NA,NA,Chippewa,45.2090953,-91.3503464
@@ -10417,7 +10417,7 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 1981300,Unnamed,4,14 FEET,NA,No,No,No,NA,NA,NA,Washburn,45.7775419,-91.5482357
 1981400,Unnamed,10,15 FEET,NA,No,No,No,NA,NA,NA,Washburn,45.7752284,-91.5445873
 1981500,Unnamed,11,15 FEET,NA,No,No,No,NA,NA,NA,Washburn,45.7738244,-91.5501341
-1981700,Unnamed,4,6 FEET,NA,No,No,No,NA,NA,NA,Washburn,45.7729116,-91.546382500000007
+1981700,Unnamed,4,6 FEET,NA,No,No,No,NA,NA,NA,Washburn,45.7729116,-91.5463825
 1981800,Unnamed,10,12 FEET,NA,No,No,No,NA,NA,NA,Washburn,45.7704135,-91.5459688
 1981900,Unnamed,2,14 FEET,NA,No,No,No,NA,NA,NA,Washburn,45.768508,-91.5422819
 1982000,Unnamed,12,10 FEET,NA,No,No,No,NA,NA,NA,Washburn,45.7664786,-91.545733
@@ -10540,7 +10540,7 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 5550083,Unnamed,0.2,NA,NA,No,No,No,NA,NA,NA,NA,44.3529934,-91.9780966
 5550307,Unnamed,0.07,NA,NA,No,No,No,NA,NA,NA,NA,44.3469973,-91.9844809
 5550322,Unnamed,0.11,NA,NA,No,No,No,NA,NA,NA,NA,44.3464741,-91.9865799
-5550673,Unnamed,0.35,NA,NA,No,No,No,NA,NA,NA,NA,44.335043400000004,-91.966085
+5550673,Unnamed,0.35,NA,NA,No,No,No,NA,NA,NA,NA,44.3350434,-91.966085
 5551282,Unnamed,0.36,NA,NA,No,No,No,NA,NA,NA,NA,44.3166294,-91.9274109
 5551394,Unnamed,0.76,NA,NA,No,No,No,NA,NA,NA,NA,44.3131699,-91.9249988
 5552370,Unnamed,0.95,NA,NA,No,No,No,NA,NA,NA,NA,44.2780982,-91.9144043
@@ -10561,7 +10561,7 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 547900,Unnamed,2,6 FEET,NA,No,No,No,NA,NA,NA,Marinette,45.4289311,-88.4206405
 548000,Unnamed,2,4 FEET,NA,No,No,No,NA,NA,NA,Marinette,45.4353273,-88.4219244
 553600,Unnamed,2,6 FEET,NA,No,No,Yes,NA,NA,NA,Forest,45.4937816,-88.6279774
-554900,Unnamed,1,2 FEET,NA,No,No,Yes,NA,NA,NA,Forest,45.5396848,-88.692311900000007
+554900,Unnamed,1,2 FEET,NA,No,No,Yes,NA,NA,NA,Forest,45.5396848,-88.6923119
 559000,Unnamed,30,6 FEET,NA,No,No,No,NA,SPRING,NA,Marinette,45.5027643,-88.3926194
 315100,Unnamed,33,13 FEET,NA,No,No,No,NA,DRAINAGE,NA,Outagamie,44.37945,-88.7195111
 315900,Unnamed,0.36,6 FEET,NA,No,No,No,NA,NA,NA,Outagamie,44.351064,-88.6094721
@@ -10606,7 +10606,7 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 1101300,Unnamed,26,11 FEET,NA,No,No,No,NA,SEEPAGE,NA,Lincoln,45.4898468,-89.6367884
 1101400,Unnamed,3,10 FEET,NA,No,No,No,NA,NA,NA,Lincoln,45.4937544,-89.6542899
 1101500,Unnamed,0.36,5 FEET,NA,No,No,No,NA,NA,NA,Lincoln,45.492023,-89.6570745
-1101600,Unnamed,4,19 FEET,NA,No,No,No,NA,NA,NA,Lincoln,45.4909842,-89.664865699999993
+1101600,Unnamed,4,19 FEET,NA,No,No,No,NA,NA,NA,Lincoln,45.4909842,-89.6648657
 1101700,Unnamed,2,7 FEET,NA,No,No,No,NA,NA,NA,Lincoln,45.4807166,-89.6536754
 1101800,Unnamed,0.28,12 FEET,NA,No,No,No,NA,NA,NA,Lincoln,45.4692176,-89.6116807
 1101900,Unnamed,5,9 FEET,NA,No,No,No,NA,NA,NA,Lincoln,45.4704688,-89.6289696
@@ -10892,7 +10892,7 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 5545697,Unnamed,4,NA,NA,No,No,No,NA,NA,NA,Jackson,44.5266608,-91.1524203
 5545699,Unnamed,1,NA,NA,No,No,No,NA,NA,NA,Wood,44.5324051,-90.3077496
 5545751,Unnamed,0.69,NA,NA,No,No,No,NA,NA,NA,Clark,44.5307684,-90.3704903
-1670200,Unnamed,3,6 FEET,NA,No,No,Yes,NA,NA,NA,Jackson,44.342939200000004,-90.4240056
+1670200,Unnamed,3,6 FEET,NA,No,No,Yes,NA,NA,NA,Jackson,44.3429392,-90.4240056
 1670300,Unnamed,2,5 FEET,NA,No,No,No,NA,NA,NA,Jackson,44.3406909,-90.395376
 1670600,Unnamed,1,10 FEET,NA,No,No,Yes,NA,NA,NA,Jackson,44.410834,-90.7260208
 1670700,Unnamed,5,12 FEET,NA,No,No,No,NA,NA,NA,Jackson,44.4130456,-90.7336019
@@ -11184,7 +11184,7 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 1154300,Unnamed,2,21 FEET,NA,No,No,No,NA,NA,NA,Oneida,45.8245871,-89.3376012
 1154400,Unnamed,3,16 FEET,NA,No,No,No,NA,NA,NA,Vilas,45.9004501,-89.2333243
 1154500,Unnamed,5,NA,NA,No,No,No,NA,NA,NA,Vilas,45.8844964,-89.1879667
-1154600,Unnamed,9,16 FEET,NA,No,No,No,NA,NA,NA,Vilas,45.870552000000004,-89.2142056
+1154600,Unnamed,9,16 FEET,NA,No,No,No,NA,NA,NA,Vilas,45.870552,-89.2142056
 1154800,Unnamed,9,16 FEET,NA,No,No,No,NA,NA,NA,"Vilas, Oneida",45.860942,-89.2237446
 1154900,Unnamed,12,16 FEET,NA,No,No,No,NA,NA,NA,Oneida,45.85035,-89.20685
 1155000,Unnamed,6,15 FEET,NA,No,No,No,NA,NA,NA,Oneida,45.8451104,-89.2084187
@@ -11261,7 +11261,7 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 5567125,Unnamed,0.38,NA,NA,No,No,No,NA,NA,NA,Vernon,43.5545432,-91.038065
 5567342,Unnamed,0.41,NA,NA,No,No,No,NA,NA,NA,Vernon,43.5461165,-91.2102378
 5567346,Unnamed,187,NA,NA,No,No,No,NA,NA,NA,Dodge,43.5360512,-88.6295354
-5567674,Unnamed,2,NA,NA,No,No,No,NA,NA,NA,Richland,43.540820600000004,-90.2456266
+5567674,Unnamed,2,NA,NA,No,No,No,NA,NA,NA,Richland,43.5408206,-90.2456266
 5567688,Unnamed,0.36,NA,NA,No,No,No,NA,NA,NA,Dodge,43.535512,-88.8894597
 5567825,Unnamed,4,NA,NA,No,No,No,NA,NA,NA,Sauk,43.5344816,-89.9494376
 5568154,Unnamed,0.52,NA,NA,No,No,No,NA,NA,NA,Richland,43.5214858,-90.2345404
@@ -11349,7 +11349,7 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 1951000,Unnamed,7,5 FEET,NA,No,No,No,NA,NA,NA,Price,45.6543226,-90.3246621
 1951100,Unnamed,0.37,4 FEET,NA,No,No,No,NA,NA,NA,Price,45.6457627,-90.300311
 1951200,Unnamed,0.14,12 FEET,NA,No,No,No,NA,NA,NA,Price,45.680119,-90.4430417
-1951400,Unnamed,0.37,6 FEET,NA,No,No,No,NA,NA,NA,Price,45.677778000000004,-90.4504065
+1951400,Unnamed,0.37,6 FEET,NA,No,No,No,NA,NA,NA,Price,45.677778,-90.4504065
 1951500,Unnamed,0.59,5 FEET,NA,No,No,No,NA,NA,NA,Price,45.6771121,-90.4507087
 1951800,Unnamed,1,18 FEET,NA,No,No,No,NA,NA,NA,Price,45.6553945,-90.4942201
 1951850,Unnamed,0.78,4 FEET,NA,No,No,No,NA,NA,NA,Price,45.6716816,-90.2885952
@@ -11638,7 +11638,7 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 2809100,Unnamed,0.6,5 FEET,NA,No,No,Yes,NA,NA,NA,Douglas,46.4415929,-91.6965126
 2809150,Unnamed,0.85,NA,NA,No,No,No,NA,NA,NA,Douglas,46.4629467,-91.8584257
 2809200,Unnamed,0.39,5 FEET,NA,No,No,No,NA,NA,NA,Douglas,46.4471465,-91.8220061
-2809300,Unnamed,0.35,4 FEET,NA,No,No,No,NA,NA,NA,Douglas,46.446843200000004,-91.8274031
+2809300,Unnamed,0.35,4 FEET,NA,No,No,No,NA,NA,NA,Douglas,46.4468432,-91.8274031
 2809400,Unnamed,0.44,6 FEET,NA,No,No,No,NA,NA,NA,Douglas,46.4451501,-91.8181292
 2809500,Unnamed,7,12 FEET,NA,No,No,No,NA,NA,NA,Douglas,46.4922526,-92.0004197
 2809600,Unnamed,3,38 FEET,NA,No,No,No,NA,NA,NA,Douglas,46.4886571,-92.0484438
@@ -11768,7 +11768,7 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 2513500,Unnamed,2,4 FEET,NA,No,No,No,NA,NA,NA,Polk,45.5418633,-92.5401608
 2513600,Unnamed,0.75,5 FEET,NA,No,No,No,NA,NA,NA,Polk,45.5450376,-92.6433556
 2513800,Unnamed,3,25 FEET,NA,No,No,No,NA,NA,NA,Polk,45.5282403,-92.637878
-2513900,Unnamed,1,NA,NA,No,No,No,NA,NA,NA,Polk,45.532894400000004,-92.6486083
+2513900,Unnamed,1,NA,NA,No,No,No,NA,NA,NA,Polk,45.5328944,-92.6486083
 2514000,Unnamed,2,12 FEET,NA,No,No,No,NA,NA,NA,Polk,45.5311312,-92.6207261
 2514100,Unnamed,4,6 FEET,NA,No,No,No,NA,NA,NA,Polk,45.5219431,-92.6174376
 2514200,Unnamed,0.57,4 FEET,NA,No,No,No,NA,NA,NA,Polk,45.5252501,-92.6207025
@@ -12276,7 +12276,7 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 1542900,Unnamed,5,16 FEET,NA,No,No,Yes,NA,NA,NA,Oneida,45.8430843,-89.6703937
 1543200,Unnamed,2,7 FEET,NA,No,No,No,NA,NA,NA,Oneida,45.8128779,-89.6956642
 1543500,Unnamed,4,7 FEET,NA,No,No,No,NA,NA,NA,Oneida,45.8065914,-89.6971128
-1544200,Unnamed,9,7 FEET,NA,No,No,No,NA,NA,NA,Oneida,45.811113400000004,-89.5991722
+1544200,Unnamed,9,7 FEET,NA,No,No,No,NA,NA,NA,Oneida,45.8111134,-89.5991722
 1544300,Unnamed,4,14 FEET,NA,No,No,No,NA,NA,NA,Oneida,45.8102444,-89.5981444
 1544500,Unnamed,8,NA,NA,No,No,No,NA,NA,NA,Oneida,45.8808944,-89.6511917
 1545100,Unnamed,4,9 FEET,NA,No,No,Yes,NA,NA,NA,Vilas,45.9034706,-89.6154021
@@ -12544,7 +12544,7 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 5550357,Unnamed,0.18,NA,NA,No,No,No,NA,NA,NA,NA,44.3445566,-91.9937493
 5550715,Unnamed,0.34,NA,NA,No,No,Yes,NA,NA,NA,NA,44.3343966,-91.9314885
 5551048,Unnamed,0.36,NA,NA,No,No,No,NA,NA,NA,NA,44.3240897,-91.9327495
-5551099,Unnamed,0.33,NA,NA,No,No,No,NA,NA,NA,NA,44.322464600000004,-91.935749
+5551099,Unnamed,0.33,NA,NA,No,No,No,NA,NA,NA,NA,44.3224646,-91.935749
 5551259,Unnamed,0.39,NA,NA,No,No,No,NA,NA,NA,NA,44.3173334,-91.9368428
 5552289,Unnamed,0.21,NA,NA,No,No,Yes,NA,NA,NA,NA,44.2819811,-91.9140273
 5552948,Unnamed,1,NA,NA,No,No,No,NA,NA,NA,NA,44.2581793,-91.8983809
@@ -12748,7 +12748,7 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 1933050,Unnamed,0.75,3 FEET,NA,No,No,No,NA,NA,NA,Rusk,45.471533,-91.0922598
 1933100,Unnamed,2,5 FEET,NA,No,No,No,NA,NA,NA,Rusk,45.5271296,-91.2098653
 1933200,Unnamed,2,12 FEET,NA,No,No,No,NA,NA,NA,Rusk,45.5147321,-91.2088889
-1933300,Unnamed,11,5 FEET,NA,No,No,No,NA,NA,NA,Rusk,45.5018048,-91.227002100000007
+1933300,Unnamed,11,5 FEET,NA,No,No,No,NA,NA,NA,Rusk,45.5018048,-91.2270021
 1933400,Unnamed,9,4 FEET,NA,No,No,No,NA,NA,NA,Rusk,45.4954518,-91.2209947
 1933500,Unnamed,7,5 FEET,NA,No,No,No,NA,NA,NA,Rusk,45.507884,-91.2116617
 1933600,Unnamed,0.32,5 FEET,NA,No,No,No,NA,NA,NA,Rusk,45.5514212,-91.4107508
@@ -12824,7 +12824,7 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 1896600,Unnamed,3,5 FEET,NA,No,No,No,NA,NA,NA,Chippewa,45.2010094,-91.3646711
 1896700,Unnamed,4,8 FEET,NA,No,No,Yes,NA,NA,NA,Chippewa,45.2052075,-91.3885384
 1896800,Unnamed,4,11 FEET,NA,No,No,Yes,NA,NA,NA,Chippewa,45.2050873,-91.4014384
-1896900,Unnamed,5,9 FEET,NA,No,No,Yes,NA,NA,NA,Chippewa,45.2032385,-91.404628400000007
+1896900,Unnamed,5,9 FEET,NA,No,No,Yes,NA,NA,NA,Chippewa,45.2032385,-91.4046284
 2670800,Unnamed,2,17 FEET,NA,No,No,No,NA,NA,NA,Burnett,45.9924889,-92.3134694
 2671600,Unnamed,8,4 FEET,NA,No,No,No,NA,NA,NA,Burnett,46.0216496,-92.2927139
 2675800,Unnamed,10,18 FEET,NA,No,No,No,NA,NA,NA,Burnett,45.8955677,-92.2701892
@@ -13091,7 +13091,7 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 5581016,Unnamed,0.34,NA,NA,No,No,No,NA,NA,NA,NA,42.4954938,-88.0590193
 1757500,Unnamed,5,22 FEET,NA,No,No,Yes,NA,NA,NA,Taylor,45.1273602,-90.6413255
 1757700,Unnamed,14,12 FEET,NA,No,No,Yes,NA,NA,NA,Taylor,45.1294621,-90.6462208
-1757900,Unnamed,5,11 FEET,NA,No,No,No,NA,NA,NA,Taylor,45.142269400000004,-90.6252861
+1757900,Unnamed,5,11 FEET,NA,No,No,No,NA,NA,NA,Taylor,45.1422694,-90.6252861
 1758000,Unnamed,5,15 FEET,NA,No,No,No,NA,NA,NA,Taylor,45.1458778,-90.6251972
 1758200,Unnamed,2,21 FEET,NA,No,No,Yes,NA,NA,NA,Taylor,45.1523371,-90.5942193
 1758800,Unnamed,5,8 FEET,NA,No,No,No,NA,NA,NA,Taylor,45.0338269,-90.5222782
@@ -13192,7 +13192,7 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 2569500,Unnamed,2,4 FEET,NA,No,No,No,NA,NA,NA,Burnett,46.0663881,-92.2899727
 2572400,Unnamed,7,13 FEET,NA,No,No,No,NA,NA,NA,Washburn,46.1519409,-91.9955279
 2572500,Unnamed,1,6 FEET,NA,No,No,No,NA,NA,NA,Washburn,46.1362645,-91.9314361
-2583250,Unnamed,2,NA,NA,No,No,No,NA,NA,NA,Douglas,46.177959799999996,-91.9744213
+2583250,Unnamed,2,NA,NA,No,No,No,NA,NA,NA,Douglas,46.1779598,-91.9744213
 2583300,Unnamed,1,8 FEET,NA,No,No,No,NA,NA,NA,Bayfield,46.2693056,-91.0214667
 2593300,Unnamed,2,15 FEET,NA,No,No,No,NA,NA,NA,Bayfield,46.3717854,-91.4793658
 2593400,Unnamed,2,18 FEET,NA,No,No,No,NA,NA,NA,Bayfield,46.3732919,-91.4865316
@@ -13623,7 +13623,7 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 724350,Unnamed,12,NA,NA,No,No,No,NA,NA,NA,Crawford,43.1311417,-91.1676333
 781400,Unnamed,5,10 FEET,NA,No,No,No,NA,NA,NA,Rock,42.7558169,-88.9869595
 787000,Unnamed,6,2 FEET,NA,No,No,Yes,NA,NA,NA,Dodge,43.2261116,-88.9302478
-787100,Unnamed,2,2 FEET,NA,No,No,Yes,NA,NA,NA,Dodge,43.2215777,-88.945327700000007
+787100,Unnamed,2,2 FEET,NA,No,No,Yes,NA,NA,NA,Dodge,43.2215777,-88.9453277
 742300,Unnamed,3,7 FEET,NA,No,No,No,NA,NA,NA,Polk,45.6106902,-92.3280621
 66200,Unnamed,4,23 FEET,NA,No,No,No,NA,NA,NA,Manitowoc,43.9902849,-87.7649052
 68900,Unnamed,2,3 FEET,NA,No,No,No,NA,NA,NA,Manitowoc,43.9679331,-88.0021974
@@ -13742,7 +13742,7 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 1807700,Unnamed,0.64,2 FEET,NA,No,No,No,NA,NA,NA,Eau Claire,44.6117844,-91.605848
 1807800,Unnamed,1,NA,NA,No,No,No,NA,NA,NA,Eau Claire,44.6092807,-91.6126588
 1809200,Unnamed,157,NA,NA,No,No,No,NA,NA,NA,Buffalo,44.1778091,-91.7513608
-1809500,Unnamed,76,NA,NA,No,No,No,NA,NA,NA,Buffalo,44.1826137,-91.766913400000007
+1809500,Unnamed,76,NA,NA,No,No,No,NA,NA,NA,Buffalo,44.1826137,-91.7669134
 1813400,Unnamed,21,NA,NA,No,No,No,NA,NA,NA,Buffalo,44.2677,-91.8747667
 1813800,Unnamed,12,NA,NA,No,No,No,NA,NA,NA,Buffalo,44.2601728,-91.823515
 1814400,Unnamed,5,NA,NA,No,No,No,NA,NA,NA,Buffalo,44.3325524,-91.886019
@@ -13886,7 +13886,7 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 2829500,Unnamed,0.53,4 FEET,NA,No,No,No,NA,NA,NA,Douglas,46.6103651,-91.9080005
 2829560,Unnamed,6,NA,NA,No,No,No,NA,NA,NA,Douglas,46.6647323,-92.0744118
 2829570,Unnamed,2,NA,NA,No,No,No,NA,NA,NA,Douglas,46.6626708,-92.0750417
-2829600,Unnamed,4,3 FEET,NA,No,No,No,NA,NA,NA,Douglas,46.648952800000004,-92.0985724
+2829600,Unnamed,4,3 FEET,NA,No,No,No,NA,NA,NA,Douglas,46.6489528,-92.0985724
 2829700,Unnamed,1,5 FEET,NA,No,No,No,NA,NA,NA,Douglas,46.6497139,-92.1056944
 2829800,Unnamed,5,3 FEET,NA,No,No,No,NA,NA,NA,Douglas,46.6558395,-92.0809509
 2829900,Unnamed,2,NA,NA,No,No,No,NA,NA,NA,Douglas,46.6510644,-92.0912935
@@ -13917,7 +13917,7 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 2849000,Unnamed,6,7 FEET,NA,No,No,No,NA,NA,NA,Douglas,46.6897833,-91.8595222
 2851700,Unnamed,1,4 FEET,NA,No,No,No,NA,NA,NA,Douglas,46.5741694,-91.9172639
 2851800,Unnamed,0.2,6 FEET,NA,No,No,No,NA,NA,NA,Douglas,46.5732743,-91.9164699
-2852800,Unnamed,1,8 FEET,NA,No,No,No,NA,NA,NA,Douglas,46.5306778,-91.938613899999993
+2852800,Unnamed,1,8 FEET,NA,No,No,No,NA,NA,NA,Douglas,46.5306778,-91.9386139
 2853600,Unnamed,0.61,4 FEET,NA,No,No,Yes,NA,NA,NA,Douglas,46.574403,-91.9581383
 12500,Unnamed,13,5 FEET,NA,No,No,No,NA,NA,NA,Ozaukee,43.4225174,-88.012392
 12600,Unnamed,13,13 FEET,NA,No,No,No,NA,NA,NA,Ozaukee,43.4069997,-88.0140631
@@ -14046,7 +14046,7 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 1119700,Unnamed,0.28,12 FEET,NA,No,No,No,NA,NA,NA,Oneida,45.7144149,-89.6810868
 1121300,Unnamed,1,10 FEET,NA,No,No,Yes,NA,NA,NA,Oneida,45.729062,-89.6369954
 1122900,Unnamed,1,12 FEET,NA,No,No,Yes,NA,NA,NA,Oneida,45.6833014,-89.6125446
-1124500,Unnamed,1,4 FEET,NA,No,No,No,NA,NA,NA,Oneida,45.690243100000004,-89.5445558
+1124500,Unnamed,1,4 FEET,NA,No,No,No,NA,NA,NA,Oneida,45.6902431,-89.5445558
 1125800,Unnamed,2,6 FEET,NA,No,No,No,NA,NA,NA,Oneida,45.6707215,-89.4726349
 1127700,Unnamed,1,12 FEET,NA,No,No,No,NA,NA,NA,Oneida,45.7092575,-89.3902644
 1129300,Unnamed,0.71,18 FEET,NA,No,No,No,NA,NA,NA,Oneida,45.7177043,-89.1289606
@@ -14064,7 +14064,7 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 1148400,Unnamed,1,10 FEET,NA,No,No,No,NA,NA,NA,Oneida,45.831556,-89.7681555
 1149800,Unnamed,2,16 FEET,NA,No,No,Yes,NA,NA,NA,Oneida,45.876175,-89.5805392
 1151500,Unnamed,7,26 FEET,NA,No,No,No,NA,NA,NA,Oneida,45.8440947,-89.6548018
-1153000,Unnamed,0.38,12 FEET,NA,No,No,Yes,NA,NA,NA,Oneida,45.8206175,-89.528219000000007
+1153000,Unnamed,0.38,12 FEET,NA,No,No,Yes,NA,NA,NA,Oneida,45.8206175,-89.528219
 1154700,Unnamed,22,26 FEET,NA,No,No,No,NA,NA,NA,Vilas,45.8727233,-89.2349797
 1156400,Unnamed,7,19 FEET,NA,No,No,Yes,NA,NA,NA,Oneida,45.8570265,-89.0919737
 1157900,Unnamed,0.86,14 FEET,NA,No,No,Yes,NA,NA,NA,Forest,45.8130509,-88.9870303
@@ -14272,7 +14272,7 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 435500,Unnamed,2,5 FEET,NA,No,No,Yes,NA,NA,NA,Oconto,45.3549201,-88.6444748
 435600,Unnamed,0.47,4 FEET,NA,No,No,Yes,NA,NA,NA,Oconto,45.3575369,-88.6085845
 435700,Unnamed,1,7 FEET,NA,No,No,Yes,NA,NA,NA,Oconto,45.3578347,-88.6101983
-435800,Unnamed,6,14 FEET,NA,No,No,Yes,NA,NA,NA,Oconto,45.313212300000004,-88.5580748
+435800,Unnamed,6,14 FEET,NA,No,No,Yes,NA,NA,NA,Oconto,45.3132123,-88.5580748
 435950,Unnamed,0.76,NA,NA,No,No,No,NA,NA,NA,Oconto,45.3006115,-88.646591
 436200,Unnamed,5,4 FEET,NA,No,No,Yes,NA,NA,NA,Oconto,45.296301,-88.6054157
 436300,Unnamed,3,14 FEET,NA,No,No,Yes,NA,NA,NA,Oconto,45.360134,-88.5385344
@@ -14548,7 +14548,7 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 1947200,Unnamed,13,10 FEET,NA,No,No,No,NA,NA,NA,Barron,45.5912091,-91.9556909
 1947400,Unnamed,13,6 FEET,NA,No,No,No,NA,NA,NA,Barron,45.5915579,-91.9421837
 1947500,Unnamed,5,8 FEET,NA,No,No,No,NA,NA,NA,Barron,45.5826894,-91.945356
-1947600,Unnamed,3,5 FEET,NA,No,No,No,NA,NA,NA,Barron,45.581178800000004,-91.9373434
+1947600,Unnamed,3,5 FEET,NA,No,No,No,NA,NA,NA,Barron,45.5811788,-91.9373434
 1947700,Unnamed,2,5 FEET,NA,No,No,No,NA,NA,NA,Barron,45.5754829,-92.0104078
 1947900,Unnamed,2,10 FEET,NA,No,No,No,NA,NA,NA,Barron,45.5700571,-92.0143918
 1948000,Unnamed,4,6 FEET,NA,No,No,No,NA,NA,NA,Barron,45.5539506,-91.9755723
@@ -15084,7 +15084,7 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 1065800,Unnamed,1,4 FEET,NA,No,No,No,NA,NA,NA,Langlade,45.366825,-89.2931028
 1067300,Unnamed,15,6 FEET,NA,No,No,No,NA,NA,NA,Langlade,45.3462329,-89.2020229
 2819800,Unnamed,0.23,6 FEET,NA,No,No,No,NA,NA,NA,Bayfield,46.5722736,-91.5121314
-2821400,Unnamed,4,4 FEET,NA,No,No,No,NA,NA,NA,Bayfield,46.538888300000004,-91.4924875
+2821400,Unnamed,4,4 FEET,NA,No,No,No,NA,NA,NA,Bayfield,46.5388883,-91.4924875
 2823000,Unnamed,5,31 FEET,NA,No,No,No,NA,NA,NA,Bayfield,46.5188462,-91.511425
 2824600,Unnamed,0.63,5 FEET,NA,No,No,No,NA,NA,NA,Douglas,46.5285059,-91.6653465
 2825900,Unnamed,0.89,4 FEET,NA,No,No,Yes,NA,NA,NA,Bayfield,46.6617734,-91.0987897
@@ -15634,7 +15634,7 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 2578700,Unnamed,1,4 FEET,NA,No,No,No,NA,NA,NA,Douglas,46.1628667,-91.6531806
 2578800,Unnamed,1,5 FEET,NA,No,No,No,NA,NA,NA,Douglas,46.1628667,-91.6531806
 2578900,Unnamed,0.05,6 FEET,NA,No,No,No,NA,NA,NA,Douglas,46.1615566,-91.6516876
-2579000,Unnamed,0.71,6 FEET,NA,No,No,No,NA,NA,NA,Douglas,46.1608348,-91.650710900000007
+2579000,Unnamed,0.71,6 FEET,NA,No,No,No,NA,NA,NA,Douglas,46.1608348,-91.6507109
 2579100,Unnamed,1,4 FEET,NA,No,No,No,NA,NA,NA,Douglas,46.1593194,-91.6480056
 2579200,Unnamed,0.41,6 FEET,NA,No,No,No,NA,NA,NA,Douglas,46.1599894,-91.6526714
 2579400,Unnamed,0.18,6 FEET,NA,No,No,Yes,NA,NA,NA,Douglas,46.2405533,-91.7512945
@@ -15652,7 +15652,7 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 2580600,Unnamed,26,4 FEET,NA,No,No,No,NA,SEEPAGE,NA,Douglas,46.2169041,-91.9175927
 2580700,Unnamed,0.57,15 FEET,NA,No,No,No,NA,NA,NA,Douglas,46.2228938,-91.8568174
 2580900,Unnamed,5,2 FEET,NA,No,No,No,NA,NA,NA,Douglas,46.2189071,-91.8318214
-2581000,Unnamed,32,4 FEET,NA,No,No,No,NA,SEEPAGE,NA,Douglas,46.208702099999996,-91.8257124
+2581000,Unnamed,32,4 FEET,NA,No,No,No,NA,SEEPAGE,NA,Douglas,46.2087021,-91.8257124
 2581100,Unnamed,11,9 FEET,NA,No,No,No,NA,NA,NA,Douglas,46.2153937,-91.8364351
 2581200,Unnamed,5,8 FEET,NA,No,No,No,NA,NA,NA,Douglas,46.2140061,-91.8401371
 2581400,Unnamed,0.84,5 FEET,NA,No,No,No,NA,NA,NA,Douglas,46.2070175,-91.8427022
@@ -15672,7 +15672,7 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 2582900,Unnamed,17,5 FEET,NA,No,No,No,NA,NA,NA,Douglas,46.2022343,-91.9479606
 2583000,Unnamed,2,21 FEET,NA,No,No,Yes,NA,NA,NA,Douglas,46.2113246,-91.9683242
 2583100,Unnamed,6,15 FEET,NA,No,No,Yes,NA,NA,NA,Douglas,46.2091504,-91.9696672
-2583200,Unnamed,9,8 FEET,NA,No,No,No,NA,NA,NA,Douglas,46.1938044,-91.978866300000007
+2583200,Unnamed,9,8 FEET,NA,No,No,No,NA,NA,NA,Douglas,46.1938044,-91.9788663
 2583400,Unnamed,9,44 FEET,NA,No,No,Yes,NA,NA,NA,Bayfield,46.2705936,-91.0256307
 2583500,Unnamed,2,5 FEET,NA,No,No,Yes,NA,NA,NA,Bayfield,46.2600466,-91.0300698
 2583600,Unnamed,2,17 FEET,NA,No,No,Yes,NA,NA,NA,Bayfield,46.2553854,-91.0094117
@@ -15867,7 +15867,7 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 1094300,Unnamed,0.25,31 FEET,NA,No,No,No,NA,NA,NA,Langlade,45.3809283,-89.3040227
 1094400,Unnamed,0.14,30 FEET,NA,No,No,No,NA,NA,NA,Langlade,45.3832628,-89.3128445
 1094500,Unnamed,0.73,8 FEET,NA,No,No,No,NA,NA,NA,Langlade,45.4564569,-89.2012934
-1094600,Unnamed,1,6 FEET,NA,No,No,No,NA,NA,NA,Langlade,45.4665889,-89.224183300000007
+1094600,Unnamed,1,6 FEET,NA,No,No,No,NA,NA,NA,Langlade,45.4665889,-89.2241833
 1094700,Unnamed,0.37,16 FEET,NA,No,No,No,NA,NA,NA,Langlade,45.4661028,-89.2261443
 1094900,Unnamed,1,7 FEET,NA,No,No,No,NA,NA,NA,Langlade,45.4629583,-89.2247083
 1095000,Unnamed,2,7 FEET,NA,No,No,No,NA,NA,NA,Langlade,45.4593556,-89.2251778
@@ -15986,7 +15986,7 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 1911400,Unnamed,4,4 FEET,NA,No,No,Yes,NA,NA,NA,Chippewa,45.2078857,-91.4038234
 1913000,Unnamed,1,5 FEET,NA,No,No,Yes,NA,NA,NA,Chippewa,45.2125728,-91.3617568
 1914600,Unnamed,4,5 FEET,NA,No,No,No,NA,NA,NA,Chippewa,45.2692491,-91.4841978
-1916200,Unnamed,21,3 FEET,NA,No,No,No,NA,NA,NA,Chippewa,45.255918200000004,-91.4836066
+1916200,Unnamed,21,3 FEET,NA,No,No,No,NA,NA,NA,Chippewa,45.2559182,-91.4836066
 1917800,Unnamed,3,30 FEET,NA,No,No,Yes,NA,NA,NA,Taylor,45.3091078,-90.3694247
 1919400,Unnamed,7,3 FEET,NA,No,No,No,NA,NA,NA,Rusk,45.3698638,-91.2200009
 1920800,Unnamed,5,8 FEET,NA,No,No,No,NA,NA,NA,Rusk,45.3067012,-91.3332963
@@ -16338,7 +16338,7 @@ id,name,acres,max_depth,mean_depth,landing,public_beach,public_park,fish,type,cl
 609400,Upper Scott Flowage 4060,124,16 FEET,7 FEET,Yes,No,No,"Panfish, Largemouth Bass, Smallmouth Bass, Northern Pike and Walleye",DRAINAGE,NA,Marinette,45.1120443,-87.6628373
 1664100,Upper Sparta Pond,8,9 FEET,NA,No,No,No,"Panfish, Largemouth Bass, Northern Pike and Trout",DRAINAGE,NA,Monroe,44.0093,-90.6450806
 2043600,Upper Spirit Lake,16,6 FEET,NA,No,No,No,NA,SEEPAGE,NA,Barron,45.554183,-92.0688329
-821000,Upper Spring Lake,17,11 FEET,4 FEET,No,No,Yes,"Panfish, Largemouth Bass and Northern Pike",DRAINAGE,NA,Jefferson,42.887535,-88.553210000000007
+821000,Upper Spring Lake,17,11 FEET,4 FEET,No,No,Yes,"Panfish, Largemouth Bass and Northern Pike",DRAINAGE,NA,Jefferson,42.887535,-88.55321
 2267100,Upper Springstead Lake,121,22 FEET,13 FEET,No,No,No,"Musky, Panfish, Largemouth Bass, Smallmouth Bass, Northern Pike and Walleye",DRAINAGE,NA,Iron,46.0173769,-90.1303147
 2191700,Upper Steve Creek Flowage,138,8 FEET,NA,Yes,No,Yes,Panfish and Northern Pike,DRAINAGE,NA,Taylor,45.3638677,-90.614481
 2318000,Upper Sugarbush Lake,141,29 FEET,17 FEET,No,No,No,"Musky, Panfish, Largemouth Bass, Smallmouth Bass, Northern Pike and Walleye",DRAINAGE,NA,Vilas,46.033583,-89.8764435

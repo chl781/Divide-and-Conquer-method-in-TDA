@@ -1,8 +1,6 @@
-# This script carries out the Wisconsin Lakes analysis in the manuscript by  
-##Chenghui Li and Jessi Cisewski-Kehe titled, 
+# This script carries out the Wisconsin Lakes analysis in the manuscript in  
 ##"A Divide-and-Conquer Approach to Persistent Homology." 
 #Full citation:  [To be added once available]
-#arXiv: arXiv:2410.01839.
 
 # Data source:  https://apps.dnr.wi.gov/lakes/lakepages/Results.aspx
 # Cleaned data file used in paper:  lakes_wi_updated.csv

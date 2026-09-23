@@ -101,7 +101,7 @@ DiagCirSimp <- function(X,gap,maxscale,maxdimension,n){
   
   # I think it is right.
   
-  ## This is Jessi's guess-- 3 estimates
+  ## 3 estimates
   dataDraw=ThreePointsCal(data1,data2)
   length1=sqrt(sum((dataDraw[1,]-dataDraw[2,])^2))
   length2=sqrt(sum((dataDraw[3,]-dataDraw[2,])^2))

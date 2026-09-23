@@ -1,6 +1,6 @@
 # Divide-and-Conquer-method-in-TDA
 
-This folder contains the code and data for Li, C. and Cisewski-Kehe, J., 2024. A Divide-and-Conquer Approach to Persistent Homology. arXiv preprint arXiv:2410.01839.
+This folder contains the code and data for "A Divide-and-Conquer Approach to Persistent Homology" 
 
 Full citation:  [To be added once finalized]
 
