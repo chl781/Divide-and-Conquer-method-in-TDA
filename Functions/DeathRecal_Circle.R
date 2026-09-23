@@ -1,5 +1,4 @@
-# DeathRecal aiming at circle case. This is derived from formula on the Internet.
-
+# DeathRecal aiming at circle case.
 DeathRecal_Circle<- function(X,i,j,k){
   A=X[i,]
   B=X[j,]

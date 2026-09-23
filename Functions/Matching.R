@@ -8,11 +8,9 @@ Matching <- function(X,Y,eps){
   
   m=NCOL(X)
   
-  #Check if X[i,] is in the convex hull of Y given eps error.
   for(i in 1:nX){
     Xi=X[i,]
-    if(any(apply(Y,
-                 1, function(x, want) isTRUE(all.equal(x, want)), Xi))){
+    if(any(apply(Y,1, function(x, want) isTRUE(all.equal(x, want)), Xi))){
       next
     }
     Yeps=Xi+(Y-Xi)*(1-eps/rowNorms(Y-Xi))
@@ -24,8 +22,7 @@ Matching <- function(X,Y,eps){
   
   for (j in 1:nY) {
     Yj=Y[j,]
-    if(any(apply(X,
-             1, function(x, want) isTRUE(all.equal(x, want)), Yj))){
+    if(any(apply(X,1, function(x, want) isTRUE(all.equal(x, want)), Yj))){
       next
     }
     Xeps=Yj+(X-Yj)*(1-eps/rowNorms(X-Yj))

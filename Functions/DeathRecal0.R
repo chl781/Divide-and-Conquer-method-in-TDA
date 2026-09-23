@@ -1,11 +1,10 @@
-# Another way to perform DeathRecal1. A substitute for DeathRecal1.
+# A substitute for DeathRecal1 to compute the death time for a data set. This is a more efficient method to compute the death time.
 
 DeathRecal0<- function(data){
   a=0
   n=NROW(data)
   c=0
   DeathRecal1=0
-  #alocation=matrix(0,nrow=2,ncol=3)
   for(i in 1:(n-2)){
     for(j in (i+1):(n-1)){
       a1=sqrt(sum((data[i,]-data[j,])^2))

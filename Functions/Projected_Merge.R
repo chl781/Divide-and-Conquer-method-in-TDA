@@ -31,8 +31,7 @@ Projected_Merge <- function(ind_suspicious,bound,range,Diag_split,X_split,Suspic
       Ndata=max(floor(max(NROW(Suspicious[[non_empty[i,1],non_empty[i,2]]][[non_empty[i,3] ]]),
                 NROW(Suspicious[[non_empty[j,1],non_empty[j,2]]][[non_empty[j,3] ]]))/5)+2)
       error=max(gap1[2]-gap1[1],gap2[2]-gap2[1])/Ndata
-      #if(Matching1(bound[[non_empty[i,1],non_empty[i,2]]][[non_empty[i,3] ]]
-       #           ,bound[[non_empty[j,1],non_empty[j,2]]][[non_empty[j,3] ]],eps = error )){
+
       list_X=list(bound[[non_empty[i,1],non_empty[i,2]]][[non_empty[i,3] ]],
                   bound[[non_empty[j,1],non_empty[j,2]]][[non_empty[j,3] ]])
       

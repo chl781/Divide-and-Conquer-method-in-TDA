@@ -1,4 +1,4 @@
-# This aims at recovering the death time for sphere case
+# Death calculation for sphere case.
 
 DeathRecal_Sphere<- function(p1,p2,p3,p4){
     a = p1[1] - p2[1]
@@ -25,7 +25,7 @@ DeathRecal_Sphere<- function(p1,p2,p3,p4){
     Q = (A1 + B1 + C1) / 2
     R = (A2 + B2 + C2) / 2
     
-    # D是系数行列式，利用克拉默法则
+
     D = a*b1*c2 + a2*b*c1 + c*a1*b2 - (a2*b1*c + a1*b*c2 + a*b2*c1)
     Dx = P*b1*c2 + b*c1*R + c*Q*b2 - (c*b1*R + P*c1*b2 + Q*b*c2)
     Dy = a*Q*c2 + P*c1*a2 + c*a1*R - (c*Q*a2 + a*c1*R + c2*P*a1)

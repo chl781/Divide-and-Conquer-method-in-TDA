@@ -53,10 +53,7 @@ Diagm3Combine_ <- function(X_split,m,Diag_split,
   ##
   
   # extract all of cycles data 
-  #X_suspicious <- mapply(Diag_split = Diag_split, ind_suspicious = ind_suspicious, X_split = X_split,
-  #                      FUN = suspicious_Find, SIMPLIFY = F)
-  
-  #X_suspicious = unlist_part_(X_suspicious[!sapply(X_suspicious,is.null)])
+
 	X_suspicious=list()
   num=1
   for(i in 1:(m-1)){
@@ -85,10 +82,6 @@ Diagm3Combine_ <- function(X_split,m,Diag_split,
     }
   }
 
-  #dist_bound = matrix(mapply(FUN = dist_construct, X = rep(X_suspicious,times=length_dist_bound),
-   #                          Y = rep(X_suspicious,each=length_dist_bound)),
-   #                   length_dist_bound,length_dist_bound)
-  
   ################
   
   # Notice that the maxscale in the following function cannot be too large.
@@ -137,15 +130,12 @@ Diagm3Combine_ <- function(X_split,m,Diag_split,
         stop()
       }
       Suspicious_i = cbind(X_split[[non_empty[i,1], non_empty[i,2], non_empty[i,3]]][df1,]
-                           #,rep(col,NROW(X_split[[non_empty[i,1],non_empty[i,2]]][df1,]))
       ) # Retrieve the data
       
-      #colnames(Suspicious_i) <- c("x","y","col")
       colnames(Suspicious_i) <- c("x","y","z")
       Combined[[num]] = rbind(Combined[[num]],Suspicious_i)
       Combined_diag_indices[[num]] = rbind(Combined_diag_indices[[num]],
                                            non_empty[i,]) # This saves all of points constructing the loops.
-      #col=col+1
     }
     num = num+1
   }
@@ -185,7 +175,6 @@ Diagm3Combine_ <- function(X_split,m,Diag_split,
     PD[i,2] = BirthRecal2_(Diag_split,Combined_diag_indices[[i]],ind_suspicious)
     #PD[i,3] = DeathRecal0_(unique(Combined1[[i]])) # This is a specific death estimate for d=2.
     PD[i,3] = DeathRecal1_(unique(Combined1[[i]]),10^6) # This is a specific death estimate for d=2. # Random samples for 10^6 times to estimate the death time.
-    # DeathRecal0 uses 4 for loops, which can definitely be improved.
   }
   
   # Combine the combined PD and PD for sub-features.

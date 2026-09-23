@@ -4,18 +4,18 @@ This folder contains the code and data for the Wisconsin lake analysis for "A Di
 
 This folder is self-contained, and includes the following:
 
-1.  wi_lakes_analysis.R 
+1. wi_lakes_analysis.R 
  - This R script takes you through the WI Lakes analysis.  Hopefully there are enough comments to follow the procedures, but more details are available in the paper.  
 
 2. lakes_wi_updated.csv
 - The data were obtained from https://apps.dnr.wi.gov/lakes/lakepages/Results.aspx
 - This data file is the cleaned version as described in the manuscript.
 
-3.  pd_north.rds and pd_south.rds
+3. pd_north.rds and pd_south.rds
 - The northern region and southern region persistence diagrams
 - Both sets include 8 persistence diagrams
 
-4.  partition_coordinates.rds
+4. partition_coordinates.rds
 - The latitude and longitude coordinates of the northern and southern regions
 
 5. GetDiagram.R

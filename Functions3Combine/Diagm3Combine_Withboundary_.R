@@ -1,4 +1,4 @@
-
+# This function is to obtain the combined diagram assuming that the outside of the data is the boundary. The boundary is assumed to be a cube. The function is to combine the diagrams from different sub-cubes and then obtain the combined diagram.
 Diagm3Combine_Withboundary_ <- function(X_split,m,Diag_split,
                            range,maxdimension,maxscale,error){
   gap1=seq(range[1,1], range[1,2], length.out = m)
@@ -165,15 +165,12 @@ Diagm3Combine_Withboundary_ <- function(X_split,m,Diag_split,
         stop()
       }
       Suspicious_i = cbind(X_split[[non_empty[i,1], non_empty[i,2], non_empty[i,3]]][df1,]
-                           #,rep(col,NROW(X_split[[non_empty[i,1],non_empty[i,2]]][df1,]))
       ) # Retrieve the data
       
-      #colnames(Suspicious_i) <- c("x","y","col")
       colnames(Suspicious_i) <- c("x","y","z")
       Combined[[num]] = rbind(Combined[[num]],Suspicious_i)
       Combined_diag_indices[[num]] = rbind(Combined_diag_indices[[num]],
                                            non_empty[i,]) # This saves all of points constructing the loops.
-      #col=col+1
     }
     num = num+1
   }

@@ -14,20 +14,7 @@ DiagContm2 <- function(X,m,maxscale,maxdimension,range){
     }
   }
   
-  ##### without running with Full data
-  
-  #DiagRips <- ripsDiag(
-  #  X = X, maxdimension = maxdimension, maxscale = maxscale,
-  #  library = "Dionysus", location = TRUE, printProgress = F)
-  #if( any(DiagRips$diagram[,1]==1) ){
-  #  index=which(DiagRips$diagram[,1]==1)
-  #  t=index[which.max(DiagRips$diagram[index,3]-DiagRips$diagram[index,2])]
-  #  S[1,]=c(DiagRips$diagram[t,2],DiagRips$diagram[t,3])
-  #}else{
-  #  S[1,]=c(0,0)
-  #}
-  
-  ####### Begin to split the data into parts.
+  ##################### Begin to split the data into parts.
   
   i1 = matrix(rep(1:(m-1),m-1),m-1,m-1)
   j1 = matrix(rep(1:(m-1),m-1),m-1,m-1,byrow = T)

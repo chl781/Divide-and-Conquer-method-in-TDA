@@ -1,20 +1,13 @@
-# Notice that the deathRecal have been changed to for the design
-# of Circular data.
-
 # This code is used to test how the combination behaving.
-# Return as a matrix with full data birth time and death time and two
-# cutting pieces' birth time and death times.
+# Return as a matrix with full data birth time and death time and two cutting pieces' birth time and death times.
 # n is the number of supplemental points.
-
-# Cutting into half. Will return another estimates: Random Selected 3 points to 
-# estimate the death and birth time.
 
 DiagCirSimp <- function(X,gap,maxscale,maxdimension,n){
   X1=X[-X[,1]>gap,]
   X2=X[-X[,1]<gap,]
   Y=matrix(c(rep(-gap,n),seq(-2,2,4/(n-1))),nrow=n,byrow = F)
   S=matrix(0,nrow = 8,ncol = 2)
-  # Full data
+  # Full data rips diagram
   DiagRips <- ripsDiag(
     X = X, maxdimension = maxdimension, maxscale = maxscale,
     library = "Dionysus", location = TRUE, printProgress = F)
@@ -64,14 +57,6 @@ DiagCirSimp <- function(X,gap,maxscale,maxdimension,n){
     data2=c()
   }
   
-  # Here is a problem, because if there is no complete half of the data, then we cannot
-  # use the sophisticated method to produce it.
-  
-  # There is another potential issue that the data does not necessarily have the 
-  # same representative points. Otherwise, it is just a test program.
-  
-  # if(all(data1[data1[1,]==-gap,],data2[data2[1,]==-gap,]))
-  
   data=rbind(data1,data2)
   data=data[data[,1]!=-gap,]
   
@@ -87,21 +72,15 @@ DiagCirSimp <- function(X,gap,maxscale,maxdimension,n){
     S[4,]=c(0,0)
   }
   
-  ## Consider use DiagRips1, DiagRips2 to build an easy bounded but not use a 
-  ## Re-estimate step.
-  
   death1=DiagRips1$deathLocation[t1,]
   death2=DiagRips2$deathLocation[t2,]
   data1=data1[data1[,1]!=-gap,]
   data2=data2[data2[,1]!=-gap,]
   BirthRecal=max(BirthRecal(data1,data2),S[2,1],S[3,1]) # This birth estimate is for general.
   Deathrecal=DeathRecal_Circle(data,1,2,3)
-  # Try DeathRecal_Circle
   S[5,]=c(BirthRecal,Deathrecal)
   
-  # I think it is right.
-  
-  ## This is [XXX]'s guess-- 3 estimates
+  # Calculate the distances between the three points.
   dataDraw=ThreePointsCal(data1,data2)
   length1=sqrt(sum((dataDraw[1,]-dataDraw[2,])^2))
   length2=sqrt(sum((dataDraw[3,]-dataDraw[2,])^2))

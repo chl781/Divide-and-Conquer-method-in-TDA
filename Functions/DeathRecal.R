@@ -1,5 +1,5 @@
-# My own calculation process for death time.
-# x is the 
+# Calculation process for death time.
+# x is the data
 # death1 is the death time for x. death2 is the death time for the other data set.
 # deathtime is the death time for x.
 

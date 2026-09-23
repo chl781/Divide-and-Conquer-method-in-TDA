@@ -42,8 +42,6 @@ DiagCont4 <- function(X,gap1,gap2,maxscale,maxdimension){
     dist1[i,j]=dist1[j,i]=abs(X1[j,2])
   }
   
-  
-  # X1 # Change X to be distance matrix
   DiagRips1 <- ripsDiag(
     X = dist1, maxdimension = maxdimension, maxscale = maxscale,
     library = "Dionysus",dist="arbitrary", location = TRUE, printProgress = F)
@@ -76,7 +74,6 @@ DiagCont4 <- function(X,gap1,gap2,maxscale,maxdimension){
     dist2[i,j]=dist2[j,i]=abs(X2[j,2])
   }
   
-  # X2
   DiagRips2 <- ripsDiag(
     X = dist2, maxdimension = maxdimension, dist = "arbitrary", maxscale = maxscale,
     library = "Dionysus", location = TRUE, printProgress = F)
@@ -183,11 +180,7 @@ DiagCont4 <- function(X,gap1,gap2,maxscale,maxdimension){
   }else{
     data4=c()
   }
-  
-  # Here is a problem, because if there is no complete half of the data, then we cannot
-  # use the sophisticated method to produce it.
-  
-  # Notice that this procedure do not check for the coincidence for the representative points.
+
   data=rbind(data1,data2,data3,data4)
   data=data[data[,1]!=-gap1&data[,2]!=-gap2,]
   
@@ -204,13 +197,8 @@ DiagCont4 <- function(X,gap1,gap2,maxscale,maxdimension){
     S[6,]=c(0,0)
   }
   
-  # Added estimates.
-  # Notice that I have changed the birth estimates to be simpler.
-  
-  
   BirthRecal=max(S[2,1],S[3,1],S[4,1],S[5,1]) 
-  # This birth estimate is for general.
-  # Should do it in a more sophisticated way.
+
   Deathrecal=DeathRecal_Circle(data,1,2,3)
   S[7,]=c(BirthRecal,Deathrecal)
   

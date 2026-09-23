@@ -1,14 +1,6 @@
-# An object supplemental trial. 
-#
-# We will compute the distance matrix as the input and then discuss it.
-
-# Bascically, it is added by 2 objects
-
 DiagCont <- function(X,gap,maxscale,maxdimension){
   X1=X[-X[,1]>gap,]
   X2=X[-X[,1]<gap,]
-  #Y=matrix(c(rep(-gap,n),seq(-2,2,4/(n-1))),nrow=n,byrow = F)
-  # We don't need Y
   S=matrix(0,nrow = 6,ncol = 2)
   # Full data
   DiagRips <- ripsDiag(
@@ -23,8 +15,6 @@ DiagCont <- function(X,gap,maxscale,maxdimension){
   }
   
   # Construct the dist matrix.
-  # Only adding one line.
-  
   n1=nrow(X1)
   dist1=matrix(0,n1+1,n1+1)
   for (i in 1:n1) {
@@ -37,12 +27,7 @@ DiagCont <- function(X,gap,maxscale,maxdimension){
     dist1[i,j]=dist1[j,i]=abs(X1[j,1]+gap)
   }
   
-  #i=n1+2
-  #for(j in 1:n1){
-  #  dist1[i,j]=dist1[j,i]=abs(X1[j,2])
-  #}
-  
-  # X1 # Change X to be distance matrix
+  # DiagRips1 is the diagram for X1
   DiagRips1 <- ripsDiag(
     X = dist1, maxdimension = maxdimension, maxscale = maxscale,
     library = "Dionysus",dist="arbitrary", location = TRUE, printProgress = F)
@@ -55,7 +40,7 @@ DiagCont <- function(X,gap,maxscale,maxdimension){
     S[2,]=c(0,0)
   }
   
-  #X2 Construct the dist matrix 
+  # DiagRips2 is the diagram for X2
   n2=nrow(X2)
   dist2=matrix(0,n2+1,n2+1)
   for (i in 1:n2) {
@@ -67,11 +52,6 @@ DiagCont <- function(X,gap,maxscale,maxdimension){
   for(j in 1:n2){
     dist2[i,j]=dist2[j,i]=abs(X2[j,1]+gap)
   }
-  
-  #i=n2+2
-  #for(j in 1:n2){
-  #  dist2[i,j]=dist2[j,i]=abs(X2[j,2])
-  #}
   
   # X2
   DiagRips2 <- ripsDiag(
@@ -101,14 +81,6 @@ DiagCont <- function(X,gap,maxscale,maxdimension){
     data2=c()
   }
   
-  # Here is a problem, because if there is no complete half of the data, then we cannot
-  # use the sophisticated method to produce it.
-  
-  # There is another potential issue that the data does not necessarily have the 
-  # same representative points. Otherwise, it is just a test program.
-  
-  # if(all(data1[data1[1,]==-gap,],data2[data2[1,]==-gap,]))
-  
   data=rbind(data1,data2)
   data=data[data[,1]!=-gap,]
   
@@ -124,17 +96,14 @@ DiagCont <- function(X,gap,maxscale,maxdimension){
     S[4,]=c(0,0)
   }
   
-  ## Consider use DiagRips1, DiagRips2 to build an easy bounded but not use a 
-  ## Re-estimate step.
+  ## Apply the birth and death recalibration.
   
   data1=data1[data1[,1]!=-gap,]
   data2=data2[data2[,1]!=-gap,]
   BirthRecal=max(BirthRecal(data1,data2),S[2,1],S[3,1]) # This birth estimate is for general.
   Deathrecal=DeathRecal_Circle(data,1,2,3)
-  # Try DeathRecal_Circle
   S[5,]=c(BirthRecal,Deathrecal)
   
-  # Approximate 
   # Approximate estimate based on whole data
   gmra = gmra.create.ipca(X, eps=0, dim=1, maxKids=1, stop=4)
   res <- multiscale.rips(gmra, maxD = 1)

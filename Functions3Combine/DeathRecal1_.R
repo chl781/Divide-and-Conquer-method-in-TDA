@@ -1,5 +1,4 @@
-# Back up code
-
+# Compute the death time of the 2-dimensional homology group for a given data set using a sampling method.
 DeathRecal1_<- function(data,nsample=10^5){
   a=0
   n=NROW(data)
@@ -26,6 +25,6 @@ DeathRecal1_<- function(data,nsample=10^5){
 	}
 
 
-  return(c) # death distance can be guaranteed to approximate well.
+  return(c) 
 }
 

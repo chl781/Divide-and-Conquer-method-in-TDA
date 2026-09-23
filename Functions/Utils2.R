@@ -1,8 +1,7 @@
 # This is the utils file for DiagContm2 for parallel purpose
-# po records the position of current X_split
+# It records the position of current X_split
 
 DiagSplit <- function(X_split_ij,i1,j1,m){
-  #X_split_ij = X_split[[i1,j1]]
   length_X_split_ij = NROW(X_split_ij)
   
   # Prevent trivial case

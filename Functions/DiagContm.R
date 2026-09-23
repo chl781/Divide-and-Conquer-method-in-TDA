@@ -95,14 +95,13 @@ DiagContm <- function(X,m,maxscale,maxdimension,range,choice){
       dist1[(n1+1):(n1+4-si-sj),(n1+1):(n1+4-si-sj)]=BoundaryConnect(i1,j1,m)
       
       
-      # Change X to be distance matrix
       Diag2[[i1,j1]] <- ripsDiag(
         X = dist1, maxdimension = maxdimension, maxscale = maxscale,
         library = "Dionysus",dist="arbitrary", location = TRUE, printProgress = F)
-      # Be careful of the combination step
+
       DiagRips2=Diag2[[i1,j1]]
       if( any(DiagRips2$diagram[,1]==1) ){
-        index=which(DiagRips2$diagram[,1]==1)# Change it to dimension = 1.
+        index=which(DiagRips2$diagram[,1]==1)
         t2[i1,j1]=index[which.max(DiagRips2$diagram[index,3]-DiagRips2$diagram[index,2])]
       }else{
         t2[i1,j1]=-1
@@ -111,7 +110,7 @@ DiagContm <- function(X,m,maxscale,maxdimension,range,choice){
   }
   #####################
   # Combine the data. 
-  # Notice that this step still not involved in the combination step.
+  # Notice that this step is not involved in the combination step in the paper.
   # 1st method
   if(choice==1){
     ind1=c()
@@ -191,12 +190,6 @@ DiagContm <- function(X,m,maxscale,maxdimension,range,choice){
     }
   }
   
- 
-  
-  # Here is a problem, because if there is no complete half of the data, then we cannot
-  # use the sophisticated method to produce it.
-  
-  # Notice that this procedure do not check for the coincidence for the representative points.
   data=data[data[,1]!=0 & data[,2]!=0,]
   
   # Based on the new data, we analyze the estimated birth time and death time.
@@ -211,13 +204,6 @@ DiagContm <- function(X,m,maxscale,maxdimension,range,choice){
   }else{
     S[2,]=c(0,0)
   }
-  
-  # Added estimates.
-  
-  
-  # Birth estimate is unrealistic because there could be missing sub-boxes.
-  #  Too conservative for distribution indpendent case, but can fix the distribution case.
-  # But, if there is sparse case, then this will decrease the time estimate.
   
   BirthRecal=0 # Initialization for BirthRecal.
   
@@ -246,10 +232,7 @@ DiagContm <- function(X,m,maxscale,maxdimension,range,choice){
     }
   }
   
-  # This birth estimate is for general.
-  # Should do it in a more sophisticated way.
   Deathrecal=DeathRecal_Circle(data,1,2,3) 
-  # Another approximation is to sample several points from different sub-boxes.
   S[3,]=c(BirthRecal,Deathrecal)
   
   # Approximate estimate based on whole data
@@ -267,7 +250,5 @@ DiagContm <- function(X,m,maxscale,maxdimension,range,choice){
   }
   
   S[4,]=c(MSE_Linear_birth,MSE_Linear_death)
-  
-  # Check if we can combine the sub-features.
-  return(S)
+    return(S)
 }

@@ -24,8 +24,6 @@ CombineDiagram <- function(D,tol){
   # Get rid of dimension 0 features.
   i=1
   if(NROW(S$diagram)==0){stop('no features detected!')}
-  #NROW and NCOL is to prevent trivial result like nrow=1
-  #ifelse(test=(max(NROW(S$diagram),NCOL(S$diagram)) >= 3), yes=max(NROW(S$diagram),NCOL(S$diagram)), no=min(NROW(S$diagram),NCOL(S$diagram)))
   while(i<=ifelse(test=(max(NROW(S$diagram),NCOL(S$diagram)) > 3), yes=max(NROW(S$diagram),NCOL(S$diagram)), no=min(NROW(S$diagram),NCOL(S$diagram)))){
     if(is.vector(S$diagram)==T){
       names1=names(S$diagram)
@@ -50,8 +48,7 @@ CombineDiagram <- function(D,tol){
   }
   
   # We will need to test if there is an identity for the death location.
-  # We only leave the ones having the largest significance level
-  # and use it to identify if it is suspicious
+  # We only leave the ones having the largest significance level and use it to identify if it is suspicious
   
   S=Regularized(S)
   

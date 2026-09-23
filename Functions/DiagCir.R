@@ -3,7 +3,7 @@
 # cutting pieces' birth time and death times.
 # n is the number of supplemental points.
 
-# CUtting into half.
+# Cutting into half.
 
 DiagCir <- function(X,gap,maxscale,maxdimension,n){
   X1=X[-X[,1]>gap,]
@@ -59,13 +59,7 @@ DiagCir <- function(X,gap,maxscale,maxdimension,n){
   }else{
     data2=c()
   }
-  # Here is a problem, because if there is no complete half of the data, then we cannot
-  # use the sophisticated method to produce it.
-  
-  # There is another potential issue that the data does not necessarily have the 
-  # same representative points. Otherwise, it is just a test program.
-  
-  # if(all(data1[data1[1,]==-gap,],data2[data2[1,]==-gap,]))
+
     
   data=rbind(data1,data2)
   data=data[data[,1]!=-gap,]

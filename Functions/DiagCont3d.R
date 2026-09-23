@@ -33,12 +33,6 @@ DiagCont3d <- function(X,gap,maxscale,maxdimension){
     dist1[i,j]=dist1[j,i]=abs(X1[j,1])
   }
   
-  #i=n1+2
-  #for(j in 1:n1){
-  #  dist1[i,j]=dist1[j,i]=abs(X1[j,2])
-  #}
-  
-  # X1 # Change X to be distance matrix
   DiagRips1 <- ripsDiag(
     X = dist1, maxdimension = maxdimension, maxscale = maxscale,
     library = "Dionysus",dist="arbitrary", location = TRUE, printProgress = F)
@@ -65,12 +59,6 @@ DiagCont3d <- function(X,gap,maxscale,maxdimension){
     dist2[i,j]=dist2[j,i]=abs(X2[j,1])
   }
   
-  #i=n2+2
-  #for(j in 1:n2){
-  #  dist2[i,j]=dist2[j,i]=abs(X2[j,2])
-  #}
-  
-  # X2
   DiagRips2 <- ripsDiag(
     X = dist2, maxdimension = maxdimension, dist = "arbitrary", maxscale = maxscale,
     library = "Dionysus", location = TRUE, printProgress = F)
@@ -97,15 +85,7 @@ DiagCont3d <- function(X,gap,maxscale,maxdimension){
   }else{
     data2=c()
   }
-  
-  # Here is a problem, because if there is no complete half of the data, then we cannot
-  # use the sophisticated method to produce it.
-  
-  # There is another potential issue that the data does not necessarily have the 
-  # same representative points. Otherwise, it is just a test program.
-  
-  # if(all(data1[data1[1,]==-gap,],data2[data2[1,]==-gap,]))
-  
+
   data=rbind(data1,data2)
   data=data[data[,1]!=-gap,]
   
@@ -121,15 +101,11 @@ DiagCont3d <- function(X,gap,maxscale,maxdimension){
     S[4,]=c(0,0)
   }
   
-  ########## The above are about re-estimate and the following is about using approximation and 
-  ########## Easy estimate method to estimate it.
-  
   ## Easy estimate
   
-  #BirthRecal=max(BirthRecal(data1,data2),S[2,1],S[3,1]) # This birth estimate is for general.
   BirthRecal=max(S[2,1],S[3,1])
   seed=c(1,2,3,4) # Can be changed to random numbers.
-  # seed=ceiling(seed)
+
   Deathrecal=DeathRecal_Sphere(data[seed[1],],data[seed[2],],
                                data[seed[3],],data[seed[4],])
   S[5,]=c(BirthRecal,Deathrecal)

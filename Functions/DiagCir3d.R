@@ -1,12 +1,8 @@
 # 3D Data and supplement data as a plane
-# This code is used to test how the combination behaving.
+
 # Return as a matrix with full data birth time and death time and two
 # cutting pieces' birth time and death times.
 # n is the number of supplemental points.
-
-# Notice that we can use the sphere information to do the easy calculation.
-
-# This program is only used for cutting in half.
 
 DiagCir3d <- function(X,gap,maxscale,maxdimension,n){
   X1=X[-X[,1]>gap,]
@@ -27,7 +23,7 @@ DiagCir3d <- function(X,gap,maxscale,maxdimension,n){
     S[1,]=c(0,0)
   }
   
-  # X1
+  # X1: one side of the data
   DiagRips1 <- ripsDiag(
     X = rbind(X1,Y), maxdimension = maxdimension, maxscale = maxscale,
     library = "Dionysus", location = TRUE, printProgress = F)
@@ -40,7 +36,7 @@ DiagCir3d <- function(X,gap,maxscale,maxdimension,n){
     S[2,]=c(0,0)
   }
   
-  # X2
+  # X2: the other side of the data
   DiagRips2 <- ripsDiag(
     X = rbind(X2,Y), maxdimension = maxdimension, maxscale = maxscale,
     library = "Dionysus", location = TRUE, printProgress = F)
@@ -65,14 +61,7 @@ DiagCir3d <- function(X,gap,maxscale,maxdimension,n){
   }else{
     data2=c()
   }
-  # Here is a problem, because if there is no complete half of the data, then we cannot
-  # use the sophisticated method to produce it.
-  
-  # There is another potential issue that the data does not necessarily have the 
-  # same representative points. Otherwise, it is just a test program.
-  
-  # if(all(data1[data1[1,]==-gap,],data2[data2[1,]==-gap,]))
-  
+
   data=rbind(data1,data2)
   data=data[data[,1]!=-gap,]
   data=unique(data) # This step is to prevent the duplicated case and speed it up.
@@ -88,20 +77,15 @@ DiagCir3d <- function(X,gap,maxscale,maxdimension,n){
   }else{
     S[4,]=c(0,0)
   }
-  
-  ########## The above are about re-estimate and the following is about using approximation and 
-  ########## Easy estimate method to estimate it.
-  
   ## Easy estimate
   
   death1=DiagRips1$deathLocation[t1,]
   death2=DiagRips2$deathLocation[t2,]
   data1=data1[data1[,1]!=-gap,]
   data2=data2[data2[,1]!=-gap,]
-  #BirthRecal=max(BirthRecal(data1,data2),S[2,1],S[3,1]) # This birth estimate is for general.
   BirthRecal=max(S[2,1],S[3,1])
-  seed=c(1,2,3,4) # Can be cahnged to random numbers.
-  # seed=ceiling(seed)
+  seed=c(1,2,3,4) 
+
   Deathrecal=DeathRecal_Sphere(data[seed[1],],data[seed[2],],
                                data[seed[3],],data[seed[4],])
   S[5,]=c(BirthRecal,Deathrecal)

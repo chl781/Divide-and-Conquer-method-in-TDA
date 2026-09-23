@@ -166,9 +166,7 @@ Diagm3Combine_Withboundary_Combine_Subregion_ <- function(X_split,m,Diag_split,
       if(length(df1) <= 1){
         stop()
       }
-      Suspicious_i = cbind(X_split[[non_empty[i,1], non_empty[i,2], non_empty[i,3]]][df1,]
-                           #,rep(col,NROW(X_split[[non_empty[i,1],non_empty[i,2]]][df1,]))
-      ) # Retrieve the data
+      Suspicious_i = cbind(X_split[[non_empty[i,1], non_empty[i,2], non_empty[i,3]]][df1,]) # Retrieve the data
       
       #colnames(Suspicious_i) <- c("x","y","col")
       colnames(Suspicious_i) <- c("x","y","z")

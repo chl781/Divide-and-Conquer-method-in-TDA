@@ -1,7 +1,6 @@
 
 # Determine if there is features touch the boundary
 # tol is the level we can treat as close to the boundary
-# For now, we set tol as 0 to test.
 
 IdentifyBoun <- function(D,lim,tol){
   Result=1

@@ -2,7 +2,6 @@
 # Generate the dividing diagrams' form.
 
 
-# For now, assume it is for 2d problem.
 Divide <- function(X,lim,n,by,m0){
   # Innitial S
   if(nrow(lim)!=ncol(X)){
@@ -20,11 +19,9 @@ Divide <- function(X,lim,n,by,m0){
     Xdtm=matrix(DTM, ncol = length(Yseq), nrow = length(Xseq))
     colnames(Xdtm)<-Yseq
     rownames(Xdtm)<-Xseq
-    # n is the number it will break for each side.
     k=1
     for(i in 1:n){
       for(j in 1:n){
-        # n is the number it will break for each side.
         stepsize1=(lim[1,2]-lim[1,1])/(n+1)
         stepsize2=(lim[2,2]-lim[2,1])/(n+1)
         lim1=c(lim[1]+(i-1)*stepsize1,lim[1]+(i+1)*stepsize1)

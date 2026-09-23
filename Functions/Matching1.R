@@ -8,9 +8,6 @@ Matching1 <- function(X,Y,eps){
   nX=NROW(X)
   nY=NROW(Y)
   
-  #m=NCOL(X)
-  
-  #Check if X[i,] is in the convex hull of Y given eps error.
   for(i in 1:nX){
     Xi=X[i,]
     if(any(apply(Y,

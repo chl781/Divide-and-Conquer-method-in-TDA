@@ -1,7 +1,5 @@
 # This function serves as projection method.
 
-# Define the inputs
-# 
 
 Diagm2Combine <- function(X_split,m,Diag_split,
                           range,maxdimension,maxscale){
@@ -13,9 +11,6 @@ Diagm2Combine <- function(X_split,m,Diag_split,
   gap2=seq(range[2,1],range[2,2],length.out =m)
   
   # Extract the information of cross feature.
-  
-  # lapply
-  # mclapply
   
   for (i in 1:(m-1)) {
     for (j in 1:(m-1)) {
@@ -71,7 +66,7 @@ Diagm2Combine <- function(X_split,m,Diag_split,
       bound[[i,j]]=matrix(list(),1,length(t3))
       Suspicious[[i,j]]=matrix(list(),1,length(t3))
       Suspicious_features[[i,j]]=matrix(list(),1,length(t3))
-      # This discussion is for general.
+   
       lengthX=NROW(X_split[[i,j]])
       
       for(ij in 1:length(t3)){
@@ -80,8 +75,7 @@ Diagm2Combine <- function(X_split,m,Diag_split,
         IN1=IN-lengthX # Show the indices.
         IN1=IN1[IN1>0]
         
-        # Need a concrete projection algorithm.
-        # projection may also need a threshold.
+
         data2=X_split_ij[IN[IN<=lengthX],]
         lengthdata=NROW(data2)
         if(1 %in% IN1){  
@@ -145,7 +139,7 @@ Diagm2Combine <- function(X_split,m,Diag_split,
   
 
   
-  ################# Matching
+  ################# Matching algorithm
   
   #Suspicious_Combined=list()
   #Suspicious_Index=list()
@@ -208,7 +202,6 @@ Diagm2Combine <- function(X_split,m,Diag_split,
   
   for (i1 in 1:((m-1)^2-1) ) {
     for (j1 in (i1+1):(m-1)^2) {
-    #for(j1 in c(i1+1,i1+m-1)) {
       if (length_bound_matrix[i1]==0|length_bound_matrix[j1]==0){
         next
       }

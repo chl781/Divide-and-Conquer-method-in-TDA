@@ -1,4 +1,4 @@
-# This is [XXX]'s guess. Draw 3 points out and calculate the max, min or average.
+# Draw 3 points out and calculate the max, min or average.
 
 ThreePointsCal<- function(x,y){
   x1=NROW(x)

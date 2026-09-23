@@ -1,4 +1,4 @@
-
+# Compute the birth time of a suspicious feature based on the combined diagrams and the suspicious indices.
 BirthRecal2_ <- function(Diag_split,Combined_diag_indices,ind_suspicious){
   estimate=0
   for(i in 1:NROW(Combined_diag_indices) ){

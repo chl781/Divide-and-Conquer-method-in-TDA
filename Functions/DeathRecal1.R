@@ -1,7 +1,7 @@
-# My own calculation process for death time Eddited.
-# x is the 
-# death1 is the death time for x. death2 is the death time for the other data set.
-# deathtime is the death time for x.
+# DeathRecal1 is a function to calculate the death time for a data set.
+# data is the data set.
+# death1 is the death time for data. death2 is the death time for the other data set.
+# deathtime is the death time for data.
 
 DeathRecal1<- function(data,death1,death2){
   a=0

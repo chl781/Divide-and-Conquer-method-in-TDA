@@ -80,7 +80,6 @@ drop_list <- function(X){
 ########################################
 
 subfeature_cycle_Find <- function(X_split,Diag_split, ind_subfeature){
-  #subfeature_cycles = list()
   if(is.null(ind_subfeature)){
     return(NULL)
   }
@@ -100,7 +99,6 @@ suspicious_Find <- function(X_split,Diag_split,ind_suspicious){
   }
   l1=NROW(X_split)
   t=Diag_split$cycleLocation[ind_suspicious]
-  #print(t)
   t=mapply(t,num = l1, FUN = is.small)
   if(is.list(t)){
     X_suspicious=mapply(Y=t,FUN=extract,X=rep(list(X_split),
@@ -109,7 +107,6 @@ suspicious_Find <- function(X_split,Diag_split,ind_suspicious){
     X_suspicious=X_split[t,]
   }
   
-  #print(X_suspicious)
   return(X_suspicious)
 }
 
